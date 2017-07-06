@@ -9,8 +9,8 @@ else
     A = 0;
 end
 
-xCoMDelta    =  zeros(3,1);
-% xCoMDelta(2) = -0.02;
+% CoM correction to force CoM to be coincident with the ground contact point
+xCoMDelta  =  zeros(3,1);
 
 % Frequency
 f          =  referenceParams(2);

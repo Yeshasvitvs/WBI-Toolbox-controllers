@@ -1,16 +1,22 @@
-# README #
+# README 
 
-Structure of the repository:
+This balancing controller aims to balance iCub robot while standing on a moving platform, i.e. the seesaw.
+
+# Structure of the repository:
 
 - simulink
 - imuCalib
 
-## simulink ##
-Contains the simulink diagram and the initialization file.
-The initialization file automatically adds the `matlab` folder to the path (because it uses some functions)
+# simulink
 
-## imuCalib ##
-A Simulink model for verifying seesaw IMU measurements
+Contains the simulink diagram and the initialization file for balancing controller.
 
-## How to test it ##
-Open gazebo. Pause the simulation. Add the `iCub on seesaw` model. Play the controller
+## how to run a simulation:
+
+- install [icub-gazebo-wholebody]() repository and follow the [seesaw README]().
+- open the [simulink model]() and let it run!
+
+# imuCalib 
+
+A Simulink model for verifying seesaw IMU measurements. Connect the FOG IMU following the instructions 
+in [kvh-yarp-devices]() and then run the model.

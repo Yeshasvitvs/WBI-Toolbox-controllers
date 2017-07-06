@@ -1,6 +1,6 @@
-function [tauModel,SIGMA_fH,SIGMA_NA,ConstraintsMatrixQP2Feet,bVectorConstraintsQp2Feet,HessianMatrixQP2Feet,gradientQP2Feet,fH,NA,ddxCoM_seesaw,dotHwDes] = ...
+function [tauModel,SIGMA_fH,SIGMA_NA,ConstraintsMatrixQP2Feet,bVectorConstraintsQp2Feet,HessianMatrixQP2Feet,gradientQP2Feet,fH,NA,dotHDes_ctrl2] = ...
           balancingController(w_R_s,s_omega,seesaw,robot,trajectory,gain,qj,nu,ConstraintsMatrix,bVectorConstraints, ...
-                              w_H_lSole,w_H_rSole,w_p_CoM,reg,CONFIG,ROBOT_DOF,xCoM_seesaw,dxCoM_seesaw,HwDes)
+                              w_H_lSole,w_H_rSole,w_p_CoM,reg,CONFIG,ROBOT_DOF,HDes_ctrl2,intHDes_ctrl2)
 
 %% Balancing control of iCub on a seesaw.                          
 %% Recap of the equations needed for balancing on a semispherical seesaw.
@@ -275,7 +275,7 @@ Ktheta = gain.Ktheta;
 %
 
 % how to get tauModel: first, calculate hjBar:
-hjBar = h(7:end) - M(7:nDof+6,1:6)/M(1:6,1:6)*h(1:6) -impedances*(qj-qjDes) -dampings*qjDot;
+hjBar = h(7:end) -M(7:nDof+6,1:6)/M(1:6,1:6)*h(1:6) -impedances*(qj-qjDes) -dampings*qjDot;
                      
 % then, inverse of mass matrix, LAMBDA, its pseudoinverse and its null space
 S = [zeros(6,nDof);
@@ -302,9 +302,8 @@ SIGMA = -pinvLAMBDA*F -NLambda*JjBar;
 
 %% CONTROL part: it is in charge of retrieve the forces fH and their null space NA
 
-% compatibility with other controllers
-ddxCoM_seesaw = zeros(3,1);
-dotHwDes      = zeros(3,1);
+% enforce compatibility between different controllers
+dotHDes_ctrl2 = zeros(6,1);
 
 if CONFIG.CONTROL_KIND == 1
     
@@ -336,36 +335,36 @@ if CONFIG.CONTROL_KIND == 1
     saturated_xCoM = saturate(gain.PCOM * (xCoMDes - w_p_CoM(1:3)),-gain.P_SATURATION,gain.P_SATURATION);
   
     % desired CoM acceleration
-    dotH_seesaw = ddxCoMDes + saturated_xCoM + gain.DCOM * (dxCoMDes - w_vCoM);
+    ddxCoM_star = ddxCoMDes + saturated_xCoM + gain.DCOM * (dxCoMDes - w_vCoM);
 
     % robot desired linear and angular momentum
-    HDot_star = [ M(1,1)*dotH_seesaw; 
+    HDot_star = [ M(1,1)*ddxCoM_star; 
                  -gain.DAngularMomentum*H(4:end)-gain.PAngularMomentum*intHw];
              
     % desired forces at feet
-    fH =  pinvAR*(HDot_star - gravityWrench);
+    fH = pinvAR*(HDot_star - gravityWrench);
      
 elseif CONFIG.CONTROL_KIND == 2
     
     % CONTROL 2: fH is the vector of desired feet wrenches. In this
-    % configuration, it is in charge of stabilizing the robot momentum only
-    % but the CoM reference is such that the angular momentum of the seesaw
-    % is stabilized
+    % configuration, it is still in charge of stabilizing the robot momentum,     
+    % but desired robot momentum dynamics is chosen to control the angular 
+    % momentum of the seesaw in x direction
     
     % distance between the robot CoM and the feet
     w_gl = w_p_lSole - w_p_CoM;
     w_gr = w_p_rSole - w_p_CoM;
     
     % first, external forces multipliers and bias forces acting on
-    % seesaw ang. mom. dynamics
+    % seesaw angular momentum dynamics in x direction
     momentMultipl    =  transpose(e1)*(eye(3)+skew(s_r)*invTHETA*skew(s_r)*IOTA);
     forceMultipl     = -transpose(e1)*skew(s_r)*invTHETA;
     biasForcesSeesaw =  mS*transpose(e1)*skew(s_r)*invTHETA*(skew(s_rDot)*s_omega -(skew(s_omega))^2*s_r -s_g);
     
-    % then, combine forces and moments and project them to the world frame
+    % combine forces and moments and project them to the world frame
     Aseesaw          = -[forceMultipl,momentMultipl]*s_AS;
     
-    % desired thetaDDot 
+    % desired seesaw angular acceleration 
     thetaDot         = s_omega(1);
     seesaw_angles    = rollPitchYawFromRotation(w_R_s);
     thetaDDot_star   = -KthetaDot*thetaDot -Ktheta*seesaw_angles(1);
@@ -385,7 +384,7 @@ elseif CONFIG.CONTROL_KIND == 2
     % momentum of the seesaw in the x direction 
     A_dotH      = Aseesaw*pinvAR;
     pinvA_dotH  = pinv(A_dotH,reg.pinvTol);    
-    dotH_seesaw = pinvA_dotH*(Is(1)*thetaDDot_star -biasForcesSeesaw);
+    dotHDes_ctrl2 = pinvA_dotH*(Is(1)*thetaDDot_star -biasForcesSeesaw);
    
     % linear velocity of the robot CoM 
     w_vCoM = JCoM * nu;
@@ -397,31 +396,27 @@ elseif CONFIG.CONTROL_KIND == 2
     % Null space of w_AR
     NA = eye(size(pinvAR*w_AR)) - pinvAR*w_AR;
   
-    % desired CoM acceleration from desired momentum derivative
-    ddxCoM_seesaw = dotH_seesaw(1:3)/M(1,1);
+    % desired CoM dynamics
+    ddxCoMDes = dotHDes_ctrl2(1:3)/M(1,1);
+    dxCoMDes  = HDes_ctrl2(1:3)/M(1,1);
+    xCoMDes   = intHDes_ctrl2(1:3)/M(1,1);
     
     % saturate the CoM position error
-    saturated_xCoM = saturate(gain.PCOM * (xCoM_seesaw - w_p_CoM(1:3)),-gain.P_SATURATION,gain.P_SATURATION);
+    saturated_xCoM = saturate(gain.PCOM * (xCoMDes - w_p_CoM(1:3)),-gain.P_SATURATION,gain.P_SATURATION);
 
     % desired CoM acceleration
-    ddxCoM_star = saturated_xCoM + gain.DCOM * (dxCoM_seesaw - w_vCoM);
-
-    % robot desired linear and angular momentum
-    dotHwDes           = dotH_seesaw(4:6);
+    ddxCoM_star = ddxCoMDes +saturated_xCoM + gain.DCOM * (dxCoMDes - w_vCoM);
     
-    HDot_star_feedback = [ M(1,1)*ddxCoM_star; 
-                          -gain.DAngularMomentum*(H(4:end)-HwDes)-gain.PAngularMomentum*intHw];
-       
-    HDot_star = dotH_seesaw + HDot_star_feedback;       
+    % final robot momentum dynamics
+    HDot_star = [ M(1,1)*ddxCoM_star; 
+                  dotHDes_ctrl2(4:6)-gain.DAngularMomentum*(H(4:end)-HDes_ctrl2(4:6))-gain.PAngularMomentum*intHw]; 
              
     % desired forces at feet
     fH =  pinvAR*(HDot_star - gravityWrench);
  
-else
-    
+else    
     fH = zeros(12,1);
     NA = zeros(12,12);
-    
 end
                           
 %% Optimization using quadratic programming (QP) solver

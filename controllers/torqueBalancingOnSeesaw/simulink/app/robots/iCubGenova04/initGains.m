@@ -1,6 +1,6 @@
 ROBOT_DOF              = 23;
 WBT_wbiList            = '(torso_pitch,torso_roll,torso_yaw,l_shoulder_pitch,l_shoulder_roll,l_shoulder_yaw,l_elbow,r_shoulder_pitch,r_shoulder_roll,r_shoulder_yaw,r_elbow,l_hip_pitch,l_hip_roll,l_hip_yaw,l_knee,l_ankle_pitch,l_ankle_roll,r_hip_pitch,r_hip_roll,r_hip_yaw,r_knee,r_ankle_pitch,r_ankle_roll)';
-sat.torque             = 12;
+sat.torque             = 30;
 
 %% Seesaw parameters
 seesaw                 = struct;
@@ -57,13 +57,12 @@ elseif strcmp(FRAMES.fixedLink,'r_sole')
     
     seesaw.s_sFixed    = seesaw.s_sr;
     
-else
-    
+else    
     error('The robot frame which is assumed to be fixed w.r.t. the seesaw is not valid!')    
 end
 
 % Adjust seesaw angle measurements (roll, pitch, yaw) [deg]
-seesaw.offset          = [0; 0; 0];
+seesaw.offset = [0; 0; 0];
 
 % Relative rotation between world frame and IMU seesaw world frame
 addpath('../../../../../utilityMatlabFunctions/');
@@ -129,12 +128,19 @@ elseif CONFIG.CONTROL_KIND == 2
 
     % Saturate the CoM position error
     gain.P_SATURATION      = 0.3;
+
+    % Regularization terms
+    reg                    = struct;
+    reg.pinvDamp           = 1;
+    reg.HessianQP          = 1e-7;
+    reg.pinvTol            = 1e-3;
+    reg.pinvTolVb          = 1e-7;
      
 end
 
 %% Friction cone parameters
-numberOfPoints         = 4; % The friction cone is approximated by using linear interpolation of the circle. 
-                            % So, numberOfPoints defines the number of points used to interpolate the circle in each cicle's quadrant 
+numberOfPoints                = 4; % The friction cone is approximated by using linear interpolation of the circle. 
+                                   % So, numberOfPoints defines the number of points used to interpolate the circle in each cicle's quadrant 
 % Friction parameters
 forceFrictionCoefficient      = 1;   
 torsionalFrictionCoefficient  = 2/150;
@@ -144,3 +150,4 @@ gain.footSize                 = [ -0.07  0.12 ;    % xMin, xMax
                                   -0.045 0.05 ];   % yMin, yMax     
 % Minimal normal force
 fZmin                         = 20;
+

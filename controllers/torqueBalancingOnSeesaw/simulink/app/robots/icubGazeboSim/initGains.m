@@ -64,12 +64,11 @@ elseif strcmp(FRAMES.fixedLink,'r_sole')
     seesaw.s_sFixed    = seesaw.s_sr;
     
 else
-    
     error('The robot frame which is assumed to be fixed w.r.t. the seesaw is not valid!')    
 end
 
 % Adjust seesaw angle measurements (roll, pitch, yaw) [deg]
-seesaw.offset          = [0; 0; 0];
+seesaw.offset = [0; 0; 0];
 
 % Relative rotation between world frame and IMU seesaw world frame
 addpath('../../../../../utilityMatlabFunctions/');
@@ -82,8 +81,8 @@ seesaw.w_R_wImu = eye(3);
 % number of samples is the order of the filter.
 
 % Select the order of the filter for seesaw orientation and ang velocity
-seesaw.positionFilterOrder = 5;
-seesaw.velocityFilterOrder = 5;
+seesaw.positionFilterOrder = 2;
+seesaw.velocityFilterOrder = 2;
 
 %% References for CoM trajectory
 directionOfOscillation     = [0; 1; 0];
@@ -146,8 +145,8 @@ elseif CONFIG.CONTROL_KIND == 2
 end
     
 %% Friction cone parameters
-numberOfPoints         = 4; % The friction cone is approximated by using linear interpolation of the circle. 
-                            % So, numberOfPoints defines the number of points used to interpolate the circle in each cicle's quadrant 
+numberOfPoints                = 4; % The friction cone is approximated by using linear interpolation of the circle. 
+                                   % So, numberOfPoints defines the number of points used to interpolate the circle in each cicle's quadrant 
 % Friction parameters
 forceFrictionCoefficient      = 1;   
 torsionalFrictionCoefficient  = 2/150;
