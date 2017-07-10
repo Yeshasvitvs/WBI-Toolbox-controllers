@@ -6,7 +6,7 @@ CONFIG.ON_GAZEBO       = true;
 PORTS.IMU        = '/icubSim/inertial';
 PORTS.IMU_SEESAW = '/seesaw/inertial';
 PORTS.NECK       = '/icubSim/head/state:o';
-sat.torque       = 34;
+sat.torque       = 40;
 
 %% Seesaw parameters
 seesaw           = struct;
@@ -90,6 +90,7 @@ referenceParams            = [0.0,0.25]; % referenceParams(1) = amplitude of asc
 noOscillationTime          = 0; % the variable noOscillationTime is the time, in seconds, that the robot waits before starting moving the CoM left-and-right
 
 %% Gains and regularization terms (for all different controllers)
+
 if CONFIG.CONTROL_KIND == 1
     
     % gain on seesaw angular velocity
@@ -100,7 +101,7 @@ if CONFIG.CONTROL_KIND == 1
     gain.posturalProp      = diag([100 10 200,   100 100 100 80,   100 100 100 80,   600 60 600 600 100 10,   600 60 600 600 100 10])/10;                    
     gain.posturalDamp      = 2*sqrt(gain.posturalProp)/5;
 
-    gain.PAngularMomentum  = 2/20;
+    gain.PAngularMomentum  = diag([1 1 1])/10;
     gain.DAngularMomentum  = 2*sqrt(gain.PAngularMomentum)/5;
 
     gain.PCOM              = diag([ 200 20 200])/10;
@@ -115,21 +116,22 @@ if CONFIG.CONTROL_KIND == 1
     reg.HessianQP          = 1e-7;
     reg.pinvTol            = 1e-7;
     reg.pinvTolVb          = 1e-4;
-    
+    reg.pinvDamp_ctrl3     = 0.1; % NOT USED
+     
 elseif CONFIG.CONTROL_KIND == 2
     
     % gain on seesaw angular velocity
     gain.Ktheta            = 1;
-    gain.KthetaDot         = 1;
+    gain.KthetaDot         = 2*sqrt(gain.Ktheta);
 
     % By default these values are used by CONTROL_KIND 1
     gain.posturalProp      = diag([100 50 200,   100 100 100 80,   100 100 100 80,   600 60 600 600 100 10,   600 60 600 600 100 10])/10;                        
     gain.posturalDamp      = 2*sqrt(gain.posturalProp)/5;
 
-    gain.PAngularMomentum  = 1;
-    gain.DAngularMomentum  = 2*sqrt(gain.PAngularMomentum)/15;
+    gain.PAngularMomentum  = diag([1 1 1])/10;
+    gain.DAngularMomentum  = 2*sqrt(gain.PAngularMomentum)/5;
 
-    gain.PCOM              = diag([ 200 10 200 ])/10;
+    gain.PCOM              = diag([ 200 20 200 ])/10;
     gain.DCOM              = 2*sqrt(gain.PCOM)/5;
 
     % Saturate the CoM position error
@@ -141,9 +143,37 @@ elseif CONFIG.CONTROL_KIND == 2
     reg.HessianQP          = 1e-7;
     reg.pinvTol            = 1e-7;
     reg.pinvTolVb          = 1e-4;
+    reg.pinvDamp_ctrl3     = 0.1; % NOT USED
     
-end
+elseif CONFIG.CONTROL_KIND == 3
     
+    % gain on seesaw angular velocity
+    gain.Ktheta            = 25;
+    gain.KthetaDot         = 2*sqrt(gain.Ktheta);
+
+    % By default these values are used by CONTROL_KIND 1
+    gain.posturalProp      = diag([100 50 200,   100 100 100 80,   100 100 100 80,   600 60 600 600 100 10,   600 60 600 600 100 10])/10;                        
+    gain.posturalDamp      = 2*sqrt(gain.posturalProp)/5;
+
+    gain.PAngularMomentum  = diag([10 10 10])/10;
+    gain.DAngularMomentum  = 2*sqrt(gain.PAngularMomentum)/5;
+
+    gain.PCOM              = diag([ 200 0.1 200 ])/10;
+    gain.DCOM              = 2*sqrt(gain.PCOM)/5;
+
+    % Saturate the CoM position error
+    gain.P_SATURATION      = 0.3;
+ 
+    % Regularization terms
+    reg                    = struct;
+    reg.pinvDamp           = 1;
+    reg.HessianQP          = 1e-7;
+    reg.pinvTol            = 1e-7;
+    reg.pinvTolVb          = 1e-4;
+    reg.pinvDamp_ctrl3     = 0.1;
+    
+end   
+
 %% Friction cone parameters
 numberOfPoints                = 4; % The friction cone is approximated by using linear interpolation of the circle. 
                                    % So, numberOfPoints defines the number of points used to interpolate the circle in each cicle's quadrant 

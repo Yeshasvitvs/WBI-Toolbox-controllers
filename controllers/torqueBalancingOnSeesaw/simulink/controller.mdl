@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.1092"
+    ComputedModelVersion    "1.1095"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -48,28 +48,16 @@ Model {
 	$ClassName		"Simulink.ExplorerBarInfo"
 	Visible			[1]
       }
-      Array {
-	Type			"Simulink.EditorInfo"
-	Dimension		2
-	Object {
-	  $ObjectID		  5
-	  IsActive		  [1]
-	  ViewObjType		  "SimulinkTopLevel"
-	  LoadSaveID		  "0"
-	  Extents		  [1265.0, 596.0]
-	  ZoomFactor		  [0.77100271002710019]
-	  Offset		  [-177.86028119507944, 106.84182776801407]
-	}
-	Object {
-	  $ObjectID		  6
-	  IsActive		  [0]
-	  ViewObjType		  "SimulinkSubsys"
-	  LoadSaveID		  "1283"
-	  Extents		  [1265.0, 596.0]
-	  ZoomFactor		  [2.2943548387096775]
-	  Offset		  [69.307749340949044, 9.8980667838312684]
-	}
-	PropName		"EditorsInfo"
+      Object {
+	$PropName		"EditorsInfo"
+	$ObjectID		5
+	$ClassName		"Simulink.EditorInfo"
+	IsActive		[1]
+	ViewObjType		"SimulinkSubsys"
+	LoadSaveID		"517"
+	Extents			[1265.0, 597.0]
+	ZoomFactor		[0.82]
+	Offset			[0.0, -3.0731707317073074]
       }
     }
   }
@@ -79,9 +67,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "gabri"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Jul 06 15:32:27 2017"
-  RTWModifiedTimeStamp	  421254066
-  ModelVersionFormat	  "1.%<AutoIncrement:1092>"
+  LastModifiedDate	  "Sun Jul 09 21:59:44 2017"
+  RTWModifiedTimeStamp	  421538272
+  ModelVersionFormat	  "1.%<AutoIncrement:1095>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -121,7 +109,7 @@ Model {
   TryForcingSFcnDF	  off
   Object {
     $PropName		    "DataLoggingOverride"
-    $ObjectID		    7
+    $ObjectID		    6
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "controller"
     overrideMode_	    [0.0]
@@ -184,13 +172,13 @@ Model {
     Type		    "Handle"
     Dimension		    1
     Simulink.ConfigSet {
-      $ObjectID		      8
+      $ObjectID		      7
       Version		      "1.14.2"
       Array {
 	Type			"Handle"
 	Dimension		9
 	Simulink.SolverCC {
-	  $ObjectID		  9
+	  $ObjectID		  8
 	  Version		  "1.14.2"
 	  StartTime		  "0.0"
 	  StopTime		  "inf"
@@ -225,7 +213,7 @@ Model {
 	  InsertRTBMode		  "Whenever possible"
 	}
 	Simulink.DataIOCC {
-	  $ObjectID		  10
+	  $ObjectID		  9
 	  Version		  "1.14.2"
 	  Decimation		  "1"
 	  ExternalInput		  "[t, u]"
@@ -258,7 +246,7 @@ Model {
 	  Refine		  "1"
 	}
 	Simulink.OptimizationCC {
-	  $ObjectID		  11
+	  $ObjectID		  10
 	  Version		  "1.14.2"
 	  Array {
 	    Type		    "Cell"
@@ -318,7 +306,7 @@ Model {
 	  ParallelExecutionInRapidAccelerator on
 	}
 	Simulink.DebuggingCC {
-	  $ObjectID		  12
+	  $ObjectID		  11
 	  Version		  "1.14.2"
 	  Array {
 	    Type		    "Cell"
@@ -414,7 +402,7 @@ Model {
 	  SFTransitionActionBeforeConditionDiag	"warning"
 	}
 	Simulink.HardwareCC {
-	  $ObjectID		  13
+	  $ObjectID		  12
 	  Version		  "1.14.2"
 	  ProdBitPerChar	  8
 	  ProdBitPerShort	  16
@@ -455,7 +443,7 @@ Model {
 	  ProdEqTarget		  on
 	}
 	Simulink.ModelReferenceCC {
-	  $ObjectID		  14
+	  $ObjectID		  13
 	  Version		  "1.14.2"
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
 	  CheckModelReferenceTargetMessage "error"
@@ -470,7 +458,7 @@ Model {
 	  SupportModelReferenceSimTargetCustomCode off
 	}
 	Simulink.SFSimCC {
-	  $ObjectID		  15
+	  $ObjectID		  14
 	  Version		  "1.14.2"
 	  SFSimEnableDebug	  on
 	  SFSimOverflowDetection  on
@@ -486,7 +474,7 @@ Model {
 	}
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
-	  $ObjectID		  16
+	  $ObjectID		  15
 	  Version		  "1.14.2"
 	  Array {
 	    Type		    "Cell"
@@ -574,7 +562,7 @@ Model {
 	    Type		    "Handle"
 	    Dimension		    2
 	    Simulink.CodeAppCC {
-	      $ObjectID		      17
+	      $ObjectID		      16
 	      Version		      "1.14.2"
 	      Array {
 		Type			"Cell"
@@ -648,7 +636,7 @@ Model {
 	    }
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
-	      $ObjectID		      18
+	      $ObjectID		      17
 	      Version		      "1.14.2"
 	      Array {
 		Type			"Cell"
@@ -734,7 +722,7 @@ Model {
 	  }
 	}
 	SlCovCC.ConfigComp {
-	  $ObjectID		  19
+	  $ObjectID		  18
 	  Version		  "1.14.2"
 	  DisabledProps		  []
 	  Description		  "Simulink Coverage Configuration Component"
@@ -782,11 +770,11 @@ Model {
   }
   Simulink.ConfigSet {
     $PropName		    "ActiveConfigurationSet"
-    $ObjectID		    8
+    $ObjectID		    7
   }
   Object {
     $PropName		    "DataTransfer"
-    $ObjectID		    20
+    $ObjectID		    19
     $ClassName		    "Simulink.GlobalDataTransfer"
     DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
     DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
@@ -1167,7 +1155,7 @@ Model {
   System {
     Name		    "controller"
     Location		    [65, 24, 1366, 768]
-    Open		    on
+    Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -3776,7 +3764,7 @@ Model {
       System {
 	Name			"Dump and visualize"
 	Location		[65, 24, 1366, 768]
-	Open			off
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -3883,7 +3871,7 @@ Model {
 	  Position		  [545, 510, 645, 640]
 	  ZOrder		  255
 	  Floating		  off
-	  Location		  [81, 136, 1352, 762]
+	  Location		  [71, 78, 1362, 762]
 	  Open			  off
 	  NumInputPorts		  "3"
 	  List {
@@ -3903,8 +3891,10 @@ Model {
 	    MarkerStyles	    "none|none|none|none|none|none"
 	  }
 	  ShowLegends		  on
-	  YMin			  "-0.05~-0.05~-0.0175"
-	  YMax			  "0.65~0.65~0.0175"
+	  LegendLocations	  "0.86464     0.86696     0.10728    0.074927\n0.86929     0.55994     0.10263    0.074927\n0.8785"
+	  "8     0.25146    0.093338    0.074927"
+	  YMin			  "-0.05~-0.05~-0.0075"
+	  YMax			  "0.65~0.65~0.001"
 	  SaveToWorkspace	  on
 	  SaveName		  "Scope_CoM"
 	  DataFormat		  "StructureWithTime"
@@ -4367,7 +4357,7 @@ Model {
 	  Position		  [1185, 496, 1375, 694]
 	  ZOrder		  483
 	  Floating		  off
-	  Location		  [81, 113, 1362, 767]
+	  Location		  [81, 108, 1362, 762]
 	  Open			  off
 	  NumInputPorts		  "3"
 	  List {
@@ -4387,8 +4377,10 @@ Model {
 	    MarkerStyles	    "none|none|none|none|none|none"
 	  }
 	  ShowLegends		  on
-	  YMin			  "-5~-5~-5"
-	  YMax			  "5~5~5"
+	  LegendLocations	  "0.88739      0.6443    0.084699     0.29339\n0.80777     0.33849     0.16432     0.29339\n0.8780"
+	  "2    0.032683    0.094067     0.29339"
+	  YMin			  "-25~-4e-08~-25"
+	  YMax			  "175~4e-08~175"
 	  SaveToWorkspace	  on
 	  SaveName		  "Scope_f"
 	  DataFormat		  "StructureWithTime"
@@ -4513,7 +4505,7 @@ Model {
 	  Position		  [550, 20, 655, 130]
 	  ZOrder		  491
 	  Floating		  off
-	  Location		  [76, 83, 1367, 767]
+	  Location		  [71, 106, 1362, 762]
 	  Open			  off
 	  NumInputPorts		  "5"
 	  List {
@@ -4535,11 +4527,11 @@ Model {
 	    MarkerStyles	    "none|none|none|none|none|none"
 	  }
 	  ShowLegends		  on
-	  LegendLocations	  "0.89717      0.8655    0.074748    0.074927\n0.88323     0.65844    0.088691     0.09777\n0.8785"
-	  "8     0.47423    0.093338     0.09777\n0.88323     0.24433    0.088691     0.14346\n0.87858    0.060124    0.093338"
-	  "     0.14346"
-	  YMin			  "-5~-5~-5~-5~-5"
-	  YMax			  "5~5~5~5~5"
+	  LegendLocations	  "0.89756     0.85976    0.074748    0.078125\n0.88362     0.65301    0.088691     0.10194\n0.8789"
+	  "7     0.46856    0.093338     0.10194\n0.88362       0.238    0.088691     0.14958\n0.87897    0.053544    0.093338"
+	  "     0.14958"
+	  YMin			  "-7~-2~-2.5~-4~-3.5"
+	  YMax			  "2~1.5~1.5~3~2"
 	  SaveToWorkspace	  on
 	  SaveName		  "Scope_tauDes"
 	  DataFormat		  "StructureWithTime"
@@ -5512,7 +5504,7 @@ Model {
       RequestExecContextInheritance off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		21
+	$ObjectID		20
 	$ClassName		"Simulink.Mask"
       }
       System {
@@ -5547,7 +5539,7 @@ Model {
 	  }
 	  System {
 	    Name		    "Compute base velocity"
-	    Location		    [65, 24, 1366, 768]
+	    Location		    [55, 14, 726, 778]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -5559,7 +5551,7 @@ Model {
 	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "140"
+	    ZoomFactor		    "69"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "w_H_b"
@@ -5615,8 +5607,8 @@ Model {
 	      RequestExecContextInheritance off
 	      System {
 		Name			"Base and joints velocity"
-		Location		[65, 24, 1366, 768]
-		Open			on
+		Location		[55, 14, 726, 778]
+		Open			off
 		ModelBrowserVisibility	off
 		ModelBrowserWidth	200
 		ScreenColor		"white"
@@ -5627,7 +5619,7 @@ Model {
 		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 		TiledPageScale		1
 		ShowPageBoundaries	off
-		ZoomFactor		"229"
+		ZoomFactor		"140"
 		Block {
 		  BlockType		  Inport
 		  Name			  "v_b"
@@ -5744,7 +5736,7 @@ Model {
 		  Position		  [475, 16, 550, 94]
 		  ZOrder		  935
 		  Floating		  off
-		  Location		  [66, 53, 1367, 767]
+		  Location		  [71, 78, 1362, 762]
 		  Open			  off
 		  NumInputPorts		  "1"
 		  List {
@@ -5762,7 +5754,6 @@ Model {
 		    MarkerStyles	    "none|none|none|none|none|none"
 		  }
 		  ShowLegends		  on
-		  LegendLocations	  "0.90757      0.8055     0.06495     0.13743"
 		  SaveToWorkspace	  on
 		  SaveName		  "Scope_vb"
 		  DataFormat		  "StructureWithTime"
@@ -6471,7 +6462,7 @@ Model {
 	      RequestExecContextInheritance off
 	      Object {
 		$PropName		"MaskObject"
-		$ObjectID		22
+		$ObjectID		21
 		$ClassName		"Simulink.Mask"
 		Description		"This block evaluates the homogeneous transformation between the world and the root link, i.e. ^wH_b. I"
 		"t assumes that the link specified by the variable 'link_name' has a constant position\nw.r.t. an inertial frame, but"
@@ -6480,7 +6471,7 @@ Model {
 		"r str;\n\nport_label('input',1,'q_j','texmode','on')\n\n"
 		Object {
 		  $PropName		  "Parameters"
-		  $ObjectID		  23
+		  $ObjectID		  22
 		  $ClassName		  "Simulink.MaskParameter"
 		  Type			  "edit"
 		  Name			  "link_name"
@@ -7089,7 +7080,7 @@ Model {
 		  Position		  [740, 44, 770, 76]
 		  ZOrder		  897
 		  Floating		  off
-		  Location		  [71, 78, 1362, 762]
+		  Location		  [81, 138, 1352, 762]
 		  Open			  off
 		  NumInputPorts		  "1"
 		  List {
@@ -7107,6 +7098,8 @@ Model {
 		    MarkerStyles	    "none|none|none|none|none|none"
 		  }
 		  ShowLegends		  off
+		  YMin			  "-0.04"
+		  YMax			  "0.0025"
 		  SaveToWorkspace	  on
 		  SaveName		  "Scope_IMUtheta"
 		  DataFormat		  "StructureWithTime"
@@ -7120,7 +7113,7 @@ Model {
 		  Position		  [315, 44, 345, 76]
 		  ZOrder		  919
 		  Floating		  off
-		  Location		  [81, 108, 1362, 762]
+		  Location		  [66, 53, 1367, 767]
 		  Open			  off
 		  NumInputPorts		  "1"
 		  List {
@@ -7291,7 +7284,7 @@ Model {
 		  Position		  [315, 104, 345, 136]
 		  ZOrder		  921
 		  Floating		  off
-		  Location		  [76, 108, 1367, 767]
+		  Location		  [71, 106, 1362, 762]
 		  Open			  off
 		  NumInputPorts		  "1"
 		  List {
@@ -8430,7 +8423,7 @@ Model {
 	      RequestExecContextInheritance off
 	      System {
 		Name			"Seesaw orientation and ang velocity from IMU seesaw"
-		Location		[65, 24, 1366, 768]
+		Location		[55, 14, 726, 778]
 		Open			off
 		ModelBrowserVisibility	off
 		ModelBrowserWidth	200
@@ -8442,7 +8435,7 @@ Model {
 		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 		TiledPageScale		1
 		ShowPageBoundaries	off
-		ZoomFactor		"214"
+		ZoomFactor		"106"
 		Block {
 		  BlockType		  Inport
 		  Name			  "IMU_seesaw"
@@ -8473,7 +8466,7 @@ Model {
 		  RequestExecContextInheritance	off
 		  System {
 		    Name		    "Seesaw angular velocity with IMU seesaw"
-		    Location		    [65, 24, 1366, 768]
+		    Location		    [55, 14, 726, 778]
 		    Open		    off
 		    ModelBrowserVisibility  off
 		    ModelBrowserWidth	    200
@@ -8485,7 +8478,7 @@ Model {
 		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
 		    TiledPageScale	    1
 		    ShowPageBoundaries	    off
-		    ZoomFactor		    "69"
+		    ZoomFactor		    "33"
 		    Block {
 		    BlockType		    Inport
 		    Name		    "IMU_seesaw"
@@ -8711,7 +8704,7 @@ Model {
 		    RequestExecContextInheritance off
 		    System {
 		    Name		    "Visualize seesaw angvel"
-		    Location		    [65, 24, 1366, 768]
+		    Location		    [55, 14, 726, 778]
 		    Open		    off
 		    ModelBrowserVisibility  off
 		    ModelBrowserWidth	    200
@@ -8723,7 +8716,7 @@ Model {
 		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
 		    TiledPageScale	    1
 		    ShowPageBoundaries	    off
-		    ZoomFactor		    "326"
+		    ZoomFactor		    "155"
 		    Block {
 		    BlockType		    Inport
 		    Name		    "velocity before filter"
@@ -8768,7 +8761,7 @@ Model {
 		    Position		    [320, 169, 350, 201]
 		    ZOrder		    899
 		    Floating		    off
-		    Location		    [71, 78, 1362, 762]
+		    Location		    [70, 106, 1361, 790]
 		    Open		    off
 		    NumInputPorts	    "1"
 		    List {
@@ -8830,7 +8823,7 @@ Model {
 		    Position		    [320, 104, 350, 136]
 		    ZOrder		    906
 		    Floating		    off
-		    Location		    [66, 81, 1367, 795]
+		    Location		    [71, 78, 1372, 792]
 		    Open		    off
 		    NumInputPorts	    "1"
 		    List {
@@ -10454,7 +10447,7 @@ Model {
       RequestExecContextInheritance off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		24
+	$ObjectID		23
 	$ClassName		"Simulink.Mask"
       }
       System {
@@ -11252,7 +11245,7 @@ Model {
       RequestExecContextInheritance off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		25
+	$ObjectID		24
 	$ClassName		"Simulink.Mask"
 	Display			"disp('SYNCHRONIZER')"
       }

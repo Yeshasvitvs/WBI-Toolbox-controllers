@@ -184,8 +184,8 @@ skewBar_omega = blkdiag(skew(s_omega), skew(s_omega), skew(s_omega), skew(s_omeg
 %     thetaDot = s_omega(1);
 
 % then, eq 22 is simplified because in the x direction s_Muc is not
-% effective. also, skew(s_omega)*s_omega is zero and
-% transpose(e1)*skew(eta*e1) is zero too. hence, one has
+% effective. also, skew(s_omega)*s_omega is zero and transpose(e1)*skew(eta*e1) 
+% is zero too. hence, one has
 %
 % thetaDDot = transpose(e1)*inv_Is*(skew(s_r)*s_Fc +s_Mue)
 
@@ -413,7 +413,76 @@ elseif CONFIG.CONTROL_KIND == 2
              
     % desired forces at feet
     fH =  pinvAR*(HDot_star - gravityWrench);
- 
+    
+elseif CONFIG.CONTROL_KIND == 3
+    
+    % CONTROL 3: first control objective is the same of 2, but now strict
+    % task priorities between desired seesaw angular momentum dynamics and
+    % desired robot dynamics are imposed.
+    
+    % distance between the robot CoM and the feet
+    w_gl = w_p_lSole - w_p_CoM;
+    w_gr = w_p_rSole - w_p_CoM;
+    
+    % first, external forces multipliers and bias forces acting on
+    % seesaw angular momentum dynamics in x direction
+    momentMultipl    =  transpose(e1)*(eye(3)+skew(s_r)*invTHETA*skew(s_r)*IOTA);
+    forceMultipl     = -transpose(e1)*skew(s_r)*invTHETA;
+    biasForcesSeesaw =  mS*transpose(e1)*skew(s_r)*invTHETA*(skew(s_rDot)*s_omega -(skew(s_omega))^2*s_r -s_g);
+    
+    % combine forces and moments and project them to the world frame
+    Aseesaw          = -[forceMultipl,momentMultipl]*s_AS;
+    
+    % desired seesaw angular acceleration 
+    thetaDot         = s_omega(1);
+    seesaw_angles    = rollPitchYawFromRotation(w_R_s);
+    thetaDDot_star   = -KthetaDot*thetaDot -Ktheta*seesaw_angles(1);
+    
+    % forces at feet that generates desired thetaDDot:
+    pinvAseesaw      = pinvDamped(Aseesaw,reg.pinvDamp_ctrl3);
+    NAseesaw         = eye(size(pinvAseesaw*Aseesaw)) - pinvAseesaw*Aseesaw;
+    fHDes_seesaw     = pinvAseesaw*(Is(1)*thetaDDot_star -biasForcesSeesaw);
+    
+    % matrix which projects the forces at feet into the robot centroidal
+    % dynamics, w.r.t the world frame and its pseudoinverse. It must be
+    % projected in the null space of the first task. First, consider the 
+    % robot centroidal momentum equation:
+    %
+    %    AR*(fHDes_seesaw + NAseesaw*fHDes_robot) = dotH -f_grav
+    %    
+    
+    % as a conseguence, 
+    w_AR = [eye(3) zeros(3) eye(3) zeros(3)
+            skew(w_gl) eye(3) skew(w_gr) eye(3)];
+        
+    pinvAR_NAseesaw = pinv(w_AR*NAseesaw, reg.pinvTol);
+    
+    % Null space of w_AR
+    NA = eye(size(pinvAR_NAseesaw*w_AR)) - pinvAR_NAseesaw*w_AR*NAseesaw;
+   
+    % linear velocity of the robot CoM 
+    w_vCoM = JCoM * nu;
+    w_vCoM = w_vCoM(1:3);
+    
+    % gravity wrench in world frame   
+    gravityWrench = [M(1,1)*gravAcc;zeros(3,1)];
+  
+    % desired CoM dynamics. Saturate the CoM position error
+    saturated_xCoM = saturate(gain.PCOM * (xCoMDes - w_p_CoM(1:3)),-gain.P_SATURATION,gain.P_SATURATION);
+
+    % desired CoM acceleration
+    ddxCoM_star = ddxCoMDes +saturated_xCoM + gain.DCOM * (dxCoMDes - w_vCoM);
+    
+    % robot desired linear and angular momentum
+    HDot_star = [ M(1,1)*ddxCoM_star; 
+                 -gain.DAngularMomentum*H(4:end)-gain.PAngularMomentum*intHw];
+             
+    % desired forces for robot dynamics
+    fHDes_robot =  pinvAR_NAseesaw*(HDot_star -gravityWrench -w_AR*fHDes_seesaw);
+    
+    % desired forces at feet
+    fH = fHDes_seesaw + NAseesaw*fHDes_robot;    
+    
 else    
     fH = zeros(12,1);
     NA = zeros(12,12);
