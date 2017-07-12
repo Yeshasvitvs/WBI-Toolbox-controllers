@@ -105,7 +105,7 @@ if CONFIG.CONTROL_KIND == 1
     gain.DAngularMomentum  = 2*sqrt(gain.PAngularMomentum)/5;
 
     gain.PCOM              = diag([ 200 20 200])/10;
-    gain.DCOM              = 2*sqrt(gain.PCOM)/20;
+    gain.DCOM              = 2*sqrt(gain.PCOM)/10;
 
     % Saturate the CoM position error
     gain.P_SATURATION      = 0.30;
@@ -155,7 +155,7 @@ elseif CONFIG.CONTROL_KIND == 3
     gain.posturalProp      = diag([100 50 200,   100 100 100 80,   100 100 100 80,   600 60 600 600 100 10,   600 60 600 600 100 10])/10;                        
     gain.posturalDamp      = 2*sqrt(gain.posturalProp)/5;
 
-    gain.PAngularMomentum  = diag([10 10 10])/10;
+    gain.PAngularMomentum  = diag([10 1 10])/10;
     gain.DAngularMomentum  = 2*sqrt(gain.PAngularMomentum)/5;
 
     gain.PCOM              = diag([ 200 0.1 200 ])/10;

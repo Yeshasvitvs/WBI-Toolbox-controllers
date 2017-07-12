@@ -33,7 +33,7 @@ CONFIG.USE_QP_SOLVER = true;
 %                  direction; second control objective: centroidal momentum 
 %                  dynamics of the robot;
 %
-CONFIG.CONTROL_KIND = 3; 
+CONFIG.CONTROL_KIND = 1; 
 
 %% CONFIGURATION PARAMETERS FOR STATE ESTIMATION
 
@@ -116,4 +116,3 @@ w_R_fixedLink_0 = eye(3);
 
 % Complete transformation
 seesaw.w_H_fixedLink_0 = computeTransFromFixedLinkToWorld(w_R_fixedLink_0,seesaw);
-

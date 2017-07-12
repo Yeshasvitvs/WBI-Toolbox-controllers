@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.1095"
+    ComputedModelVersion    "1.1098"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -67,9 +67,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "gabri"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Jul 09 21:59:44 2017"
-  RTWModifiedTimeStamp	  421538272
-  ModelVersionFormat	  "1.%<AutoIncrement:1095>"
+  LastModifiedDate	  "Tue Jul 11 18:02:06 2017"
+  RTWModifiedTimeStamp	  421696824
+  ModelVersionFormat	  "1.%<AutoIncrement:1098>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1168,7 +1168,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "77"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "1409"
+    SIDHighWatermark	    "1410"
     Block {
       BlockType		      SubSystem
       Name		      "Balancing controller and QP solver"
@@ -3871,7 +3871,7 @@ Model {
 	  Position		  [545, 510, 645, 640]
 	  ZOrder		  255
 	  Floating		  off
-	  Location		  [71, 78, 1362, 762]
+	  Location		  [81, 133, 1362, 762]
 	  Open			  off
 	  NumInputPorts		  "3"
 	  List {
@@ -3891,10 +3891,10 @@ Model {
 	    MarkerStyles	    "none|none|none|none|none|none"
 	  }
 	  ShowLegends		  on
-	  LegendLocations	  "0.86464     0.86696     0.10728    0.074927\n0.86929     0.55994     0.10263    0.074927\n0.8785"
-	  "8     0.25146    0.093338    0.074927"
-	  YMin			  "-0.05~-0.05~-0.0075"
-	  YMax			  "0.65~0.65~0.001"
+	  LegendLocations	  "0.86397     0.85374     0.10812    0.081479\n0.86866     0.55008     0.10343    0.081479\n0.8780"
+	  "2     0.24483    0.094067    0.081479"
+	  YMin			  "-0.05~-0.05~-0.008"
+	  YMax			  "0.65~0.65~0.003"
 	  SaveToWorkspace	  on
 	  SaveName		  "Scope_CoM"
 	  DataFormat		  "StructureWithTime"
@@ -5089,6 +5089,17 @@ Model {
 	  DstPort		  3
 	}
       }
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Gain"
+      SID		      "1410"
+      Position		      [980, 730, 1010, 760]
+      ZOrder		      835
+      Gain		      "1.1"
+      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
     }
     Block {
       BlockType		      Constant
@@ -11216,7 +11227,7 @@ Model {
       Name		      "Set References"
       SID		      "424"
       Ports		      [1]
-      Position		      [1020, 730, 1095, 760]
+      Position		      [1080, 730, 1155, 760]
       ZOrder		      587
       BackgroundColor	      "[0.827500, 0.576500, 0.603900]"
       ShowName		      off
@@ -11602,7 +11613,7 @@ Model {
       }
       Branch {
 	ZOrder			1354
-	DstBlock		"Set References"
+	DstBlock		"Gain"
 	DstPort			1
       }
     }
@@ -11622,6 +11633,13 @@ Model {
 	DstBlock		"Robot dynamics and kinematics"
 	DstPort			2
       }
+    }
+    Line {
+      ZOrder		      1386
+      SrcBlock		      "Gain"
+      SrcPort		      1
+      DstBlock		      "Set References"
+      DstPort		      1
     }
   }
 }

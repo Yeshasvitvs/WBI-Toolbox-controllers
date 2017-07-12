@@ -33,7 +33,7 @@ s_R_w = transpose(w_R_s);
 
 % angular velocity of the seesaw in world frame
 %
-%     w_omega = w_R_s * s_omega;
+%    w_omega = w_R_s * s_omega;
 
 % distance between the contact with the ground and the seesaw CoM w.r.t
 % world frame
@@ -332,10 +332,10 @@ if CONFIG.CONTROL_KIND == 1
     NA = eye(size(pinvAR*w_AR)) - pinvAR*w_AR;
   
     % saturate the CoM position error
-    saturated_xCoM = saturate(gain.PCOM * (xCoMDes - w_p_CoM(1:3)),-gain.P_SATURATION,gain.P_SATURATION);
+    saturated_xCoM = saturate(gain.PCOM*(xCoMDes -w_p_CoM(1:3)),-gain.P_SATURATION,gain.P_SATURATION);
   
     % desired CoM acceleration
-    ddxCoM_star = ddxCoMDes + saturated_xCoM + gain.DCOM * (dxCoMDes - w_vCoM);
+    ddxCoM_star = ddxCoMDes + saturated_xCoM + gain.DCOM*(dxCoMDes-w_vCoM);
 
     % robot desired linear and angular momentum
     HDot_star = [ M(1,1)*ddxCoM_star; 
@@ -402,7 +402,7 @@ elseif CONFIG.CONTROL_KIND == 2
     xCoMDes   = intHDes_ctrl2(1:3)/M(1,1);
     
     % saturate the CoM position error
-    saturated_xCoM = saturate(gain.PCOM * (xCoMDes - w_p_CoM(1:3)),-gain.P_SATURATION,gain.P_SATURATION);
+    saturated_xCoM = saturate(gain.PCOM*(xCoMDes - w_p_CoM(1:3)),-gain.P_SATURATION,gain.P_SATURATION);
 
     % desired CoM acceleration
     ddxCoM_star = ddxCoMDes +saturated_xCoM + gain.DCOM * (dxCoMDes - w_vCoM);
@@ -423,7 +423,7 @@ elseif CONFIG.CONTROL_KIND == 3
     % distance between the robot CoM and the feet
     w_gl = w_p_lSole - w_p_CoM;
     w_gr = w_p_rSole - w_p_CoM;
-    
+ 
     % first, external forces multipliers and bias forces acting on
     % seesaw angular momentum dynamics in x direction
     momentMultipl    =  transpose(e1)*(eye(3)+skew(s_r)*invTHETA*skew(s_r)*IOTA);
