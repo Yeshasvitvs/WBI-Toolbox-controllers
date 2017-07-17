@@ -38,15 +38,15 @@ block.SetPreCompOutPortInfoToDynamic;
 % Definition of port sizes for QP 2 feet
 block.InputPort(1).Dimensions        = 23;        % tauModel               
 block.InputPort(2).Dimensions        = 23;        % Sigmaf_HDot
-block.InputPort(3).Dimensions        = [23 12];   % SigmaNa 
-block.InputPort(4).Dimensions        = [12 12];   % HessianMatrixQP2Feet               
-block.InputPort(5).Dimensions        = [1  12];   % gradientQP2Feet
-block.InputPort(6).Dimensions        = [38 12];   % ConstraintsMatrixQP2Feet 
+block.InputPort(3).Dimensions        = [23 17];   % SigmaNa 
+block.InputPort(4).Dimensions        = [17 17];   % HessianMatrixQP2Feet               
+block.InputPort(5).Dimensions        = [1  17];   % gradientQP2Feet
+block.InputPort(6).Dimensions        = [38 17];   % ConstraintsMatrixQP2Feet 
 block.InputPort(7).Dimensions        = [1  38];   % bVectorConstraintsQp2Feet 
 block.InputPort(8).Dimensions        = 1 ;        % USE_QP_SOLVER
 
 % Override output port properties
-block.OutputPort(1).Dimensions       = 12;        % f0 Two Feet
+block.OutputPort(1).Dimensions       = 17;        % f0 Two Feet
 block.OutputPort(2).Dimensions       = 1;         % Exit flag QP 2 Feet
 block.OutputPort(3).Dimensions       = 23;        % tau
 

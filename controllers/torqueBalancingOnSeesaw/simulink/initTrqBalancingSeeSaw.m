@@ -4,9 +4,9 @@ clear variables
 %% GENERIC CONFIGURATION PARAMETERS
 
 % Robot name
-% setenv('YARP_ROBOT_NAME','icubGazeboSim');
+setenv('YARP_ROBOT_NAME','icubGazeboSim');
 % setenv('YARP_ROBOT_NAME','iCubGenova02');
-setenv('YARP_ROBOT_NAME','iCubGenova04');
+% setenv('YARP_ROBOT_NAME','iCubGenova04');
 
 % Simulation time step (fixed) [s]
 CONFIG.TS = 0.01;
@@ -22,24 +22,19 @@ CONFIG.USE_QP_SOLVER = true;
 
 % Choose between different balancing controllers. 
 % 
-% CONTROL_KIND 1 = control objective: Centroidal momentum dynamics of the
-%                  robot only;
+% CONTROL_TYPE 1 = control objective: Centroidal momentum dynamics of the
+%                  robot and of the seesaw;
 %
-% CONTROL_KIND 2 = control objective: seesaw angular momentum in x direction;
-%                  still obtained by controlling the centroidal momentum 
-%                  dynamics of the robot;
-%
-% CONTROL_KIND 3 = first control objective: seesaw angular momentum in x 
-%                  direction; second control objective: centroidal momentum 
-%                  dynamics of the robot;
-%
-CONFIG.CONTROL_KIND = 1; 
+CONFIG.CONTROL_TYPE = 1; 
 
 %% CONFIGURATION PARAMETERS FOR STATE ESTIMATION
 
 % Select the link frame that is fixed w.r.t. the seesaw. Only two frames can be
 % selected: l_sole and r_sole
 FRAMES.fixedLink = 'l_sole';
+
+% Correct CoM estimation at time 0
+CONFIG.USE_COM_CORRECTION = true;
 
 %% Configuration options for robot IMU only
 

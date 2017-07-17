@@ -9,13 +9,10 @@ else
     A = 0;
 end
 
-% CoM correction to force CoM to be coincident with the ground contact point
-xCoMDelta  =  [0;0;0];
-
 % Frequency
 f          =  referenceParams(2);
 
-xcomDes    =  xCoM0 + xCoMDelta + A*sin(2*pi*f*t)*directionOfOscillation;
+xcomDes    =  xCoM0 + A*sin(2*pi*f*t)*directionOfOscillation;
 
 xDcomDes   =  A*2*pi*f*cos(2*pi*f*t)*directionOfOscillation;
 
