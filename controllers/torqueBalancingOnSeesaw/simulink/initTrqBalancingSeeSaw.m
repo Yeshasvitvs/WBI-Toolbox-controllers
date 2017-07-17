@@ -4,9 +4,9 @@ clear variables
 %% GENERIC CONFIGURATION PARAMETERS
 
 % Robot name
-setenv('YARP_ROBOT_NAME','icubGazeboSim');
+% setenv('YARP_ROBOT_NAME','icubGazeboSim');
 % setenv('YARP_ROBOT_NAME','iCubGenova02');
-% setenv('YARP_ROBOT_NAME','iCubGenova04');
+setenv('YARP_ROBOT_NAME','iCubGenova04');
 
 % Simulation time step (fixed) [s]
 CONFIG.TS = 0.01;
@@ -33,7 +33,7 @@ CONFIG.USE_QP_SOLVER = true;
 %                  direction; second control objective: centroidal momentum 
 %                  dynamics of the robot;
 %
-CONFIG.CONTROL_KIND = 3; 
+CONFIG.CONTROL_KIND = 1; 
 
 %% CONFIGURATION PARAMETERS FOR STATE ESTIMATION
 
@@ -48,7 +48,7 @@ FRAMES.imu = 'imu_frame';
 
 % If True, it will not assume that the neck position is [0;0;0], but the
 % neck angles are taken into account instead for correcting IMU measurements
-CONFIG.CORRECT_IMU_WITH_NECK = false;
+CONFIG.CORRECT_IMU_WITH_NECK = true;
 
 % Given the particular shape of the seesaw, the seesaw yaw and pitch should
 % be zero. If these filters are True, they will force the seesaw pitch and
@@ -83,6 +83,8 @@ CONFIG.REMOVE_SEESAW_YZ_ANGVEL = false;
 PORTS.IMU = '/icub/inertial';
 PORTS.IMU_SEESAW = '/seesaw';
 PORTS.NECK = '/icub/head/state:o';
+PORTS.WBDT_LEFTLEG_EE  = '/wholeBodyDynamics/left_leg/cartesianEndEffectorWrench:o';
+PORTS.WBDT_RIGHTLEG_EE = '/wholeBodyDynamics/right_leg/cartesianEndEffectorWrench:o';
 
 % This information is used for evaluating the integral of the angular
 % momentum error

@@ -10,7 +10,7 @@ else
 end
 
 % CoM correction to force CoM to be coincident with the ground contact point
-xCoMDelta  =  zeros(3,1);
+xCoMDelta  =  [0;0;0];
 
 % Frequency
 f          =  referenceParams(2);
