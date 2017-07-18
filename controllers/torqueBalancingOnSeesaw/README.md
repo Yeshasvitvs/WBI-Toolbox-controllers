@@ -9,9 +9,9 @@ This balancing controller aims to balance iCub robot while standing on a moving 
 
 # simulink
 
-Contains the simulink diagram and the initialization file for balancing controller.
+It contains the simulink diagram and the initialization files for balancing controller.
 
-## how to run a simulation:
+## How to run a simulation:
 
 - install [icub-gazebo-wholebody]() repository and follow the [seesaw README]().
 - open the [simulink model]() and let it run!

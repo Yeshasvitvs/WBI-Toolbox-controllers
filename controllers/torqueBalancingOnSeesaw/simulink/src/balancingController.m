@@ -1,9 +1,10 @@
-function [tauModel,SIGMA_fH,SIGMA_NA,ConstraintsMatrixQP2Feet,bVectorConstraintsQp2Feet,HessianMatrixQP2Feet,gradientQP2Feet,fH,NA,dotHDes_ctrl2] = ...
+function [tauModel,SIGMA_fH,SIGMA_NA,ConstraintsMatrixQP2Feet,bVectorConstraintsQp2Feet,HessianMatrixQP2Feet,gradientQP2Feet,fH,NA,CoMError,thetaDot,seesaw_angles] = ...
           balancingController(w_R_s,s_omega,seesaw,robot,trajectory,gain,qj,nu,ConstraintsMatrix,bVectorConstraints, ...
-                              w_H_lSole,w_H_rSole,w_p_CoM,reg,CONFIG,ROBOT_DOF,HDes_ctrl2,intHDes_ctrl2)
+                              w_H_lSole,w_H_rSole,w_p_CoM,reg,CONFIG,ROBOT_DOF)
 
 %% Balancing control of iCub on a seesaw.                          
 %% Recap of the equations needed for balancing on a semispherical seesaw.
+persistent w_CoMtotal_0
 
 % robot DoFs
 nDof = size(ROBOT_DOF,1);
@@ -32,8 +33,7 @@ e3 = [0;0;1];
 s_R_w = transpose(w_R_s);
 
 % angular velocity of the seesaw in world frame
-%
-%    w_omega = w_R_s * s_omega;
+w_omega = w_R_s * s_omega;
 
 % distance between the contact with the ground and the seesaw CoM w.r.t
 % world frame
@@ -60,7 +60,7 @@ s_r = s_R_w * w_r;
 
 % the seesaw velocity w.r.t. seesaw frame
 %
-%     s_v = skew(s_r) * s_omega;
+%    s_v = skew(s_r) * s_omega;
 
 % now, it is necessary to express the seesaw dynamics w.r.t. a frame
 % attached to the seesaw, with it origin at the seesaw CoM
@@ -70,47 +70,47 @@ inv_Is = eye(3)/Is;
 
 % linear momentum of the seesaw
 %
-%     s_vDot = skew(s_rDot)*s_omega +skew(s_r)*s_omegaDot = s_g -skew(s_omega)*s_v + (1/mS)*(s_Fc + s_Fe) (eq. 4)
+%    s_vDot = skew(s_rDot)*s_omega +skew(s_r)*s_omegaDot = s_g -skew(s_omega)*s_v + (1/mS)*(s_Fc + s_Fe) (eq. 4)
 %
 % angular momentum  of the seesaw 
 %
-%     s_omegaDot = inv_Is*(skew(s_r)*s_Fc +s_Mue -skew(s_omega)*Is*s_omega) (eq. 5)
+%    s_omegaDot = inv_Is*(skew(s_r)*s_Fc +s_Mue -skew(s_omega)*Is*s_omega) (eq. 5)
 
 % substitute the seesaw angular momentum equation into the linear momentum
 % equation (always w.r.t. seesaw frame) 
 %
-%     skew(s_rDot)*s_omega + skew(s_r)*inv_Is*(skew(s_r)*s_Fc + s_Mue - skew(s_omega)*Is*s_omega) =
-%     s_g - skew(s_omega)*s_v + (1/mS)*(s_Fc + s_Fe)   (eq.6)
+%    skew(s_rDot)*s_omega + skew(s_r)*inv_Is*(skew(s_r)*s_Fc + s_Mue - skew(s_omega)*Is*s_omega) =
+%    s_g - skew(s_omega)*s_v + (1/mS)*(s_Fc + s_Fe)   (eq.6)
 
 % multiplier of s_Fc in the equation that links the external force in seesaw 
 % frame (s_Fc) to the forces and moments at feet in seesaw frame (s_Fe, s_Mue)
 %
-%     THETA_BAR = -(1/mS) * THETA;
-%     IOTA = mS * inv_Is;
-%     THETA = eye(3) + skew(s_r)*IOTA*transpose(skew(s_r));
+%    THETA_BAR = -(1/mS) * THETA;
+%    IOTA = mS * inv_Is;
+%    THETA = eye(3) + skew(s_r)*IOTA*transpose(skew(s_r));
 
 % inverse of THETA
 %
-%     invTHETA = eye(size(THETA))/THETA;
+%    invTHETA = eye(size(THETA))/THETA;
 
 % this equation links the external force in seesaw frame (s_Fc) to the
 % forces and moments at feet in seesaw frame (s_Fe, s_Mue)  
 %
-%     s_Fc = invTHETA*(mS*skew(s_rDot)*s_omega +mS*skew(s_r)*inv_Is*(s_Mue - skew(s_omega)*Is*s_omega)-mS*s_g -s_Fe -mS*(skew(s_omega))^2*s_r); (eq. 7)
+%    s_Fc = /home/gabri/Documents/MATLABinvTHETA*(mS*skew(s_rDot)*s_omega +mS*skew(s_r)*inv_Is*(s_Mue - skew(s_omega)*Is*s_omega)-mS*s_g -s_Fe -mS*(skew(s_omega))^2*s_r); (eq. 7)
 %
 
 % substitute the seesaw contact force equation (7) into the seesaw angular
 % momentum equation w.r.t. the seesaw frame (5)
 %
-%     Is*s_omegaDot = (eye(3)+mS*skew(s_r)*invTHETA*skew(s_r)*inv_Is)*s_Mue 
-%                     -skew(s_r)*invTHETA*s_Fe -(eye(3)+mS*skew(s_r)*invTHETA*skew(s_r)*inv_Is -s_g)*skew(s_omega)*Is*s_omega 
-%                     +ms*skew(s_r)*invTHETA*(skew(s_rDot)*s_omega-(skew(s_omega))^2*s_r);   (eq. 8)     
+%    Is*s_omegaDot = (eye(3)+mS*skew(s_r)*invTHETA*skew(s_r)*inv_Is)*s_Mue 
+%                    -skew(s_r)*invTHETA*s_Fe -(eye(3)+mS*skew(s_r)*invTHETA*skew(s_r)*inv_Is -s_g)*skew(s_omega)*Is*s_omega 
+%                    +ms*skew(s_r)*invTHETA*(skew(s_rDot)*s_omega-(skew(s_omega))^2*s_r);   (eq. 8)     
 %
 
 % now we need to find the force s_Fe and the torque s_Mue. We can use the
 % feet acceleration equation in world frame
 %
-%     JDot*nu + J*nuDot = w_nufDot  (eq. 9)
+%    JDot*nu + J*nuDot = w_nufDot  (eq. 9)
 %
 
 % matrix that links the feet linear and angular velocity in seesaw frame to
@@ -134,7 +134,7 @@ DELTA_dot = [eye(3)
          
 % feet acceleration in seesaw frame
 %
-%     s_nufDot = DELTA_dot*s_omega + DELTA*s_omegaDot;
+%    s_nufDot = DELTA_dot*s_omega + DELTA*s_omegaDot;
 
 % matrix that projects the feet linear and angular velocity in world frame
 w_Rbar_s = blkdiag(w_R_s, w_R_s, w_R_s, w_R_s);
@@ -144,20 +144,20 @@ skewBar_omega = blkdiag(skew(s_omega), skew(s_omega), skew(s_omega), skew(s_omeg
 
 % feet linear and angular velocity in world frame
 %
-%     w_nuf = w_Rbar_s * s_nuf;  
+%    w_nuf = w_Rbar_s * s_nuf;  
 
 % rewriting the equation that links the feet linear and angular velocity in 
 % seesaw frame to the angular velocity of the seesaw (eq 9)
 %
-% JDot*nu + J*nuDot = w_Rbar_s*(skewBar_omega*s_nuf + DELTA_dot*s_omega + DELTA*s_omegaDot) (eq 12)
+%    JDot*nu + J*nuDot = w_Rbar_s*(skewBar_omega*s_nuf + DELTA_dot*s_omega + DELTA*s_omegaDot) (eq 12)
 
 % rewriting the equation of the seesaw angular momentum w.r.t. the seesaw
 % frame to have the following form: s_omegaDot = OMEGA1 + OMEGA2 * s_W_e
 % in this way we can substitute s_omegaDot in (12)
 %
-%     OMEGA0 = IOTA + IOTA*skew(s_r)*invTHETA*skew(s_r)*IOTA;
-%     OMEGA1 = IOTA*skew(s_r)*invTHETA*(skew(s_rDot)*s_omega-(skew(s_omega))^2*s_r -s_g) -OMEGA0*skew(s_omega)*Is*s_omega/mS;
-%     OMEGA2 = [-IOTA*skew(s_r)*invTHETA, OMEGA0]/mS;
+%    OMEGA0 = IOTA + IOTA*skew(s_r)*invTHETA*skew(s_r)*IOTA;
+%    OMEGA1 = IOTA*skew(s_r)*invTHETA*(skew(s_rDot)*s_omega-(skew(s_omega))^2*s_r -s_g) -OMEGA0*skew(s_omega)*Is*s_omega/mS;
+%    OMEGA2 = [-IOTA*skew(s_r)*invTHETA, OMEGA0]/mS;
 
 %% Extension for balancing on a semicylindrical seesaw: equations list
 
@@ -166,28 +166,28 @@ skewBar_omega = blkdiag(skew(s_omega), skew(s_omega), skew(s_omega), skew(s_omeg
 
 % constrain the rotation about z axis
 %
-%     s_Muc = transpose(w_R_s)*e3*Mu;
+%    s_Muc = transpose(w_R_s)*e3*Mu;
 
 % add to s_r the component that create the torque along the y axis (it is
 % constrained to be zero by the choice of eta)
 %
-%     s_rp = s_r + eta*e1
+%    s_rp = s_r + eta*e1
 
 % angular momentum  of the seesaw: it contains now sMuc and s_rp instead of
 % s_r (eq. 22)
 %
-%     s_omegaDot = inv_Is*(skew(s_rp)*s_Fc +s_Muc +s_Mue -skew(s_omega)*Is*s_omega)
+%    s_omegaDot = inv_Is*(skew(s_rp)*s_Fc +s_Muc +s_Mue -skew(s_omega)*Is*s_omega)
 
 % angular velocity of the seesaw has now only one element different from
 % zero. It can be rewritten as: s_omega = thetaDot * e1
 %
-%     thetaDot = s_omega(1);
+%    thetaDot = s_omega(1);
 
 % then, eq 22 is simplified because in the x direction s_Muc is not
 % effective. also, skew(s_omega)*s_omega is zero and transpose(e1)*skew(eta*e1) 
 % is zero too. hence, one has
 %
-% thetaDDot = transpose(e1)*inv_Is*(skew(s_r)*s_Fc +s_Mue)
+%    thetaDDot = transpose(e1)*inv_Is*(skew(s_r)*s_Fc +s_Mue)
 
 % rewrite now the matrix IOTA (and THETA by consequence)
 IOTA = e1*transpose(e1)*inv_Is*mS;
@@ -198,29 +198,29 @@ invTHETA = eye(size(THETA))/THETA;
 
 % now we can find s_Fc exactly in the same way before
 %
-%     s_Fc = invTHETA*(mS*skew(s_rDot)*s_omega +skew(s_r)*IOTA*s_Mue -mS*s_g -s_Fe -mS*(skew(s_omega))^2*s_r); (eq. 29)
+%    s_Fc = invTHETA*(mS*skew(s_rDot)*s_omega +skew(s_r)*IOTA*s_Mue -mS*s_g -s_Fe -mS*(skew(s_omega))^2*s_r); (eq. 29)
 %
 
 % NOW, we can proceed as before. substitute the seesaw contact force equation 
 % into the seesaw angular momentum equation w.r.t. the seesaw frame
 %
-%     thetaDDot = transpose(e1)*inv_Is*(eye(3)+skew(s_r)*invTHETA*skew(s_r)*IOTA)*s_Mue
-%                 + mS*transpose(e1)*inv_Is*skew(s_r)*invTHETA*(skew(s_rDot)*s_omega -(skew(s_omega))^2*s_r -s_g)
-%                 - transpose(e1)*inv_Is*skew(s_r)*invTHETA*s_Fe
+%    thetaDDot = transpose(e1)*inv_Is*(eye(3)+skew(s_r)*invTHETA*skew(s_r)*IOTA)*s_Mue
+%                + mS*transpose(e1)*inv_Is*skew(s_r)*invTHETA*(skew(s_rDot)*s_omega -(skew(s_omega))^2*s_r -s_g)
+%                - transpose(e1)*inv_Is*skew(s_r)*invTHETA*s_Fe
 
 % feet acceleration equation in world frame
 %
-%     JDot*nu + J*nuDot = w_nufDot 
+%    JDot*nu + J*nuDot = w_nufDot 
 %
        
 % feet acceleration in seesaw frame
 %
-%     s_nufDot = DELTA_dot*s_omega + DELTA*s_omegaDot;
+%    s_nufDot = DELTA_dot*s_omega + DELTA*s_omegaDot;
 
 % rewriting the equation that links the feet linear and angular velocity in 
 % seesaw frame to the angular velocity of the seesaw
 %
-% JDot*nu + J*nuDot = w_Rbar_s*(skewBar_omega*s_nuf + DELTA_dot*s_omega + DELTA*e1*thetaDDot) (eq 12)
+%    JDot*nu + J*nuDot = w_Rbar_s*(skewBar_omega*s_nuf + DELTA_dot*s_omega + DELTA*e1*thetaDDot) (eq 12)
 
 % rewriting the equation of the seesaw angular momentum w.r.t. the seesaw
 % frame to have the following form: s_omegaDot = e1*thetaDDot = OMEGA1 + OMEGA2 * s_W_e
@@ -263,15 +263,15 @@ Ktheta = gain.Ktheta;
 
 % projects the feet wrench in the seesaw frame
 %
-%     s_W_e = -s_AS * f
+%    s_W_e = -s_AS * f
 
 % substitute the robot dynamics in feet acceleration equation:
 %
-%     JDot*nu + J*invM*(S*tau + transpose(J)*f -h) = w_Rbar_s*(skewBar_omega*s_nuf + DELTA_dot*s_omega) + w_Rbar_s*DELTA*(OMEGA1 - OMEGA2*s_AS*f)
+%    JDot*nu + J*invM*(S*tau + transpose(J)*f -h) = w_Rbar_s*(skewBar_omega*s_nuf + DELTA_dot*s_omega) + w_Rbar_s*DELTA*(OMEGA1 - OMEGA2*s_AS*f)
 
 % calculate tau, and put in evidence the contact forces at feet:
 %
-%     tau = tauModel + SIGMA*fH + SIGMA*NA*f0 
+%    tau = tauModel + SIGMA*fH + SIGMA*NA*f0 
 %
 
 % how to get tauModel: first, calculate hjBar:
@@ -300,10 +300,13 @@ JjBar = transpose(J(:,7:end)) -M(7:nDof+6,1:6)/M(1:6,1:6)*transpose(J(:,1:6));
 % finally, SIGMA:
 SIGMA = -pinvLAMBDA*F -NLambda*JjBar;
 
-%% CONTROL part: it is in charge of retrieve the forces fH and their null space NA
+%% CONTROL part: it is in charge of retrieving the forces fH and their null space NA
 
-% enforce compatibility between different controllers
-dotHDes_ctrl2 = zeros(6,1);
+% error on CoM position
+CoMError = zeros(3,1);
+thetaDot = 0;
+seesaw_angles = zeros(3,1);
+
 
 if CONFIG.CONTROL_KIND == 1
     
@@ -355,51 +358,46 @@ elseif CONFIG.CONTROL_KIND == 2
     w_gl = w_p_lSole - w_p_CoM;
     w_gr = w_p_rSole - w_p_CoM;
     
-    % first, external forces multipliers and bias forces acting on
-    % seesaw angular momentum dynamics in x direction
-    momentMultipl    =  transpose(e1)*(eye(3)+skew(s_r)*invTHETA*skew(s_r)*IOTA);
-    forceMultipl     = -transpose(e1)*skew(s_r)*invTHETA;
-    biasForcesSeesaw =  mS*transpose(e1)*skew(s_r)*invTHETA*(skew(s_rDot)*s_omega -(skew(s_omega))^2*s_r -s_g);
-    
-    % combine forces and moments and project them to the world frame
-    Aseesaw          = -[forceMultipl,momentMultipl]*s_AS;
-    
-    % desired seesaw angular acceleration 
-    thetaDot         = s_omega(1);
-    seesaw_angles    = rollPitchYawFromRotation(w_R_s);
-    thetaDDot_star   = -KthetaDot*thetaDot -Ktheta*seesaw_angles(1);
-    
-    % forces at feet that generates desired thetaDDot:
-    %    pinvAseesaw = pinv(Aseesaw,reg.pinvTol);
-    %    NAseesaw    = eye(size(pinvAseesaw*Aseesaw)) - pinvAseesaw*Aseesaw;
-     
     % matrix which projects the forces at feet into the robot centroidal
     % dynamics, w.r.t the world frame and its pseudoinverse
-    w_AR = [eye(3) zeros(3) eye(3) zeros(3)
-            skew(w_gl) eye(3) skew(w_gr) eye(3)];
+    w_ARs = [eye(3) zeros(3) eye(3) zeros(3)];
         
+    % first, external forces multipliers and bias forces acting on
+    % seesaw angular momentum dynamics in x direction
+    momentMultipl    =  -rho*inv_Is*(eye(3)+skew(s_r)*invTHETA*skew(s_r)*IOTA);
+    forceMultipl     =   rho*inv_Is*skew(s_r)*invTHETA;
+    biasForcesSeesaw =  -rho*inv_Is*skew(s_r)*invTHETA*(skew(s_rDot)*s_omega -(skew(s_omega))^2*s_r -s_g)-gravAcc;
+    
+    % combine forces and moments and project them to the world frame
+    Aseesaw          = -[forceMultipl,momentMultipl]*s_AS -w_ARs/M(1,1);
+    
+    % linear velocity of the robot CoM 
+    w_vCoM = JCoM * nu;
+    w_vCoM = w_vCoM(1:3);
+    
+    % desired seesaw angular acceleration 
+    thetaDot         =  -rho*s_omega(1)-w_vCoM(2);
+    seesaw_angles    =   rollPitchYawFromRotation(w_R_s);
+    thetaDDot_star   = -KthetaDot*thetaDot -Ktheta*(-rho*seesaw_angles(1)-w_p_CoM(2));
+     
+
+           w_AR = [eye(3) zeros(3) eye(3) zeros(3)
+            skew(w_gl) eye(3) skew(w_gr) eye(3)]; 
     pinvAR = pinv(w_AR, reg.pinvTol);
     
     % evaluate the desired robot momentum derivative that stabilizes the angular 
     % momentum of the seesaw in the x direction 
     A_dotH      = Aseesaw*pinvAR;
     pinvA_dotH  = pinv(A_dotH,reg.pinvTol);    
-    dotHDes_ctrl2 = pinvA_dotH*(Is(1)*thetaDDot_star -biasForcesSeesaw);
-   
-    % linear velocity of the robot CoM 
-    w_vCoM = JCoM * nu;
-    w_vCoM = w_vCoM(1:3);
+    NA_dotH     = eye(size(pinvA_dotH*A_dotH)) -pinvA_dotH*A_dotH;
+    
+ 
     
     % gravity wrench in world frame   
     gravityWrench = [M(1,1)*gravAcc;zeros(3,1)];
     
     % Null space of w_AR
     NA = eye(size(pinvAR*w_AR)) - pinvAR*w_AR;
-  
-    % desired CoM dynamics
-    ddxCoMDes = dotHDes_ctrl2(1:3)/M(1,1);
-    dxCoMDes  = HDes_ctrl2(1:3)/M(1,1);
-    xCoMDes   = intHDes_ctrl2(1:3)/M(1,1);
     
     % saturate the CoM position error
     saturated_xCoM = saturate(gain.PCOM*(xCoMDes - w_p_CoM(1:3)),-gain.P_SATURATION,gain.P_SATURATION);
@@ -409,10 +407,12 @@ elseif CONFIG.CONTROL_KIND == 2
     
     % final robot momentum dynamics
     HDot_star = [ M(1,1)*ddxCoM_star; 
-                  dotHDes_ctrl2(4:6)-gain.DAngularMomentum*(H(4:end)-HDes_ctrl2(4:6))-gain.PAngularMomentum*intHw]; 
+                 -gain.DAngularMomentum*H(4:end)-gain.PAngularMomentum*intHw]; 
              
+    HDotDes   = pinvA_dotH*(Is(1)*thetaDDot_star -biasForcesSeesaw)+NA_dotH*HDot_star;         
+   
     % desired forces at feet
-    fH =  pinvAR*(HDot_star - gravityWrench);
+    fH =  pinvAR*(HDotDes - gravityWrench);
     
 elseif CONFIG.CONTROL_KIND == 3
     
@@ -424,24 +424,33 @@ elseif CONFIG.CONTROL_KIND == 3
     w_gl = w_p_lSole - w_p_CoM;
     w_gr = w_p_rSole - w_p_CoM;
  
+       % matrix which projects the forces at feet into the robot centroidal
+    % dynamics, w.r.t the world frame and its pseudoinverse
+    w_ARs = [0 1 0 0 0 0 0 1 0 0 0 0];
+        
     % first, external forces multipliers and bias forces acting on
     % seesaw angular momentum dynamics in x direction
-    momentMultipl    =  transpose(e1)*(eye(3)+skew(s_r)*invTHETA*skew(s_r)*IOTA);
-    forceMultipl     = -transpose(e1)*skew(s_r)*invTHETA;
-    biasForcesSeesaw =  mS*transpose(e1)*skew(s_r)*invTHETA*(skew(s_rDot)*s_omega -(skew(s_omega))^2*s_r -s_g);
+    momentMultipl    =  -rho*transpose(e1)*inv_Is*(eye(3)+skew(s_r)*invTHETA*skew(s_r)*IOTA);
+    forceMultipl     =   rho*transpose(e1)*inv_Is*skew(s_r)*invTHETA;
+    biasForcesSeesaw =  -rho*mS*transpose(e1)*inv_Is*skew(s_r)*invTHETA*(skew(s_rDot)*s_omega -(skew(s_omega))^2*s_r -s_g);
     
     % combine forces and moments and project them to the world frame
-    Aseesaw          = -[forceMultipl,momentMultipl]*s_AS;
+    Aseesaw          = -[forceMultipl,momentMultipl]*s_AS -w_ARs/M(1,1);
+    
+    % linear velocity of the robot CoM 
+    w_vCoM = JCoM * nu;
+    w_vCoM = w_vCoM(1:3);
     
     % desired seesaw angular acceleration 
-    thetaDot         = s_omega(1);
-    seesaw_angles    = rollPitchYawFromRotation(w_R_s);
-    thetaDDot_star   = -KthetaDot*thetaDot -Ktheta*seesaw_angles(1);
+    thetaDot         =  -rho*s_omega(1)-w_vCoM(2);
+    seesaw_angles    =   rollPitchYawFromRotation(w_R_s);
+    thetaDDot_star   = -KthetaDot*thetaDot -Ktheta*(-rho*seesaw_angles(1)-w_p_CoM(2));
     
     % forces at feet that generates desired thetaDDot:
     pinvAseesaw      = pinvDamped(Aseesaw,reg.pinvDamp_ctrl3);
     NAseesaw         = eye(size(pinvAseesaw*Aseesaw)) - pinvAseesaw*Aseesaw;
-    fHDes_seesaw     = pinvAseesaw*(Is(1)*thetaDDot_star -biasForcesSeesaw);
+   
+    fHDes_seesaw     = pinvAseesaw*(thetaDDot_star -biasForcesSeesaw);
     
     % matrix which projects the forces at feet into the robot centroidal
     % dynamics, w.r.t the world frame and its pseudoinverse. It must be
@@ -478,16 +487,76 @@ elseif CONFIG.CONTROL_KIND == 3
                  -gain.DAngularMomentum*H(4:end)-gain.PAngularMomentum*intHw];
              
     % desired forces for robot dynamics
-    fHDes_robot =  pinvAR_NAseesaw*(HDot_star -gravityWrench -w_AR*fHDes_seesaw);
+    fHDes_robot = pinvAR_NAseesaw*(HDot_star -gravityWrench -w_AR*fHDes_seesaw);
     
     % desired forces at feet
     fH = fHDes_seesaw + NAseesaw*fHDes_robot;    
+   
+elseif CONFIG.CONTROL_KIND == 4
+        
+    % CONTROL 4: the control objective is the stabilization of a desired
+    % total momentum dynamics
+
+    % the derivative of the system's linear and angular momentum is related
+    % to the external forces and moments at follows:
+    %
+    %    HDot_b = Ab*f_c + mT*gravAcc
+    %
     
+    % total CoM dynamics in world frame
+    mR            = M(1,1);
+    mT            = mS + mR;
+    w_p_CoM_s     = w_p_lSole - w_sl;
+    w_p_CoMtotal  = (mS*w_p_CoM_s + mR*w_p_CoM)/mT;
+    
+    w_v_CoM       = JCoM * nu;
+    w_v_CoM       = w_v_CoM(1:3);
+    w_v_CoM_s     = skew(w_r)*w_omega;
+    w_v_CoMtotal  = (mS*w_v_CoM_s + mR*w_v_CoM)/mT;
+ 
+    % relate forces and moments with the ones at feet:
+    %
+    %    s_Fc = invTHETA*(mS*skew(s_rDot)*s_omega +skew(s_r)*IOTA*s_Mue -mS*s_g -s_Fe -mS*(skew(s_omega))^2*s_r);
+    
+    % express the forces w.r.t. world frame
+    biasForces = w_R_s*invTHETA*(mS*skew(s_rDot)*s_omega -mS*s_g -mS*(skew(s_omega))^2*s_r);
+    ALinear = -w_R_s*invTHETA*[-s_R_w,skew(s_r)*IOTA*s_R_w]*w_AS;
+          
+    % distance between the robot CoM and the feet
+
+    if isempty(w_CoMtotal_0)    
+       w_CoMtotal_0 = w_p_CoMtotal;
+    end     
+        
+    w_AR = ALinear;
+    
+    pinvAR = pinv(w_AR,reg.pinvTol);
+    
+    % null space of w_AR
+    NA = eye(size(pinvAR*w_AR)) - pinvAR*w_AR;
+  
+    % saturate the CoM position error
+    saturated_xCoM = saturate(gain.PCOM*[(w_CoMtotal_0(1)-w_p_CoMtotal(1));(w_CoMtotal_0(2)-w_p_CoMtotal(2));(w_CoMtotal_0(3)-w_p_CoMtotal(3))],-gain.P_SATURATION,gain.P_SATURATION);
+
+    % desired CoM acceleration
+    ddxCoM_star = ddxCoMDes + saturated_xCoM + gain.DCOM*(dxCoMDes-w_v_CoMtotal);
+
+    % robot desired linear and angular momentum
+    HDot_star = mT*ddxCoM_star;
+             
+    % desired forces at feet
+    fH = pinvAR*(HDot_star -mT*gravAcc-biasForces);
+    CoMError = saturated_xCoM;
+
 else    
     fH = zeros(12,1);
     NA = zeros(12,12);
 end
-                          
+
+if isempty(w_CoMtotal_0)    
+    w_CoMtotal_0 = zeros(3,1);
+end     
+
 %% Optimization using quadratic programming (QP) solver
 
 % parameters from control

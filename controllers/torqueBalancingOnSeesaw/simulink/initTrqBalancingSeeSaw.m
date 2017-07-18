@@ -33,6 +33,10 @@ CONFIG.USE_QP_SOLVER = true;
 %                  direction; second control objective: centroidal momentum 
 %                  dynamics of the robot;
 %
+% CONTROL_KIND 4 = control objective: linear momentum (x-z) of the whole system +
+%                  angular momentum (y-z) of the whole system + error between
+%                  the CoM of the whole system and the contact point on ground;
+%
 CONFIG.CONTROL_KIND = 1; 
 
 %% CONFIGURATION PARAMETERS FOR STATE ESTIMATION
@@ -83,6 +87,8 @@ CONFIG.REMOVE_SEESAW_YZ_ANGVEL = false;
 PORTS.IMU = '/icub/inertial';
 PORTS.IMU_SEESAW = '/seesaw';
 PORTS.NECK = '/icub/head/state:o';
+PORTS.WBDT_LEFTLEG_EE  = '/wholeBodyDynamics/left_leg/cartesianEndEffectorWrench:o';
+PORTS.WBDT_RIGHTLEG_EE = '/wholeBodyDynamics/right_leg/cartesianEndEffectorWrench:o';
 
 % This information is used for evaluating the integral of the angular
 % momentum error
