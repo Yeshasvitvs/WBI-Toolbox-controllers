@@ -116,7 +116,7 @@ tauModel    = pinv_JinvMS*(JinvM*h - JDot_nu) + NullJinvMS*(h_r(7:end) -M_r(7:en
              -gain.impedances*(qj-qjDes) -gain.dampings*qjDot);
   
 SIGMA       = -(pinv_JinvMS*JinvMJt + NullJinvMS*JBar);
-   
+ 
 %% Optimization using quadratic programming (QP) solver
 
 % parameters from control and dynamics

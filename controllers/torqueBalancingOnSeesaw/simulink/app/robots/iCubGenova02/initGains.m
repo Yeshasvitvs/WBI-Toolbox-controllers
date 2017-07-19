@@ -62,7 +62,7 @@ else
 end
 
 % Adjust seesaw angle measurements (roll, pitch, yaw) [deg]
-seesaw.offset = [0.5; 0; 0];
+seesaw.offset = [1; 0; 0];
 
 % Relative rotation between world frame and IMU seesaw world frame
 addpath('../../../../../utilityMatlabFunctions/');
@@ -84,21 +84,24 @@ referenceParams            = [0.0 0.25]; % referenceParams(1) = amplitude of asc
 noOscillationTime          = 0; % the variable noOscillationTime is the time, in seconds, that the robot waits before starting moving the CoM left-and-right
 
 %% Gains and regularization terms (for all different controllers)
-if CONFIG.CONTROL_KIND == 1
+if CONFIG.CONTROL_TYPE == 1
     
-    % gain on seesaw angular velocity
-    gain.KthetaDot         = 0; % NOT USED
-    gain.Ktheta            = 0; % NOT USED
+    % seesaw gains
+    gain.PCOM_SEESAW      = diag([10 10 10]);
+    gain.DCOM_SEESAW      = 2*sqrt(gain.PCOM_SEESAW);
+    
+    gain.PAngularMomentum_seesaw  = diag([10 10 10]);
+    gain.DAngularMomentum_seesaw  = 2*sqrt(gain.PAngularMomentum);
 
     % By default these values are used by CONTROL_KIND 1
-    gain.posturalProp      = diag([100 10 200,   100 100 100 80,   100 100 100 80,   600 60 600 600 100 10,   600 60 600 600 100 10])/10;                    
-    gain.posturalDamp      = 2*sqrt(gain.posturalProp)*0;
+    gain.impedances       = diag([10 10 20,   10 10 10 8,   10 10 10 8,   60 60 60 60 10 10,   60 60 60 60 10 10]);                    
+    gain.dampings         = 2*sqrt(gain.impedances);
 
-    gain.PAngularMomentum  = 2/20;
-    gain.DAngularMomentum  = 2*sqrt(gain.PAngularMomentum)/5;
-
-    gain.PCOM              = diag([ 200 20 200])/10;
-    gain.DCOM              = 2*sqrt(gain.PCOM)/20;
+    gain.PAngularMomentum  = diag([10 10 10]);
+    gain.DAngularMomentum  = 2*sqrt(gain.PAngularMomentum);
+    
+    gain.PCOM              = diag([20 20 20]);
+    gain.DCOM              = 2*sqrt(gain.PCOM);
 
     % Saturate the CoM position error
     gain.P_SATURATION      = 0.30;
@@ -107,64 +110,9 @@ if CONFIG.CONTROL_KIND == 1
     reg                    = struct;
     reg.pinvDamp           = 1;
     reg.HessianQP          = 1e-7;
-    reg.pinvTol            = 1e-3;
-    reg.pinvTolVb          = 1e-7;
-    reg.pinvDamp_ctrl3     = 0.1; % NOT USED    
-    
-elseif CONFIG.CONTROL_KIND == 2
-    
-    % gain on seesaw angular velocity
-    gain.Ktheta            = 1;
-    gain.KthetaDot         = 1;
-
-    % By default these values are used by CONTROL_KIND 1
-    gain.posturalProp      = diag([100 50 200,   100 100 100 80,   100 100 100 80,   600 60 600 600 100 10,   600 60 600 600 100 10])/10;                        
-    gain.posturalDamp      = 2*sqrt(gain.posturalProp)*0;
-
-    gain.PAngularMomentum  = 1;
-    gain.DAngularMomentum  = 2*sqrt(gain.PAngularMomentum)/10;
-
-    gain.PCOM              = diag([ 200 10 200 ])/10;
-    gain.DCOM              = 2*sqrt(gain.PCOM)/10;
-
-    % Saturate the CoM position error
-    gain.P_SATURATION      = 0.3;
-
-    % Regularization terms
-    reg                    = struct;
-    reg.pinvDamp           = 1;
-    reg.HessianQP          = 1e-7;
-    reg.pinvTol            = 1e-3;
-    reg.pinvTolVb          = 1e-7;
-    reg.pinvDamp_ctrl3     = 0.1; % NOT USED    
-    
-elseif CONFIG.CONTROL_KIND == 3
-    
-    % gain on seesaw angular velocity
-    gain.Ktheta            = 500;
-    gain.KthetaDot         = 2*sqrt(500);
-
-    % By default these values are used by CONTROL_KIND 1
-    gain.posturalProp      = diag([100 50 200,   100 100 100 80,   100 100 100 80,   600 60 600 600 100 10,   600 60 600 600 100 10])/10;                        
-    gain.posturalDamp      = 2*sqrt(gain.posturalProp)/5;
-
-    gain.PAngularMomentum  = diag([10 1 10])/10;
-    gain.DAngularMomentum  = 2*sqrt(gain.PAngularMomentum)/5;
-
-    gain.PCOM              = diag([ 200 20 200 ])/10;
-    gain.DCOM              = 2*sqrt(gain.PCOM)/5;
-
-    % Saturate the CoM position error
-    gain.P_SATURATION      = 0.3;
- 
-    % Regularization terms
-    reg                    = struct;
-    reg.pinvDamp           = 0.1;
-    reg.HessianQP          = 1e-7;
     reg.pinvTol            = 1e-7;
     reg.pinvTolVb          = 1e-4;
-    reg.pinvDamp_ctrl3     = 0.01;
-     
+
 end
 
 %% Friction cone parameters
@@ -179,4 +127,3 @@ gain.footSize                 = [ -0.07  0.12 ;    % xMin, xMax
                                   -0.045 0.05 ];   % yMin, yMax     
 % Minimal normal force
 fZmin                         = 20;
-

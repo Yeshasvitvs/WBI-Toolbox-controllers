@@ -22,7 +22,7 @@ CONFIG.USE_QP_SOLVER = true;
 
 % Choose between different balancing controllers. 
 % 
-% CONTROL_TYPE 1 = control objective: Centroidal momentum dynamics of the
+% CONTROL_TYPE 1 = control objective: centroidal momentum dynamics of the
 %                  robot and of the seesaw;
 %
 CONFIG.CONTROL_TYPE = 1; 
@@ -34,7 +34,7 @@ CONFIG.CONTROL_TYPE = 1;
 FRAMES.fixedLink = 'l_sole';
 
 % Correct CoM estimation at time 0
-CONFIG.USE_COM_CORRECTION = true;
+CONFIG.USE_COM_CORRECTION = false;
 
 %% Configuration options for robot IMU only
 
@@ -113,4 +113,3 @@ w_R_fixedLink_0 = eye(3);
 
 % Complete transformation
 seesaw.w_H_fixedLink_0 = computeTransFromFixedLinkToWorld(w_R_fixedLink_0,seesaw);
-

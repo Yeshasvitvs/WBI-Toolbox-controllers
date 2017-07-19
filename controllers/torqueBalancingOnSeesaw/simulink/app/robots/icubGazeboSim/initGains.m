@@ -3,12 +3,12 @@ WBT_wbiList            = '(torso_pitch,torso_roll,torso_yaw,l_shoulder_pitch,l_s
 CONFIG.ON_GAZEBO       = true;
 
 % Update ports according to the simulation
-PORTS.IMU        = '/icubSim/inertial';
-PORTS.IMU_SEESAW = '/seesaw/inertial';
-PORTS.NECK       = '/icubSim/head/state:o';
+PORTS.IMU              = '/icubSim/inertial';
+PORTS.IMU_SEESAW       = '/seesaw/inertial';
+PORTS.NECK             = '/icubSim/head/state:o';
 PORTS.WBDT_LEFTLEG_EE  = '/wholeBodyDynamicsTree/left_leg/cartesianEndEffectorWrench:o';
 PORTS.WBDT_RIGHTLEG_EE = '/wholeBodyDynamicsTree/right_leg/cartesianEndEffectorWrench:o';
-sat.torque       = 40;
+sat.torque             = 40;
 
 %% Seesaw parameters
 seesaw           = struct;
@@ -92,24 +92,24 @@ referenceParams            = [0.0,0.25]; % referenceParams(1) = amplitude of asc
 noOscillationTime          = 0; % the variable noOscillationTime is the time, in seconds, that the robot waits before starting moving the CoM left-and-right
 
 %% Gains and regularization terms (for all different controllers)
-
 if CONFIG.CONTROL_TYPE == 1
     
+    % seesaw gains
     gain.PCOM_SEESAW      = diag([10 10 10]);
-    gain.DCOM_SEESAW      = 2*sqrt(gain.PCOM_SEESAW)/15;
+    gain.DCOM_SEESAW      = 2*sqrt(gain.PCOM_SEESAW)/10;
+    
+    gain.PAngularMomentum_seesaw  = diag([10 10 10]);
+    gain.DAngularMomentum_seesaw  = 2*sqrt(gain.PAngularMomentum_seesaw)/10;
 
     % By default these values are used by CONTROL_KIND 1
     gain.impedances       = diag([10 10 20,   10 10 10 8,   10 10 10 8,   60 60 60 60 10 10,   60 60 60 60 10 10]);                    
-    gain.dampings         = 2*sqrt(gain.impedances)/5;
+    gain.dampings         = 2*sqrt(gain.impedances)/10;
 
     gain.PAngularMomentum  = diag([10 10 10]);
-    gain.DAngularMomentum  = 2*sqrt(gain.PAngularMomentum)/5;
+    gain.DAngularMomentum  = 2*sqrt(gain.PAngularMomentum)/10;
     
-    gain.PAngularMomentum_seesaw  = diag([10 10 10]);
-    gain.DAngularMomentum_seesaw  = 2*sqrt(gain.PAngularMomentum)/5;
-
-    gain.PCOM              = diag([ 20 50 20]);
-    gain.DCOM              = 2*sqrt(gain.PCOM)/15;
+    gain.PCOM              = diag([20 20 20]);
+    gain.DCOM              = 2*sqrt(gain.PCOM)/10;
 
     % Saturate the CoM position error
     gain.P_SATURATION      = 0.30;
