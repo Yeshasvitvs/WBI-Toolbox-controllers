@@ -26,7 +26,7 @@ M_s = [m_s*eye(3) zeros(3);
 h_s = [(-m_s*s_g + skew(s_omega)*m_s*s_v_s);
         skew(s_omega)*I_s*s_omega];
  
-% Seesaw linear and angular momentum
+% Seesaw linear and angular momentum in seesaw frame
 H_s = M_s * s_nu_s;
 
 end

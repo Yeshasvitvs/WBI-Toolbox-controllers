@@ -1,6 +1,6 @@
 ROBOT_DOF              = 23;
 WBT_wbiList            = '(torso_pitch,torso_roll,torso_yaw,l_shoulder_pitch,l_shoulder_roll,l_shoulder_yaw,l_elbow,r_shoulder_pitch,r_shoulder_roll,r_shoulder_yaw,r_elbow,l_hip_pitch,l_hip_roll,l_hip_yaw,l_knee,l_ankle_pitch,l_ankle_roll,r_hip_pitch,r_hip_roll,r_hip_yaw,r_knee,r_ankle_pitch,r_ankle_roll)';
-sat.torque             = 20;
+sat.torque             = 30;
 
 %% Seesaw parameters
 seesaw                 = struct;
@@ -75,33 +75,30 @@ seesaw.w_R_wImu = rotx(pi)*rotz(-44/180*pi);
 % number of samples is the order of the filter.
 
 % Select the order of the filter for seesaw orientation and ang velocity
-seesaw.positionFilterOrder = 5;
-seesaw.velocityFilterOrder = 5;
+seesaw.positionFilterOrder = 3;
+seesaw.velocityFilterOrder = 3;
 
 %% References for CoM trajectory
 directionOfOscillation     = [0; 1; 0];
 referenceParams            = [0.0 0.25]; % referenceParams(1) = amplitude of ascillations in meters; referenceParams(2) = frequency of ascillations in Hertz
-noOscillationTime          = 0; % the variable noOscillationTime is the time, in seconds, that the robot waits before starting moving the CoM left-and-right
+noOscillationTime          =  0; % the variable noOscillationTime is the time, in seconds, that the robot waits before starting moving the CoM left-and-right
 
 %% Gains and regularization terms (for all different controllers)
 if CONFIG.CONTROL_TYPE == 1
     
     % seesaw gains
-    gain.PCOM_SEESAW      = diag([10 10 10]);
-    gain.DCOM_SEESAW      = 2*sqrt(gain.PCOM_SEESAW);
-    
-    gain.PAngularMomentum_seesaw  = diag([10 10 10]);
-    gain.DAngularMomentum_seesaw  = 2*sqrt(gain.PAngularMomentum);
+    gain.PAngularMomentum_seesaw  = 10;
+    gain.DAngularMomentum_seesaw  = 2*sqrt(gain.PAngularMomentum)/10;
 
     % By default these values are used by CONTROL_KIND 1
     gain.impedances       = diag([10 10 20,   10 10 10 8,   10 10 10 8,   60 60 60 60 10 10,   60 60 60 60 10 10]);                    
-    gain.dampings         = 2*sqrt(gain.impedances);
+    gain.dampings         = 2*sqrt(gain.impedances)/10;
 
     gain.PAngularMomentum  = diag([10 10 10]);
-    gain.DAngularMomentum  = 2*sqrt(gain.PAngularMomentum);
+    gain.DAngularMomentum  = 2*sqrt(gain.PAngularMomentum)/10;
     
     gain.PCOM              = diag([20 20 20]);
-    gain.DCOM              = 2*sqrt(gain.PCOM);
+    gain.DCOM              = 2*sqrt(gain.PCOM)/10;
 
     % Saturate the CoM position error
     gain.P_SATURATION      = 0.30;

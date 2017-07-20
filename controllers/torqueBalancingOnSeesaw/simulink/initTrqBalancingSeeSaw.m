@@ -23,9 +23,12 @@ CONFIG.USE_QP_SOLVER = true;
 % Choose between different balancing controllers. 
 % 
 % CONTROL_TYPE 1 = control objective: centroidal momentum dynamics of the
-%                  robot and of the seesaw;
+%                  robot and angular momentum of the seesaw along x axis;
 %
-CONFIG.CONTROL_TYPE = 1; 
+% CONTROL_TYPE 2 = control objective: centroidal momentum dynamics of the
+%                  robot only;
+%
+CONFIG.CONTROL_TYPE = 2; 
 
 %% CONFIGURATION PARAMETERS FOR STATE ESTIMATION
 
@@ -43,7 +46,7 @@ FRAMES.imu = 'imu_frame';
 
 % If True, it will not assume that the neck position is [0;0;0], but the
 % neck angles are taken into account instead for correcting IMU measurements
-CONFIG.CORRECT_IMU_WITH_NECK = true;
+CONFIG.CORRECT_IMU_WITH_NECK = false;
 
 % Given the particular shape of the seesaw, the seesaw yaw and pitch should
 % be zero. If these filters are True, they will force the seesaw pitch and
@@ -64,9 +67,11 @@ CONFIG.USE_IMU_ROBOT_4_SEESAW_ANGVEL = true;
 CONFIG.FILTER_SEESAW_ORIENT = true;
 CONFIG.FILTER_SEESAW_ANGVEL = true;
 
-% As before, given the shape of the seesaw, y-z angular velocity should be zero. This 
+%% Configurations option for both IMUs
+
+% Given the shape of the seesaw, y-z angular velocity should be zero. This 
 % option is to force omega_y and omega_z to be zero
-CONFIG.REMOVE_SEESAW_YZ_ANGVEL = false;
+CONFIG.REMOVE_SEESAW_YZ_ANGVEL = true;
 
 %% LOADING GAINS AND PARAMETERS FOR THE SPECIFIC ROBOT
 

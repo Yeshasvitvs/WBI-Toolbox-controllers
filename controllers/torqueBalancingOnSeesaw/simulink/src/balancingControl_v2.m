@@ -1,19 +1,15 @@
 function [fNoQP,fHDot,NA,tauModel,SIGMA_fH,SIGMA_NA,HessianMatrixQP2Feet,gradientQP2Feet,...
           ConstraintsMatrixQP2Feet,bVectorConstraintsQp2Feet] = ...
               ...
-              balancingControl_v1(M_r,M_s,h_r,h_s,J_r,J_f,J_s,J_rDot_nu,J_fDot_nu_s,J_sDot_nu_s,w_H_lSole,w_H_rSole,w_p_CoM_r,...
-                                  J_CoM_r,nu,gain,desired_x_dx_ddx_CoM_r,H_r,intH_r,w_R_s,H_s,...
+              balancingControl_v2(M_r,M_s,h_r,h_s,J_r,J_f,J_s,J_rDot_nu,J_fDot_nu_s,J_sDot_nu_s,w_H_lSole,w_H_rSole,w_p_CoM_r,...
+                                  J_CoM_r,nu,gain,desired_x_dx_ddx_CoM_r,H_r,intH_r,...
                                   reg,ConstraintsMatrix,bVectorConstraints,ROBOT_DOF,qj,qjDes)
 
-% CONTROL # 1: linear and angular momenum of the robot + angular momentum
-% of the seesaw in x direction
+% CONTROL # 2: linear and angular momenum of the robot only
 
 % Constants and common parameters
-s_R_w    = transpose(w_R_s);
 e3       = [0;0;1];
-e4       = [0;0;0;1;0;0];
 g        = -9.81;
-s_g      = s_R_w * g * e3;
 qjDot    = nu(7:end);
 
 % Dimension of the joint configuration space
@@ -55,31 +51,23 @@ ddxCoM_star_r   = desired_x_dx_ddx_CoM_r(:,3) + saturated_xCoM + gain.DCOM * (de
 H_rDot_star    = [(M_r(1,1) * ddxCoM_star_r); 
                   (-gain.DAngularMomentum * H_r(4:end) -gain.PAngularMomentum * intH_r(4:end))];
   
-%% Angular momentum of the seesaw in x direction
-
+%% Seesaw dynamics
 % Matrix which projects forces into the seesaw momentum dynamics
 invM_s = eye(6)/M_s;
 AS = -transpose(J_f) +transpose(J_s)/(J_s*invM_s*transpose(J_s))*J_s*invM_s*transpose(J_f);
 
-% gravity wrench in seesaw frame  
-gravityWrench_s = [(M_s(1,1)*s_g);zeros(3,1)];
-
 % bias forces in seesaw frame
 biasForces = transpose(J_s)/(J_s*invM_s*transpose(J_s))*(J_s*invM_s*h_s -J_sDot_nu_s);
-
-% robot desired angular momentum
-H_sDot_star    = -gain.DAngularMomentum_seesaw * H_s;
 
 %% Desired forces 
 
 % global forces multiplier and its nullspace
-A     = [AR; transpose(e4)*AS];
+A     = AR;  
 pinvA = pinv(A,reg.pinvTol);
 NA    = eye(size(pinvA*A)) - pinvA*A;
 
-HDot_star = [(H_rDot_star - gravityWrench_r);
-              transpose(e4)*(H_sDot_star - gravityWrench_s -biasForces)];
-
+HDot_star = H_rDot_star - gravityWrench_r;
+          
 % forces and moments satisfying the momentum dynamics
 fHDot = pinvA * HDot_star;
 
