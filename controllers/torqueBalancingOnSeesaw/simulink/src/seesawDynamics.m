@@ -13,8 +13,7 @@ s_R_w  = transpose(w_R_s);
 e3     = [0;0;1];
 g      = -9.81;
 s_g    = s_R_w * g * e3;
-w_r    = (delta * w_R_s * e3) -rho * e3;
-s_r    = s_R_w * w_r;
+s_r    = (delta * e3) -(s_R_w * rho * e3);
 s_v_s  = skew(s_r) * s_omega;
 s_nu_s = [s_v_s; s_omega];
 

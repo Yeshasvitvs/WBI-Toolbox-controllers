@@ -84,33 +84,49 @@ referenceParams            = [0.0 0.25]; % referenceParams(1) = amplitude of asc
 noOscillationTime          =  0; % the variable noOscillationTime is the time, in seconds, that the robot waits before starting moving the CoM left-and-right
 
 %% Gains and regularization terms (for all different controllers)
-if CONFIG.CONTROL_TYPE == 1
-    
-    % seesaw gains
-    gain.PAngularMomentum_seesaw  = 10;
-    gain.DAngularMomentum_seesaw  = 2*sqrt(gain.PAngularMomentum)/10;
+if CONFIG.CONTROL_TYPE == 1    
 
-    % By default these values are used by CONTROL_KIND 1
-    gain.impedances       = diag([10 10 20,   10 10 10 8,   10 10 10 8,   60 60 60 60 10 10,   60 60 60 60 10 10]);                    
-    gain.dampings         = 2*sqrt(gain.impedances)/10;
+    gain.impedances        = diag([10 20 20,   10 10 10 8,   10 10 10 8,   60 60 60 60 10 10,   60 60 60 60 10 10]);                    
+    gain.dampings          = 2*sqrt(gain.impedances)/10;
 
     gain.PAngularMomentum  = diag([10 10 10]);
-    gain.DAngularMomentum  = 2*sqrt(gain.PAngularMomentum)/10;
+    gain.DAngularMomentum  = 2*sqrt(gain.PAngularMomentum);
     
     gain.PCOM              = diag([20 20 20]);
+    gain.DCOM              = 2*sqrt(gain.PCOM)/20;
+
+    % Saturate the CoM position error
+    gain.P_SATURATION      = 0.30;
+ 
+    % Regularization terms
+    reg                    = struct;
+    reg.pinvDamp           = 0.1;
+    reg.HessianQP          = 1e-7;
+    reg.pinvTol            = 1e-7;
+    reg.pinvTolVb          = 1e-4;    
+
+elseif CONFIG.CONTROL_TYPE == 2
+    
+    gain.impedances        = diag([10 10 20,   10 10 10 8,   10 10 10 8,   60 60 60 60 10 10,   60 60 60 60 10 10]);                    
+    gain.dampings          = 2*sqrt(gain.impedances)/10;
+
+    gain.PAngularMomentum  = diag([10 10 10]);
+    gain.DAngularMomentum  = 2*sqrt(gain.PAngularMomentum);
+    
+    gain.PCOM              = diag([20 5 20]);
     gain.DCOM              = 2*sqrt(gain.PCOM)/10;
 
     % Saturate the CoM position error
     gain.P_SATURATION      = 0.30;
-    
+ 
     % Regularization terms
     reg                    = struct;
-    reg.pinvDamp           = 1;
+    reg.pinvDamp           = 0.1;
     reg.HessianQP          = 1e-7;
     reg.pinvTol            = 1e-7;
     reg.pinvTolVb          = 1e-4;
-
-end
+    
+end   
 
 %% Friction cone parameters
 numberOfPoints                = 4; % The friction cone is approximated by using linear interpolation of the circle. 

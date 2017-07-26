@@ -33,8 +33,9 @@ J_s = [eye(3)     -skew(s_r);
        zeros(1,3)  transpose(e3)*w_R_s;];
 
 % Derivative of J_s times nu_s
-J_sDot_nu_s = [zeros(3)   -skew(s_rDot)
-               zeros(2,3)  zeros(2,3)] * s_nu_s;
+J_sDot_nu_s = [zeros(3)   -skew(s_rDot);
+               zeros(1,3)  transpose(e2)*w_R_s*skew(s_omega);
+               zeros(1,3)  transpose(e3)*w_R_s*skew(s_omega);] * s_nu_s;
 
 % Jacobian matrix that maps seesaw velocity in seesaw frame to feet velocity
 J_f = [eye(3)    -skew(w_sl);

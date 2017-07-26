@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.1151"
+    ComputedModelVersion    "1.1175"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -54,10 +54,10 @@ Model {
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
 	ViewObjType		"SimulinkSubsys"
-	LoadSaveID		"932"
+	LoadSaveID		"1265"
 	Extents			[1265.0, 597.0]
-	ZoomFactor		[0.75987906128521376]
-	Offset			[225.71664056184318, 100.17433180072754]
+	ZoomFactor		[0.67417061611374407]
+	Offset			[207.07581832161679, 152.23374340949033]
       }
     }
   }
@@ -67,9 +67,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "gabri"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Jul 20 09:34:12 2017"
-  RTWModifiedTimeStamp	  422444049
-  ModelVersionFormat	  "1.%<AutoIncrement:1151>"
+  LastModifiedDate	  "Wed Jul 26 14:58:43 2017"
+  RTWModifiedTimeStamp	  422981904
+  ModelVersionFormat	  "1.%<AutoIncrement:1175>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -181,7 +181,7 @@ Model {
 	  $ObjectID		  8
 	  Version		  "1.14.2"
 	  StartTime		  "0.0"
-	  StopTime		  "inf"
+	  StopTime		  "30"
 	  AbsTol		  "auto"
 	  FixedStep		  "CONFIG.TS"
 	  InitialStep		  "auto"
@@ -1136,7 +1136,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "76"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "1534"
+    SIDHighWatermark	    "1549"
     Block {
       BlockType		      SubSystem
       Name		      "Balancing controller and QP solver"
@@ -1149,8 +1149,8 @@ Model {
       RequestExecContextInheritance off
       System {
 	Name			"Balancing controller and QP solver"
-	Location		[55, -14, 1376, 798]
-	Open			off
+	Location		[65, 24, 1366, 768]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1255,7 +1255,7 @@ Model {
 	  BlockType		  Inport
 	  Name			  "w_H_lSole"
 	  SID			  "1276"
-	  Position		  [565, 503, 595, 517]
+	  Position		  [565, 473, 595, 487]
 	  ZOrder		  844
 	  Port			  "11"
 	  IconDisplay		  "Port number"
@@ -1264,7 +1264,7 @@ Model {
 	  BlockType		  Inport
 	  Name			  "w_H_rSole"
 	  SID			  "1277"
-	  Position		  [565, 473, 595, 487]
+	  Position		  [565, 503, 595, 517]
 	  ZOrder		  845
 	  Port			  "12"
 	  IconDisplay		  "Port number"
@@ -2022,7 +2022,7 @@ Model {
 		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 		TiledPageScale		1
 		ShowPageBoundaries	off
-		ZoomFactor		"573"
+		ZoomFactor		"576"
 		Block {
 		  BlockType		  Inport
 		  Name			  "Exit flag QP two feet"
@@ -2055,12 +2055,22 @@ Model {
 		  Position		  [160, 143, 190, 187]
 		  ZOrder		  408
 		  Floating		  off
-		  Location		  [188, 365, 512, 604]
+		  Location		  [66, 53, 1367, 767]
 		  Open			  off
 		  NumInputPorts		  "1"
 		  List {
 		    ListType		    AxesTitles
 		    axes1		    "%<SignalLabel>"
+		  }
+		  List {
+		    ListType		    ScopeGraphics
+		    FigureColor		    "[0.5 0.5 0.5]"
+		    AxesColor		    "[0 0 0]"
+		    AxesTickColor	    "[1 1 1]"
+		    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+		    LineStyles		    "-|-|-|-|-|-"
+		    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
+		    MarkerStyles	    "none|none|none|none|none|none"
 		  }
 		  ShowLegends		  off
 		}
@@ -2208,7 +2218,7 @@ Model {
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
 	    ZoomFactor		    "100"
-	    SIDHighWatermark	    "136"
+	    SIDHighWatermark	    "137"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "M_r"
@@ -2639,196 +2649,196 @@ Model {
 	      IconDisplay	      "Port number"
 	    }
 	    Line {
-	      ZOrder		      5398
+	      ZOrder		      5479
 	      SrcBlock		      "M_r"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      5399
+	      ZOrder		      5480
 	      SrcBlock		      "M_s"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      2
 	    }
 	    Line {
-	      ZOrder		      5400
+	      ZOrder		      5481
 	      SrcBlock		      "h_r"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      3
 	    }
 	    Line {
-	      ZOrder		      5401
+	      ZOrder		      5482
 	      SrcBlock		      "h_s"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      4
 	    }
 	    Line {
-	      ZOrder		      5402
+	      ZOrder		      5483
 	      SrcBlock		      "J_r"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      5
 	    }
 	    Line {
-	      ZOrder		      5403
+	      ZOrder		      5484
 	      SrcBlock		      "J_f"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      6
 	    }
 	    Line {
-	      ZOrder		      5404
+	      ZOrder		      5485
 	      SrcBlock		      "J_s"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      7
 	    }
 	    Line {
-	      ZOrder		      5405
+	      ZOrder		      5486
 	      SrcBlock		      "J_rDot_nu"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      8
 	    }
 	    Line {
-	      ZOrder		      5406
+	      ZOrder		      5487
 	      SrcBlock		      "J_fDot_nu_s"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      9
 	    }
 	    Line {
-	      ZOrder		      5407
+	      ZOrder		      5488
 	      SrcBlock		      "J_sDot_nu_s"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      10
 	    }
 	    Line {
-	      ZOrder		      5408
+	      ZOrder		      5489
 	      SrcBlock		      "w_H_lSole"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      11
 	    }
 	    Line {
-	      ZOrder		      5409
+	      ZOrder		      5490
 	      SrcBlock		      "w_H_rSole"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      12
 	    }
 	    Line {
-	      ZOrder		      5410
+	      ZOrder		      5491
 	      SrcBlock		      "w_p_CoM_r"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      13
 	    }
 	    Line {
-	      ZOrder		      5411
+	      ZOrder		      5492
 	      SrcBlock		      "J_CoM_r"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      14
 	    }
 	    Line {
-	      ZOrder		      5412
+	      ZOrder		      5493
 	      SrcBlock		      "desired_x_dx_ddx_CoM_r"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      15
 	    }
 	    Line {
-	      ZOrder		      5413
+	      ZOrder		      5494
 	      SrcBlock		      "H_r"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      16
 	    }
 	    Line {
-	      ZOrder		      5414
+	      ZOrder		      5495
 	      SrcBlock		      "intH_r"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      17
 	    }
 	    Line {
-	      ZOrder		      5415
+	      ZOrder		      5496
 	      SrcBlock		      "w_R_s"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      18
 	    }
 	    Line {
-	      ZOrder		      5416
+	      ZOrder		      5497
 	      SrcBlock		      "desired_x_CoM_s"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      19
 	    }
 	    Line {
-	      ZOrder		      5417
+	      ZOrder		      5498
 	      SrcBlock		      "s_p_CoM_s"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      20
 	    }
 	    Line {
-	      ZOrder		      5418
+	      ZOrder		      5499
 	      SrcBlock		      "H_s"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      21
 	    }
 	    Line {
-	      ZOrder		      5419
+	      ZOrder		      5500
 	      SrcBlock		      "s_omega"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      22
 	    }
 	    Line {
-	      ZOrder		      5420
+	      ZOrder		      5501
 	      SrcBlock		      "ConstraintsMatrix"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      23
 	    }
 	    Line {
-	      ZOrder		      5421
+	      ZOrder		      5502
 	      SrcBlock		      "bVectorConstraints"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      24
 	    }
 	    Line {
-	      ZOrder		      5422
+	      ZOrder		      5503
 	      SrcBlock		      "ROBOT_DOF"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      25
 	    }
 	    Line {
-	      ZOrder		      5423
+	      ZOrder		      5504
 	      SrcBlock		      "qj"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      26
 	    }
 	    Line {
-	      ZOrder		      5424
+	      ZOrder		      5505
 	      SrcBlock		      "qjDes"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      27
 	    }
 	    Line {
-	      ZOrder		      5425
+	      ZOrder		      5506
 	      SrcBlock		      "nu"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
@@ -2836,7 +2846,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "fNoQP"
-	      ZOrder		      5426
+	      ZOrder		      5507
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      2
@@ -2845,7 +2855,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "fHDot"
-	      ZOrder		      5427
+	      ZOrder		      5508
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      3
@@ -2854,7 +2864,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "NA"
-	      ZOrder		      5428
+	      ZOrder		      5509
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      4
@@ -2863,7 +2873,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "tauModel"
-	      ZOrder		      5429
+	      ZOrder		      5510
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      5
@@ -2872,7 +2882,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "SIGMA_fH"
-	      ZOrder		      5430
+	      ZOrder		      5511
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      6
@@ -2881,7 +2891,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "SIGMA_NA"
-	      ZOrder		      5431
+	      ZOrder		      5512
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      7
@@ -2890,7 +2900,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "HessianMatrixQP2Feet"
-	      ZOrder		      5432
+	      ZOrder		      5513
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      8
@@ -2899,7 +2909,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "gradientQP2Feet"
-	      ZOrder		      5433
+	      ZOrder		      5514
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      9
@@ -2908,7 +2918,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "ConstraintsMatrixQP2Feet"
-	      ZOrder		      5434
+	      ZOrder		      5515
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      10
@@ -2917,7 +2927,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "bVectorConstraintsQp2Feet"
-	      ZOrder		      5435
+	      ZOrder		      5516
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      11
@@ -2925,14 +2935,14 @@ Model {
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      5436
+	      ZOrder		      5517
 	      SrcBlock		      " Demux "
 	      SrcPort		      1
 	      DstBlock		      " Terminator "
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      5437
+	      ZOrder		      5518
 	      SrcBlock		      " SFunction "
 	      SrcPort		      1
 	      DstBlock		      " Demux "
@@ -3054,20 +3064,6 @@ Model {
 	  SrcPort		  1
 	  DstBlock		  "balancingControlSeeSawFCN"
 	  DstPort		  3
-	}
-	Line {
-	  ZOrder		  1798
-	  SrcBlock		  "w_H_rSole"
-	  SrcPort		  1
-	  DstBlock		  "balancingControlSeeSawFCN"
-	  DstPort		  11
-	}
-	Line {
-	  ZOrder		  1799
-	  SrcBlock		  "w_H_lSole"
-	  SrcPort		  1
-	  DstBlock		  "balancingControlSeeSawFCN"
-	  DstPort		  12
 	}
 	Line {
 	  ZOrder		  1800
@@ -3289,6 +3285,20 @@ Model {
 	  DstBlock		  "balancingControlSeeSawFCN"
 	  DstPort		  28
 	}
+	Line {
+	  ZOrder		  1833
+	  SrcBlock		  "w_H_lSole"
+	  SrcPort		  1
+	  DstBlock		  "balancingControlSeeSawFCN"
+	  DstPort		  11
+	}
+	Line {
+	  ZOrder		  1834
+	  SrcBlock		  "w_H_rSole"
+	  SrcPort		  1
+	  DstBlock		  "balancingControlSeeSawFCN"
+	  DstPort		  12
+	}
       }
     }
     Block {
@@ -3302,7 +3312,7 @@ Model {
       RequestExecContextInheritance off
       System {
 	Name			"Dump and visualize"
-	Location		[119, 14, 810, 798]
+	Location		[65, 24, 1366, 768]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -3410,7 +3420,7 @@ Model {
 	  Position		  [545, 510, 645, 640]
 	  ZOrder		  255
 	  Floating		  off
-	  Location		  [71, 78, 1362, 762]
+	  Location		  [81, 168, 1352, 767]
 	  Open			  off
 	  NumInputPorts		  "3"
 	  List {
@@ -3430,8 +3440,8 @@ Model {
 	    MarkerStyles	    "none|none|none|none|none|none"
 	  }
 	  ShowLegends		  off
-	  YMin			  "-5~-5~-5"
-	  YMax			  "5~5~5"
+	  YMin			  "-0.05~-0.05~-0.06"
+	  YMax			  "0.65~0.65~0.08"
 	}
 	Block {
 	  BlockType		  Reference
@@ -3893,7 +3903,7 @@ Model {
 	  RequestExecContextInheritance	off
 	  System {
 	    Name		    "Visualise extrnal wrenches  "
-	    Location		    [55, 14, 726, 778]
+	    Location		    [65, 24, 1366, 768]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -3905,7 +3915,7 @@ Model {
 	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "146"
+	    ZoomFactor		    "257"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "wL_WBDT"
@@ -4148,7 +4158,7 @@ Model {
 	  Position		  [1185, 496, 1375, 694]
 	  ZOrder		  483
 	  Floating		  off
-	  Location		  [188, 365, 512, 604]
+	  Location		  [71, 78, 1362, 762]
 	  Open			  off
 	  NumInputPorts		  "3"
 	  List {
@@ -4157,7 +4167,19 @@ Model {
 	    axes2		    "%<SignalLabel>"
 	    axes3		    "%<SignalLabel>"
 	  }
+	  List {
+	    ListType		    ScopeGraphics
+	    FigureColor		    "[0.5 0.5 0.5]"
+	    AxesColor		    "[0 0 0]"
+	    AxesTickColor	    "[1 1 1]"
+	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	    LineStyles		    "-|-|-|-|-|-"
+	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
+	    MarkerStyles	    "none|none|none|none|none|none"
+	  }
 	  ShowLegends		  off
+	  YMin			  "-5~-5~-5"
+	  YMax			  "5~5~5"
 	}
 	Block {
 	  BlockType		  Reference
@@ -4845,13 +4867,6 @@ Model {
 	  DstPort		  3
 	}
 	Line {
-	  ZOrder		  74
-	  SrcBlock		  "Sum3"
-	  SrcPort		  1
-	  DstBlock		  "Gain4"
-	  DstPort		  1
-	}
-	Line {
 	  Name			  "CoM_Desired"
 	  ZOrder		  75
 	  SrcBlock		  "Selector"
@@ -4897,6 +4912,13 @@ Model {
 	  DstBlock		  "Visualise extrnal wrenches  "
 	  DstPort		  1
 	}
+	Line {
+	  ZOrder		  74
+	  SrcBlock		  "Sum3"
+	  SrcPort		  1
+	  DstBlock		  "Gain4"
+	  DstPort		  1
+	}
       }
     }
     Block {
@@ -4917,7 +4939,7 @@ Model {
       }
       System {
 	Name			"Dynamics and kinematics"
-	Location		[55, -14, 1376, 798]
+	Location		[65, 24, 1366, 768]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -6850,7 +6872,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"155"
+	ZoomFactor		"157"
 	Block {
 	  BlockType		  Inport
 	  Name			  "qj"
@@ -7310,7 +7332,7 @@ Model {
 	  }
 	  System {
 	    Name		    "Compute base velocity"
-	    Location		    [55, 14, 726, 778]
+	    Location		    [65, 24, 1366, 768]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -7322,7 +7344,7 @@ Model {
 	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "69"
+	    ZoomFactor		    "138"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "w_H_b"
@@ -7379,7 +7401,7 @@ Model {
 	      RequestExecContextInheritance off
 	      System {
 		Name			"Base and joints velocity"
-		Location		[55, 14, 726, 778]
+		Location		[65, 24, 1366, 768]
 		Open			off
 		ModelBrowserVisibility	off
 		ModelBrowserWidth	200
@@ -7391,7 +7413,7 @@ Model {
 		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 		TiledPageScale		1
 		ShowPageBoundaries	off
-		ZoomFactor		"140"
+		ZoomFactor		"228"
 		Block {
 		  BlockType		  Inport
 		  Name			  "v_b"
@@ -7471,7 +7493,7 @@ Model {
 		  Position		  [470, 149, 555, 241]
 		  ZOrder		  933
 		  Floating		  off
-		  Location		  [188, 365, 512, 604]
+		  Location		  [66, 53, 1367, 767]
 		  Open			  off
 		  NumInputPorts		  "5"
 		  List {
@@ -7482,7 +7504,19 @@ Model {
 		    axes4		    "%<SignalLabel>"
 		    axes5		    "%<SignalLabel>"
 		  }
+		  List {
+		    ListType		    ScopeGraphics
+		    FigureColor		    "[0.5 0.5 0.5]"
+		    AxesColor		    "[0 0 0]"
+		    AxesTickColor	    "[1 1 1]"
+		    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+		    LineStyles		    "-|-|-|-|-|-"
+		    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
+		    MarkerStyles	    "none|none|none|none|none|none"
+		  }
 		  ShowLegends		  off
+		  YMin			  "-5~-5~-5~-5~-5"
+		  YMax			  "5~5~5~5~5"
 		}
 		Block {
 		  BlockType		  Scope
@@ -7492,12 +7526,22 @@ Model {
 		  Position		  [475, 16, 550, 94]
 		  ZOrder		  935
 		  Floating		  off
-		  Location		  [188, 365, 512, 604]
+		  Location		  [66, 53, 1367, 767]
 		  Open			  off
 		  NumInputPorts		  "1"
 		  List {
 		    ListType		    AxesTitles
 		    axes1		    "%<SignalLabel>"
+		  }
+		  List {
+		    ListType		    ScopeGraphics
+		    FigureColor		    "[0.5 0.5 0.5]"
+		    AxesColor		    "[0 0 0]"
+		    AxesTickColor	    "[1 1 1]"
+		    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+		    LineStyles		    "-|-|-|-|-|-"
+		    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
+		    MarkerStyles	    "none|none|none|none|none|none"
 		  }
 		  ShowLegends		  off
 		}
@@ -8051,7 +8095,7 @@ Model {
 	      Name		      "Product1"
 	      SID		      "1056"
 	      Ports		      [2, 1]
-	      Position		      [800, 104, 880, 171]
+	      Position		      [825, 104, 905, 171]
 	      ZOrder		      841
 	      ShowName		      off
 	      Priority		      "19"
@@ -8424,7 +8468,7 @@ Model {
 	  System {
 	    Name		    "Seesaw orientation and angVelocity"
 	    Location		    [65, 24, 1366, 768]
-	    Open		    on
+	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -8493,7 +8537,7 @@ Model {
 	      RequestExecContextInheritance off
 	      System {
 		Name			"Compare IMU results"
-		Location		[55, -14, 1376, 798]
+		Location		[65, 24, 1366, 768]
 		Open			off
 		ModelBrowserVisibility	off
 		ModelBrowserWidth	200
@@ -8870,7 +8914,7 @@ Model {
 		  Position		  [760, 104, 790, 136]
 		  ZOrder		  906
 		  Floating		  off
-		  Location		  [66, 53, 1367, 767]
+		  Location		  [71, 78, 1362, 762]
 		  Open			  off
 		  NumInputPorts		  "1"
 		  List {
@@ -12318,8 +12362,11 @@ Stateflow {
     firstTransition	    47
     firstJunction	    46
     viewObj		    2
+    visible		    1
     machine		    1
-    ssIdHighWaterMark	    93
+    subviewS {
+    }
+    ssIdHighWaterMark	    94
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
     firstData		    4
@@ -12348,20 +12395,20 @@ Stateflow {
       "_r,M_s,h_r,h_s,J_r,J_f,J_s,J_rDot_nu,J_fDot_nu_s,J_sDot_nu_s,w_H_lSole,w_H_rSole,w_p_CoM_r,...\n                "
       "              J_CoM_r,gain,desired_x_dx_ddx_CoM_r,H_r,intH_r,w_R_s,desired_x_CoM_s,s_p_CoM_s,H_s,seesaw,...\n   "
       "                           s_omega,reg,ConstraintsMatrix,bVectorConstraints,ROBOT_DOF,qj,qjDes,nu,CONFIG)\n\n% L"
-      "ist of controllers \nif CONFIG.CONTROL_TYPE == 1\n    \n         [fNoQP,fHDot,NA,tauModel,SIGMA_fH,SIGMA_NA,Hess"
-      "ianMatrixQP2Feet,gradientQP2Feet,...\n          ConstraintsMatrixQP2Feet,bVectorConstraintsQp2Feet] = ...\n     "
-      "      ...\n           balancingControl_v1(M_r,M_s,h_r,h_s,J_r,J_f,J_s,J_rDot_nu,J_fDot_nu_s,J_sDot_nu_s,w_H_lSol"
-      "e,w_H_rSole,w_p_CoM_r,...\n                               J_CoM_r,nu,gain,desired_x_dx_ddx_CoM_r,H_r,intH_r,w_R_"
-      "s,H_s,...\n                               reg,ConstraintsMatrix,bVectorConstraints,ROBOT_DOF,qj,qjDes);\n    \ne"
-      "lseif CONFIG.CONTROL_TYPE == 2\n    \n         [fNoQP,fHDot,NA,tauModel,SIGMA_fH,SIGMA_NA,HessianMatrixQP2Feet,g"
-      "radientQP2Feet,...\n          ConstraintsMatrixQP2Feet,bVectorConstraintsQp2Feet] = ...\n           ...\n       "
-      "    balancingControl_v2(M_r,M_s,h_r,h_s,J_r,J_f,J_s,J_rDot_nu,J_fDot_nu_s,J_sDot_nu_s,w_H_lSole,w_H_rSole,w_p_Co"
-      "M_r,...\n                               J_CoM_r,nu,gain,desired_x_dx_ddx_CoM_r,H_r,intH_r,...\n                 "
-      "              reg,ConstraintsMatrix,bVectorConstraints,ROBOT_DOF,qj,qjDes);   \nelse\n    \n     fNoQP = zeros(1"
-      "2,1);\n     fHDot = zeros(12,1);\n     NA = zeros(12,12);\n     tauModel = zeros(23,1);\n     SIGMA_fH = zeros(2"
-      "3,1);\n     SIGMA_NA = zeros(23,12);\n     HessianMatrixQP2Feet = zeros(12,12);\n     gradientQP2Feet = zeros(12"
-      ",1);\n     ConstraintsMatrixQP2Feet = zeros(38,12);\n     bVectorConstraintsQp2Feet = zeros(38,1);\n            "
-      "                \nend\n\nend\n"
+      "ist of controllers \nif CONFIG.CONTROL_TYPE == 1\n    \n         \n    [fNoQP,fHDot,NA,tauModel,SIGMA_fH,SIGMA_N"
+      "A,HessianMatrixQP2Feet,gradientQP2Feet,...\n     ConstraintsMatrixQP2Feet,bVectorConstraintsQp2Feet] = ...\n    "
+      "        ...\n            balancingControl_v1(M_r,M_s,h_r,h_s,J_r,J_f,J_s,J_rDot_nu,J_fDot_nu_s,J_sDot_nu_s,w_H_l"
+      "Sole,w_H_rSole,w_p_CoM_r,...\n                                  J_CoM_r,nu,gain,desired_x_dx_ddx_CoM_r,H_r,w_R_s"
+      ",H_s,...\n                                  reg,ConstraintsMatrix,bVectorConstraints,ROBOT_DOF,qj,qjDes,s_p_CoM_"
+      "s,desired_x_CoM_s,s_omega,seesaw,intH_r);\n    \nelseif CONFIG.CONTROL_TYPE == 2\n\n     [fNoQP,fHDot,NA,tauMode"
+      "l,SIGMA_fH,SIGMA_NA,HessianMatrixQP2Feet,gradientQP2Feet,...\n      ConstraintsMatrixQP2Feet,bVectorConstraintsQ"
+      "p2Feet] = ...\n           ...\n           balancingControl_v2(M_r,M_s,h_r,h_s,J_r,J_f,J_s,J_rDot_nu,J_fDot_nu_s,"
+      "J_sDot_nu_s,w_H_lSole,w_H_rSole,w_p_CoM_r,...\n                               J_CoM_r,nu,gain,desired_x_dx_ddx_C"
+      "oM_r,H_r,intH_r,...\n                               reg,ConstraintsMatrix,bVectorConstraints,ROBOT_DOF,qj,qjDes)"
+      ";   \n    \nelse\n    \n     fNoQP = zeros(12,1);\n     fHDot = zeros(12,1);\n     NA = zeros(12,12);\n     tauM"
+      "odel = zeros(23,1);\n     SIGMA_fH = zeros(23,1);\n     SIGMA_NA = zeros(23,12);\n     HessianMatrixQP2Feet = ze"
+      "ros(12,12);\n     gradientQP2Feet = zeros(12,1);\n     ConstraintsMatrixQP2Feet = zeros(38,12);\n     bVectorCon"
+      "straintsQp2Feet = zeros(38,1);\n                            \nend\n\nend\n"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
@@ -14039,10 +14086,7 @@ Stateflow {
     firstTransition	    99
     firstJunction	    98
     viewObj		    85
-    visible		    1
     machine		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    92
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
