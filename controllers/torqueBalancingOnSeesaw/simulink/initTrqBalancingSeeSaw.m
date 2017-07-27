@@ -22,28 +22,30 @@ CONFIG.USE_QP_SOLVER = true;
 
 % Choose between different balancing controllers. 
 % 
-% CONTROL_KIND 1 = control objective: Centroidal momentum dynamics of the
+% CONTROL_TYPE 1 = control objective: centroidal momentum dynamics of the
+%                  robot and angular momentum of the seesaw along x axis;
+%
+% CONTROL_TYPE 2 = control objective: centroidal momentum dynamics of the
 %                  robot only;
 %
-% CONTROL_KIND 2 = control objective: seesaw angular momentum in x direction;
-%                  still obtained by controlling the centroidal momentum 
-%                  dynamics of the robot;
-%
-% CONTROL_KIND 3 = first control objective: seesaw angular momentum in x 
-%                  direction; second control objective: centroidal momentum 
-%                  dynamics of the robot;
-%
+<<<<<<< HEAD
 % CONTROL_KIND 4 = control objective: linear momentum (x-z) of the whole system +
 %                  angular momentum (y-z) of the whole system + error between
 %                  the CoM of the whole system and the contact point on ground;
 %
 CONFIG.CONTROL_KIND = 1; 
+=======
+CONFIG.CONTROL_TYPE = 2; 
+>>>>>>> newSeesaw
 
 %% CONFIGURATION PARAMETERS FOR STATE ESTIMATION
 
 % Select the link frame that is fixed w.r.t. the seesaw. Only two frames can be
 % selected: l_sole and r_sole
 FRAMES.fixedLink = 'l_sole';
+
+% Correct CoM estimation at time 0
+CONFIG.USE_COM_CORRECTION = false;
 
 %% Configuration options for robot IMU only
 
@@ -73,9 +75,11 @@ CONFIG.USE_IMU_ROBOT_4_SEESAW_ANGVEL = true;
 CONFIG.FILTER_SEESAW_ORIENT = true;
 CONFIG.FILTER_SEESAW_ANGVEL = true;
 
-% As before, given the shape of the seesaw, y-z angular velocity should be zero. This 
+%% Configurations option for both IMUs
+
+% Given the shape of the seesaw, y-z angular velocity should be zero. This 
 % option is to force omega_y and omega_z to be zero
-CONFIG.REMOVE_SEESAW_YZ_ANGVEL = false;
+CONFIG.REMOVE_SEESAW_YZ_ANGVEL = true;
 
 %% LOADING GAINS AND PARAMETERS FOR THE SPECIFIC ROBOT
 

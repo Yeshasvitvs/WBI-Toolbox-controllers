@@ -151,12 +151,11 @@ function SetInputPortSamplingMode(block, idx, fd)
 
 function Outputs(block)
     
-    USE_QP_SOLVER             = block.InputPort(8).Data;
+    USE_QP_SOLVER              = block.InputPort(8).Data;
 
     tauModel                   = block.InputPort(1).Data;
     Sigmaf_HDot                = block.InputPort(2).Data;
-    SigmaNa                    = block.InputPort(3).Data;
-    
+    SigmaNa                    = block.InputPort(3).Data;    
     HessianMatrixQP2Feet       = block.InputPort(4).Data;
     gradientQP2Feet            = block.InputPort(5).Data;
     ConstraintsMatrixQP2Feet   = block.InputPort(6).Data;

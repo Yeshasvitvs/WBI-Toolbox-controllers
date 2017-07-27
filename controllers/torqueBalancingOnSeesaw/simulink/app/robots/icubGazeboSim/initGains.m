@@ -3,12 +3,21 @@ WBT_wbiList            = '(torso_pitch,torso_roll,torso_yaw,l_shoulder_pitch,l_s
 CONFIG.ON_GAZEBO       = true;
 
 % Update ports according to the simulation
+<<<<<<< HEAD
 PORTS.IMU        = '/icubSim/inertial';
 PORTS.IMU_SEESAW = '/seesaw/inertial';
 PORTS.NECK       = '/icubSim/head/state:o';
 PORTS.WBDT_LEFTLEG_EE  = '/wholeBodyDynamicsTree/left_leg/cartesianEndEffectorWrench:o';
 PORTS.WBDT_RIGHTLEG_EE = '/wholeBodyDynamicsTree/right_leg/cartesianEndEffectorWrench:o';
 sat.torque       = 40;
+=======
+PORTS.IMU              = '/icubSim/inertial';
+PORTS.IMU_SEESAW       = '/seesaw/inertial';
+PORTS.NECK             = '/icubSim/head/state:o';
+PORTS.WBDT_LEFTLEG_EE  = '/wholeBodyDynamicsTree/left_leg/cartesianEndEffectorWrench:o';
+PORTS.WBDT_RIGHTLEG_EE = '/wholeBodyDynamicsTree/right_leg/cartesianEndEffectorWrench:o';
+sat.torque             = 40;
+>>>>>>> newSeesaw
 
 %% Seesaw parameters
 seesaw           = struct;
@@ -89,24 +98,27 @@ seesaw.velocityFilterOrder = 2;
 %% References for CoM trajectory
 directionOfOscillation     = [0; 1; 0];
 referenceParams            = [0.0,0.25]; % referenceParams(1) = amplitude of ascillations in meters; referenceParams(2) = frequency of ascillations in Hertz
-noOscillationTime          = 0; % the variable noOscillationTime is the time, in seconds, that the robot waits before starting moving the CoM left-and-right
+noOscillationTime          =  0; % the variable noOscillationTime is the time, in seconds, that the robot waits before starting moving the CoM left-and-right
 
 %% Gains and regularization terms (for all different controllers)
-
-if CONFIG.CONTROL_KIND == 1
+if CONFIG.CONTROL_TYPE == 1
     
-    % gain on seesaw angular velocity
-    gain.KthetaDot         = 0; % NOT USED
-    gain.Ktheta            = 0; % NOT USED
+    % seesaw gains    
+    gain.PAngularMomentum_seesaw  = 10;
+    gain.DAngularMomentum_seesaw  = 2*sqrt(gain.PAngularMomentum_seesaw);
 
     % By default these values are used by CONTROL_KIND 1
-    gain.posturalProp      = diag([100 10 200,   100 100 100 80,   100 100 100 80,   600 60 600 600 100 10,   600 60 600 600 100 10])/10;                    
-    gain.posturalDamp      = 2*sqrt(gain.posturalProp)/5;
+    gain.impedances        = diag([10 10 20,   10 10 10 8,   10 10 10 8,   60 60 60 60 10 10,   60 60 60 60 10 10]);                    
+    gain.dampings          = 2*sqrt(gain.impedances)/10;
 
-    gain.PAngularMomentum  = diag([1 1 1])/10;
-    gain.DAngularMomentum  = 2*sqrt(gain.PAngularMomentum)/5;
-
+<<<<<<< HEAD
     gain.PCOM              = diag([ 200 20 200])/10;
+=======
+    gain.PAngularMomentum  = diag([10 10 10]);
+    gain.DAngularMomentum  = 2*sqrt(gain.PAngularMomentum);
+    
+    gain.PCOM              = diag([20 10 20]);
+>>>>>>> newSeesaw
     gain.DCOM              = 2*sqrt(gain.PCOM)/10;
 
     % Saturate the CoM position error
@@ -118,6 +130,7 @@ if CONFIG.CONTROL_KIND == 1
     reg.HessianQP          = 1e-7;
     reg.pinvTol            = 1e-7;
     reg.pinvTolVb          = 1e-4;
+<<<<<<< HEAD
     reg.pinvDamp_ctrl3     = 0.1; % NOT USED
      
 elseif CONFIG.CONTROL_KIND == 2
@@ -148,30 +161,43 @@ elseif CONFIG.CONTROL_KIND == 2
     reg.pinvDamp_ctrl3     = 0.1; % NOT USED
     
 elseif CONFIG.CONTROL_KIND == 3
+=======
+
+elseif CONFIG.CONTROL_TYPE == 2
+>>>>>>> newSeesaw
     
-    % gain on seesaw angular velocity
-    gain.Ktheta            = 25;
-    gain.KthetaDot         = 2*sqrt(gain.Ktheta);
+    % seesaw gains    
+    gain.PAngularMomentum_seesaw  = 0; % NOT USED
+    gain.DAngularMomentum_seesaw  = 0; % NOT USED
 
     % By default these values are used by CONTROL_KIND 1
+<<<<<<< HEAD
     gain.posturalProp      = diag([100 50 200,   100 100 100 80,   100 100 100 80,   600 60 600 600 100 10,   600 60 600 600 100 10])/10;                        
     gain.posturalDamp      = 2*sqrt(gain.posturalProp)/5;
 
     gain.PAngularMomentum  = diag([10 1 10])/10;
     gain.DAngularMomentum  = 2*sqrt(gain.PAngularMomentum)/5;
+=======
+    gain.impedances        = diag([10 1 20,   10 10 10 8,   10 10 10 8,   60 6 60 60 10 1,   60 6 60 60 10 1]);                    
+    gain.dampings          = 2*sqrt(gain.impedances)/10;
+>>>>>>> newSeesaw
 
-    gain.PCOM              = diag([ 200 0.1 200 ])/10;
-    gain.DCOM              = 2*sqrt(gain.PCOM)/5;
+    gain.PAngularMomentum  = diag([1 1 1]);
+    gain.DAngularMomentum  = 2*sqrt(gain.PAngularMomentum)/10;
+    
+    gain.PCOM              = diag([20 2 20]);
+    gain.DCOM              = 2*sqrt(gain.PCOM)/10;
 
     % Saturate the CoM position error
     gain.P_SATURATION      = 0.30;
  
     % Regularization terms
     reg                    = struct;
-    reg.pinvDamp           = 1;
+    reg.pinvDamp           = 0.01;
     reg.HessianQP          = 1e-7;
     reg.pinvTol            = 1e-7;
     reg.pinvTolVb          = 1e-4;
+<<<<<<< HEAD
     reg.pinvDamp_ctrl3     = 0.1;
     
 elseif CONFIG.CONTROL_KIND == 4
@@ -201,6 +227,9 @@ elseif CONFIG.CONTROL_KIND == 4
     reg.pinvTolVb          = 1e-4;
     reg.pinvDamp_ctrl3     = 0.01; % NOT USED
      
+=======
+
+>>>>>>> newSeesaw
 end   
 
 %% Friction cone parameters
