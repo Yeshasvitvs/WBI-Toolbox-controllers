@@ -21,7 +21,7 @@ setup(block);
 
 function setup(block)
     
-block.NumInputPorts  = 8; 
+block.NumInputPorts = 8; 
 block.NumOutputPorts = 3; 
 
 % Setup port properties to be inherited or dynamic
@@ -36,29 +36,29 @@ block.SetPreCompOutPortInfoToDynamic;
 % %4 % [x0;lb;ub]                  
 
 % Definition of port sizes for QP 2 feet
-block.InputPort(1).Dimensions        = 23;        % tauModel               
-block.InputPort(2).Dimensions        = 23;        % Sigmaf_HDot
-block.InputPort(3).Dimensions        = [23 12];   % SigmaNa 
-block.InputPort(4).Dimensions        = [12 12];   % HessianMatrixQP2Feet               
-block.InputPort(5).Dimensions        = [1  12];   % gradientQP2Feet
-block.InputPort(6).Dimensions        = [38 12];   % ConstraintsMatrixQP2Feet 
-block.InputPort(7).Dimensions        = [1  38];   % bVectorConstraintsQp2Feet 
-block.InputPort(8).Dimensions        = 1 ;        % USE_QP_SOLVER
+block.InputPort(1).Dimensions = 23;        % tauModel               
+block.InputPort(2).Dimensions = 23;        % Sigmaf_HDot
+block.InputPort(3).Dimensions = [23 12];   % SigmaNa 
+block.InputPort(4).Dimensions = [12 12];   % HessianMatrixQP2Feet               
+block.InputPort(5).Dimensions = [1  12];   % gradientQP2Feet
+block.InputPort(6).Dimensions = [38 12];   % ConstraintsMatrixQP2Feet 
+block.InputPort(7).Dimensions = [1  38];   % bVectorConstraintsQp2Feet 
+block.InputPort(8).Dimensions = 1 ;        % USE_QP_SOLVER
 
 % Override output port properties
-block.OutputPort(1).Dimensions       = 12;        % f0 Two Feet
-block.OutputPort(2).Dimensions       = 1;         % Exit flag QP 2 Feet
-block.OutputPort(3).Dimensions       = 23;        % tau
+block.OutputPort(1).Dimensions = 12;        % f0 Two Feet
+block.OutputPort(2).Dimensions = 1;         % Exit flag QP 2 Feet
+block.OutputPort(3).Dimensions = 23;        % tau
 
 for i=1:block.NumInputPorts
-    block.InputPort(i).DatatypeID  = -1;          % 'inherited', see http://www.mathworks.com/help/simulink/slref/simulink.blockdata.html#f29-108672
-    block.InputPort(i).Complexity  = 'Real';
+    block.InputPort(i).DatatypeID = -1;          % 'inherited', see http://www.mathworks.com/help/simulink/slref/simulink.blockdata.html#f29-108672
+    block.InputPort(i).Complexity = 'Real';
     block.InputPort(i).DirectFeedthrough = true;
 end
 
 for i =1:block.NumOutputPorts
-    block.OutputPort(i).DatatypeID  = 0; % double
-    block.OutputPort(i).Complexity  = 'Real';
+    block.OutputPort(i).DatatypeID = 0; % double
+    block.OutputPort(i).Complexity = 'Real';
 end
 
 % Register parameters
@@ -151,15 +151,15 @@ function SetInputPortSamplingMode(block, idx, fd)
 
 function Outputs(block)
     
-    USE_QP_SOLVER              = block.InputPort(8).Data;
+    USE_QP_SOLVER = block.InputPort(8).Data;
 
-    tauModel                   = block.InputPort(1).Data;
-    Sigmaf_HDot                = block.InputPort(2).Data;
-    SigmaNa                    = block.InputPort(3).Data;    
-    HessianMatrixQP2Feet       = block.InputPort(4).Data;
-    gradientQP2Feet            = block.InputPort(5).Data;
-    ConstraintsMatrixQP2Feet   = block.InputPort(6).Data;
-    bVectorConstraintsQp2Feet  = block.InputPort(7).Data;
+    tauModel = block.InputPort(1).Data;
+    Sigmaf_HDot = block.InputPort(2).Data;
+    SigmaNa = block.InputPort(3).Data;    
+    HessianMatrixQP2Feet = block.InputPort(4).Data;
+    gradientQP2Feet = block.InputPort(5).Data;
+    ConstraintsMatrixQP2Feet = block.InputPort(6).Data;
+    bVectorConstraintsQp2Feet = block.InputPort(7).Data;
     
     if USE_QP_SOLVER 
         [f02Feet,~,exitFlagQP2Feet,~,~,~] = qpOASES(HessianMatrixQP2Feet,gradientQP2Feet',ConstraintsMatrixQP2Feet,[],[],[],bVectorConstraintsQp2Feet');           
@@ -169,7 +169,7 @@ function Outputs(block)
         end
     else
         exitFlagQP2Feet = 1;
-        f02Feet         = -inv(HessianMatrixQP2Feet)*gradientQP2Feet';
+        f02Feet = -inv(HessianMatrixQP2Feet)*gradientQP2Feet';
     end
             
     block.OutputPort(1).Data = f02Feet;

@@ -10,23 +10,23 @@ w_H_imu_0 = w_H_fixedLink_0/imu_H_fixedLink_0;
 w_R_imu_0 = w_H_imu_0(1:3,1:3);
 
 % Converting the IMU angles from grad into rad
-imuRot_rad     = (imuRotation * pi)/180;
-imuRot_rad_0   = (imuRotation_0 * pi)/180;
+imuRot_rad = (imuRotation * pi)/180;
+imuRot_rad_0 = (imuRotation_0 * pi)/180;
 
 % Composing the rotation matrix:
 % See http://wiki.icub.org/images/8/82/XsensMtx.pdf page 12
-wImu_R_imu     = rotz(imuRot_rad(3))*roty(imuRot_rad(2))*rotx(imuRot_rad(1));
-wImu_R_imu_0   = rotz(imuRot_rad_0(3))*roty(imuRot_rad_0(2))*rotx(imuRot_rad_0(1));
+wImu_R_imu = rotz(imuRot_rad(3))*roty(imuRot_rad(2))*rotx(imuRot_rad(1));
+wImu_R_imu_0 = rotz(imuRot_rad_0(3))*roty(imuRot_rad_0(2))*rotx(imuRot_rad_0(1));
 
 % Relative rotation between wImu and the world frame (should be constant!)
-w_R_wImu       = w_R_imu_0/wImu_R_imu_0;
+w_R_wImu = w_R_imu_0/wImu_R_imu_0;
 
 % Correcting neck movements
 wImu_H_wImuAssumingNeckToZero = correctIMU(neckPosition);
-wImu_R_imu                    = wImu_H_wImuAssumingNeckToZero(1:3,1:3) * wImu_R_imu;
+wImu_R_imu = wImu_H_wImuAssumingNeckToZero(1:3,1:3) * wImu_R_imu;
 
 % Rotation of the fixed link (= seesaw orintation) w.r.t. the imu world
-imu_R_fixedlink  = imu_H_fixedLink(1:3,1:3);
+imu_R_fixedlink = imu_H_fixedLink(1:3,1:3);
 wImu_R_fixedLink = wImu_R_imu * imu_R_fixedlink;
 
 % Finally, rotation of the seesaw w.r.t the world frame

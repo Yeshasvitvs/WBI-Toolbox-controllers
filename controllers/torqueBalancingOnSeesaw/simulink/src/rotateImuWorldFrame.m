@@ -6,7 +6,7 @@ function w_data = rotateImuWorldFrame(wImu_data,seesaw)
 % frame.
 
 % Relative rotation between the wImu (seesaw IMU) and the world frame
-w_R_wImu  = seesaw.w_R_wImu;
+w_R_wImu = seesaw.w_R_wImu;
 
 % Data in world frame
 w_data = w_R_wImu * wImu_data;

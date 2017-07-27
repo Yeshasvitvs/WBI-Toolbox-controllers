@@ -10,6 +10,7 @@ setenv('YARP_ROBOT_NAME','icubGazeboSim');
 
 % Simulation time step (fixed) [s]
 CONFIG.TS = 0.01;
+CONFIG.TEnd = inf;
 
 % Activate visualization
 CONFIG.SCOPES = true;
@@ -83,7 +84,7 @@ CONFIG.REMOVE_SEESAW_YZ_ANGVEL = true;
 PORTS.IMU = '/icub/inertial';
 PORTS.IMU_SEESAW = '/seesaw';
 PORTS.NECK = '/icub/head/state:o';
-PORTS.WBDT_LEFTLEG_EE  = '/wholeBodyDynamics/left_leg/cartesianEndEffectorWrench:o';
+PORTS.WBDT_LEFTLEG_EE = '/wholeBodyDynamics/left_leg/cartesianEndEffectorWrench:o';
 PORTS.WBDT_RIGHTLEG_EE = '/wholeBodyDynamics/right_leg/cartesianEndEffectorWrench:o';
 
 % This information is used for evaluating the integral of the angular
