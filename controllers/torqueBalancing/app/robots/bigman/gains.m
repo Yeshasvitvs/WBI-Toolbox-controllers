@@ -14,7 +14,7 @@ CONFIG.SMOOTH_DES_COM              = 0;    % If equal to one, the desired stream
 CONFIG.SMOOTH_DES_Q                = 0;    % If equal to one, the desired streamed values 
                                            % of the postural tasks are smoothed internally 
 
-WBT_wbiList            = 'ROBOT_TORQUE_CONTROL_JOINTS';
+WBT_wbiList = '(WaistSag,WaistLat,WaistYaw,LShSag,LShLat,LShYaw,LElbj,LForearmPlate,RShSag,RShLat,RShYaw,RElbj,RForearmPlate,LHipSag,LHipLat,LHipYaw,LKneeSag,LAnkSag,LAnkLat,RHipSag,RHipLat,RHipYaw,RKneeSag,RAnkSag,RAnkLat)';
 
 dump.left_wrench_port  = '/bigman/left_leg_ft/analog:o/forceTorque';
 dump.right_wrench_port = '/bigman/right_leg_ft/analog:o/forceTorque';
