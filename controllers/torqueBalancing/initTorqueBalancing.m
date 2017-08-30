@@ -36,15 +36,15 @@ setenv('YARP_ROBOT_NAME','bigman');
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% %%%%% SET ENVIRONEMENTAL VARIABLES (only for walkman-pilot-pc) %%%%%% %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% setenv('CODYCO_SUPERBUILD_ROOT','/home/lucamuratore/src/codyco-superbuild');
-% 
-% current_path = getenv('PATH');
-% setenv('PATH',fullfile(current_path, ':/home/lucamuratore/src/codyco-superbuild/build/install/bin'));
-% 
-% current_ld_library_path = getenv('LD_LIBRARY_PATH');
-% setenv('LD_LIBRARY_PATH',fullfile(current_ld_library_path, ':home/lucamuratore/src/codyco-superbuild/build/install/lib'));
-% 
-% setenv('YARP_DATA_DIRS','/home/lucamuratore/src/codyco-superbuild/build/install/share/yarp:/home/lucamuratore/src/codyco-superbuild/build/install/share/iCub:/home/lucamuratore/src/codyco-superbuild/build/install/share/codyco');
+setenv('CODYCO_SUPERBUILD_ROOT','/home/lucamuratore/src/codyco-superbuild');
+
+current_path = getenv('PATH');
+setenv('PATH',fullfile(current_path, ':/home/lucamuratore/src/codyco-superbuild/build/install/bin'));
+
+current_ld_library_path = getenv('LD_LIBRARY_PATH');
+setenv('LD_LIBRARY_PATH',fullfile(current_ld_library_path, ':home/lucamuratore/src/codyco-superbuild/build/install/lib'));
+
+setenv('YARP_DATA_DIRS','/home/lucamuratore/src/codyco-superbuild/build/install/share/yarp:/home/lucamuratore/src/codyco-superbuild/build/install/share/iCub:/home/lucamuratore/src/codyco-superbuild/build/install/share/codyco');
 
 % calibration delta for legs joints
 newOffsets = [0.12753
@@ -69,7 +69,7 @@ tSwitch    = [10 20 30 40 50 60 70 80 90 100];
 tEnd       = tSwitch(end) + 10;
 
 % ONLY FOR SIMULATION
-calibDelta = 0.*calibDelta;
+% calibDelta = 0.*calibDelta;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -99,11 +99,11 @@ SM.SM_TYPE                   = 'YOGA';
 CONFIG.SCOPES.ALL            = true;
 
 % You can also activate only some specific debugging scopes
-CONFIG.SCOPES.BASE_EST_IMU = false;
-CONFIG.SCOPES.EXTWRENCHES  = false;
-CONFIG.SCOPES.GAIN_SCHE_INFO=false;
-CONFIG.SCOPES.MAIN         = false;
-CONFIG.SCOPES.QP           = false;
+CONFIG.SCOPES.BASE_EST_IMU   = false;
+CONFIG.SCOPES.EXTWRENCHES    = false;
+CONFIG.SCOPES.GAIN_SCHE_INFO = false;
+CONFIG.SCOPES.MAIN           = false;
+CONFIG.SCOPES.QP             = false;
 
 % CONFIG.CHECK_LIMITS: if set to true, the controller will stop as soon as 
 % any of the joint limit is touched. 
@@ -124,7 +124,7 @@ FRAMES.IMU               = 'imu_frame';
 % If set to true, the base orientation is estimated by using the IMU, while
 % the base position by assuming that the origin of either the right or the
 % left foot do not move. 
-CONFIG.USE_IMU4EST_BASE    = false;
+CONFIG.USE_IMU4EST_BASE    = true;
 
 % CONFIG.YAW_IMU_FILTER and CONFIG.PITCH_IMU_FILTER: when the flag
 % CONFIG.USE_IMU4EST_BASE = true, then the orientation of the floating base is
@@ -134,8 +134,8 @@ CONFIG.USE_IMU4EST_BASE    = false;
 % when either of the flags CONFIG.YAW_IMU_FILTER or CONFIG.PITCH_IMU_FILTER
 % is set to true, then the yaw and/or pitch angles of the contact foot are
 % ignored and kept equal to the initial values.
-CONFIG.YAW_IMU_FILTER      = true;
-CONFIG.PITCH_IMU_FILTER    = true;
+CONFIG.YAW_IMU_FILTER      = false;
+CONFIG.PITCH_IMU_FILTER    = false;
 
 % CONFIG.CORRECT_NECK_IMU: when set equal to true, the kineamtics from the
 % IMU and the contact foot is corrected by using the neck angles. If it set
