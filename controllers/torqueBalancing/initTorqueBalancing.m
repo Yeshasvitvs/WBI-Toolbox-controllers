@@ -64,9 +64,10 @@ newOffsets = [0.12753
 calibDelta = newOffsets*pi/180;
 
 % dynamic calibration parameters
-USE_h_ONLY = true;
-tSwitch    = [10 20 30 40 50 60 70 80 90 100];
-tEnd       = tSwitch(end) + 10;
+USE_h_ONLY         = true;
+USE_JOINT_VELOCITY = 0;
+tSwitch            = [10 20 30 40 50 60 70 80 90 100];
+tEnd               = tSwitch(end) + 10;
 
 % ONLY FOR SIMULATION
 % calibDelta = 0.*calibDelta;
