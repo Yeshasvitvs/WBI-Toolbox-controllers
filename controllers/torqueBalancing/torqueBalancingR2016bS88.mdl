@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.3127"
+    ComputedModelVersion    "1.3128"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -41,7 +41,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [58.0, 20.0, 1855.0, 1036.0]
+      Location		      [8.0, 20.0, 1855.0, 1036.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -63,11 +63,11 @@ Model {
 	$ObjectID		5
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
-	ViewObjType		"SimulinkSubsys"
-	LoadSaveID		"2087"
+	ViewObjType		"SimulinkTopLevel"
+	LoadSaveID		"0"
 	Extents			[1801.0, 845.0]
-	ZoomFactor		[0.693980147881768]
-	Offset			[-1050.1734877326564, 2356.6929594966159]
+	ZoomFactor		[0.82]
+	Offset			[-2.2737367544323206e-13, 0.0]
       }
       Object {
 	$PropName		"DockComponentsInfo"
@@ -100,9 +100,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "leo"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Aug 22 17:51:29 2017"
-  RTWModifiedTimeStamp	  425325077
-  ModelVersionFormat	  "1.%<AutoIncrement:3127>"
+  LastModifiedDate	  "Thu Sep 07 11:33:39 2017"
+  RTWModifiedTimeStamp	  426684781
+  ModelVersionFormat	  "1.%<AutoIncrement:3128>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1203,11 +1203,22 @@ Model {
     Block {
       BlockType		      Terminator
     }
+    Block {
+      BlockType		      ToWorkspace
+      VariableName	      "simulink_output"
+      MaxDataPoints	      "1000"
+      Decimation	      "1"
+      SaveFormat	      "Array"
+      Save2DSignal	      "Inherit from input (this choice will be removed - see release notes)"
+      FixptAsFi		      off
+      NumInputs		      "1"
+      SampleTime	      "0"
+    }
   }
   System {
     Name		    "torqueBalancingR2016bS88"
-    Location		    [58, 20, 1913, 1056]
-    Open		    off
+    Location		    [8, 20, 1863, 1056]
+    Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -1220,7 +1231,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "82"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "3762"
+    SIDHighWatermark	    "3764"
     Block {
       BlockType		      SubSystem
       Name		      "DesValues"
@@ -1234,8 +1245,8 @@ Model {
       Variant		      off
       System {
 	Name			"DesValues"
-	Location		[58, 20, 1913, 1056]
-	Open			on
+	Location		[8, 20, 1863, 1056]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1422,7 +1433,7 @@ Model {
 	  ZOrder		  638
 	  BackgroundColor	  "[0.513700, 0.851000, 0.670600]"
 	  ShowName		  off
-	  LibraryVersion	  "1.381"
+	  LibraryVersion	  "1.383"
 	  SourceBlock		  "WBToolboxLibrary/wholeBodyStates/Get Estimate"
 	  SourceType		  "Get Estimate"
 	  ContentPreviewEnabled	  off
@@ -3647,7 +3658,7 @@ Model {
 	  Position		  [865, 2515, 1005, 2555]
 	  ZOrder		  598
 	  ShowName		  off
-	  LibraryVersion	  "1.381"
+	  LibraryVersion	  "1.383"
 	  SourceBlock		  "WBToolboxLibrary/Utilities/Minimum Jerk Trajectory Generator"
 	  SourceType		  "Minimum Jerk Trajectory Generator"
 	  externalSettlingTime	  on
@@ -3666,7 +3677,7 @@ Model {
 	  Position		  [865, 2415, 1005, 2455]
 	  ZOrder		  597
 	  ShowName		  off
-	  LibraryVersion	  "1.381"
+	  LibraryVersion	  "1.383"
 	  SourceBlock		  "WBToolboxLibrary/Utilities/Minimum Jerk Trajectory Generator"
 	  SourceType		  "Minimum Jerk Trajectory Generator"
 	  externalSettlingTime	  on
@@ -3784,7 +3795,7 @@ Model {
 	  Position		  [-970, 2404, -910, 2446]
 	  ZOrder		  599
 	  ForegroundColor	  "[0.490196, 0.000000, 0.000000]"
-	  LibraryVersion	  "1.381"
+	  LibraryVersion	  "1.383"
 	  SourceBlock		  "WBToolboxLibrary/Utilities/Yarp Read"
 	  SourceType		  "YARP Read"
 	  portName		  "PORTS.COM_DES"
@@ -3802,7 +3813,7 @@ Model {
 	  Position		  [-975, 2499, -905, 2546]
 	  ZOrder		  600
 	  ForegroundColor	  "[0.490196, 0.000000, 0.000000]"
-	  LibraryVersion	  "1.381"
+	  LibraryVersion	  "1.383"
 	  SourceBlock		  "WBToolboxLibrary/Utilities/Yarp Read"
 	  SourceType		  "YARP Read"
 	  portName		  "PORTS.Q_DES"
@@ -16949,7 +16960,7 @@ Model {
 	  ZOrder		  601
 	  ForegroundColor	  "[0.490196, 0.000000, 0.000000]"
 	  ShowName		  off
-	  LibraryVersion	  "1.381"
+	  LibraryVersion	  "1.383"
 	  SourceBlock		  "WBToolboxLibrary/Utilities/Yarp Read"
 	  SourceType		  "YARP Read"
 	  portName		  "['/' WBT_modelName '/constraints:i']"
@@ -20701,7 +20712,7 @@ Model {
       ZOrder		      549
       BackgroundColor	      "[0.827500, 0.576500, 0.603900]"
       ShowName		      off
-      LibraryVersion	      "1.381"
+      LibraryVersion	      "1.383"
       SourceBlock	      "WBToolboxLibrary/wholeBodyActuators/Set References"
       SourceType	      "Set References"
       ContentPreviewEnabled   off
@@ -20712,6 +20723,32 @@ Model {
       localName		      "WBT_modelName"
       wbiFile		      "WBT_wbiFilename"
       wbiList		      "WBT_wbiList"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace"
+      SID		      "3763"
+      Ports		      [1]
+      Position		      [1960, 385, 2020, 415]
+      ZOrder		      697
+      VariableName	      "yarp_time"
+      MaxDataPoints	      "inf"
+      SaveFormat	      "Structure With Time"
+      Save2DSignal	      "3-D array (concatenate along third dimension)"
+      FixptAsFi		      on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Yarp Clock"
+      SID		      "3764"
+      Ports		      [0, 1]
+      Position		      [1830, 376, 1900, 424]
+      ZOrder		      696
+      ForegroundColor	      "[0.490196, 0.000000, 0.000000]"
+      LibraryVersion	      "1.383"
+      SourceBlock	      "WBToolboxLibrary/Utilities/Yarp Clock"
+      SourceType	      "YARP Clock"
     }
     Block {
       BlockType		      SubSystem
@@ -25348,6 +25385,13 @@ Model {
       SrcPort		      3
       DstBlock		      "controller_QP"
       DstPort		      3
+    }
+    Line {
+      ZOrder		      56
+      SrcBlock		      "Yarp Clock"
+      SrcPort		      1
+      DstBlock		      "To Workspace"
+      DstPort		      1
     }
   }
 }

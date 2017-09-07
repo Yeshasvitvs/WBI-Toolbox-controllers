@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.53"
+    ComputedModelVersion    "1.61"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -99,9 +99,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "leo"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Sep 01 12:14:35 2017"
-  RTWModifiedTimeStamp	  426168864
-  ModelVersionFormat	  "1.%<AutoIncrement:53>"
+  LastModifiedDate	  "Thu Sep 07 11:38:27 2017"
+  RTWModifiedTimeStamp	  426685106
+  ModelVersionFormat	  "1.%<AutoIncrement:61>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1139,7 +1139,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "119"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "328"
+    SIDHighWatermark	    "330"
     Block {
       BlockType		      Constant
       Name		      "           "
@@ -2812,6 +2812,20 @@ Model {
       }
     }
     Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace"
+      SID		      "329"
+      Ports		      [1]
+      Position		      [1230, 15, 1290, 45]
+      ZOrder		      740
+      VariableName	      "yarp_time"
+      MaxDataPoints	      "inf"
+      SaveFormat	      "Structure With Time"
+      Save2DSignal	      "3-D array (concatenate along third dimension)"
+      FixptAsFi		      on
+      SampleTime	      "-1"
+    }
+    Block {
       BlockType		      SubSystem
       Name		      "Visualization"
       SID		      "81"
@@ -4031,6 +4045,18 @@ Model {
     }
     Block {
       BlockType		      Reference
+      Name		      "Yarp Clock"
+      SID		      "330"
+      Ports		      [0, 1]
+      Position		      [1100, 6, 1170, 54]
+      ZOrder		      739
+      ForegroundColor	      "[0.490196, 0.000000, 0.000000]"
+      LibraryVersion	      "1.383"
+      SourceBlock	      "WBToolboxLibrary/Utilities/Yarp Clock"
+      SourceType	      "YARP Clock"
+    }
+    Block {
+      BlockType		      Reference
       Name		      "holder\n2"
       SID		      "101"
       Ports		      [1, 1]
@@ -4045,7 +4071,7 @@ Model {
     }
     Block {
       BlockType		      SubSystem
-      Name		      "readIMU_and_MotorPositions"
+      Name		      "readIMU"
       SID		      "261"
       Ports		      [1]
       Position		      [265, 222, 405, 308]
@@ -4054,7 +4080,7 @@ Model {
       RequestExecContextInheritance off
       Variant		      off
       System {
-	Name			"readIMU_and_MotorPositions"
+	Name			"readIMU"
 	Location		[0, 28, 1920, 1047]
 	Open			off
 	ModelBrowserVisibility	off
@@ -4137,18 +4163,6 @@ Model {
 	  DisplayOption		  "bar"
 	}
 	Block {
-	  BlockType		  Demux
-	  Name			  "Demux1"
-	  SID			  "259"
-	  Ports			  [1, 2]
-	  Position		  [730, 426, 735, 464]
-	  ZOrder		  761
-	  ShowName		  off
-	  Commented		  "on"
-	  Outputs		  "[25;25]"
-	  DisplayOption		  "bar"
-	}
-	Block {
 	  BlockType		  Display
 	  Name			  "Display"
 	  SID			  "266"
@@ -4212,14 +4226,6 @@ Model {
 	}
 	Block {
 	  BlockType		  Terminator
-	  Name			  "Terminator"
-	  SID			  "260"
-	  Position		  [860, 465, 880, 485]
-	  ZOrder		  762
-	  Commented		  "on"
-	}
-	Block {
-	  BlockType		  Terminator
 	  Name			  "Terminator1"
 	  SID			  "270"
 	  Position		  [360, 590, 380, 610]
@@ -4238,41 +4244,6 @@ Model {
 	  SourceType		  "YARP Read"
 	  portName		  "'/bigman/imu_link/inertial'"
 	  signalSize		  "12"
-	  blocking		  off
-	  timestamp		  off
-	  autoconnect		  on
-	  errorOnConnection	  on
-	}
-	Block {
-	  BlockType		  ToWorkspace
-	  Name			  "saveMotorPositions"
-	  SID			  "258"
-	  Ports			  [1]
-	  Position		  [840, 420, 900, 450]
-	  ZOrder		  760
-	  NamePlacement		  "alternate"
-	  Commented		  "on"
-	  VariableName		  "motorPos"
-	  MaxDataPoints		  "inf"
-	  SaveFormat		  "Structure With Time"
-	  Save2DSignal		  "3-D array (concatenate along third dimension)"
-	  FixptAsFi		  on
-	  SampleTime		  "-1"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "stateExt"
-	  SID			  "257"
-	  Ports			  [0, 1]
-	  Position		  [610, 438, 660, 452]
-	  ZOrder		  759
-	  ForegroundColor	  "[0.490196, 0.000000, 0.000000]"
-	  Commented		  "on"
-	  LibraryVersion	  "1.383"
-	  SourceBlock		  "WBToolboxLibrary/Utilities/Yarp Read"
-	  SourceType		  "YARP Read"
-	  portName		  "'/bigman/imu_link/inertial'"
-	  signalSize		  "56"
 	  blocking		  off
 	  timestamp		  off
 	  autoconnect		  on
@@ -4983,28 +4954,6 @@ Model {
 	  DstBlock		  "Angular velocity"
 	  DstPort		  1
 	}
-	Line {
-	  ZOrder		  312
-	  SrcBlock		  "Demux1"
-	  SrcPort		  1
-	  DstBlock		  "saveMotorPositions"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  313
-	  SrcBlock		  "Demux1"
-	  SrcPort		  2
-	  Points		  [58, 0; 0, 20]
-	  DstBlock		  "Terminator"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  314
-	  SrcBlock		  "stateExt"
-	  SrcPort		  1
-	  DstBlock		  "Demux1"
-	  DstPort		  1
-	}
       }
     }
     Block {
@@ -5251,7 +5200,7 @@ Model {
 	  Points		  [0, -130]
 	  Branch {
 	    ZOrder		    300
-	    DstBlock		    "readIMU_and_MotorPositions"
+	    DstBlock		    "readIMU"
 	    DstPort		    1
 	  }
 	  Branch {
@@ -5371,6 +5320,10 @@ Model {
       DstPort		      4
     }
     Line {
+      FontName		      "Helvetica"
+      FontSize		      9
+      FontWeight	      "normal"
+      FontAngle		      "normal"
       ZOrder		      212
       SrcBlock		      "                   "
       SrcPort		      1
@@ -5385,6 +5338,10 @@ Model {
       DstPort		      1
     }
     Line {
+      FontName		      "Helvetica"
+      FontSize		      9
+      FontWeight	      "normal"
+      FontAngle		      "normal"
       ZOrder		      214
       SrcBlock		      "Demux2"
       SrcPort		      2
@@ -5442,6 +5399,13 @@ Model {
       SrcPort		      1
       DstBlock		      "Generate torques from the model"
       DstPort		      3
+    }
+    Line {
+      ZOrder		      330
+      SrcBlock		      "Yarp Clock"
+      SrcPort		      1
+      DstBlock		      "To Workspace"
+      DstPort		      1
     }
     Annotation {
       SID		      "70"
@@ -5851,14 +5815,12 @@ Stateflow {
   chart {
     id			    21
     machine		    1
-    name		    "readIMU_and_MotorPositions/w_H_root_link4/fromImuToHomogeousTransformFCN"
+    name		    "readIMU/w_H_root_link4/fromImuToHomogeousTransformFCN"
     windowPosition	    [326.89 491.339 161 328]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 1280 1024 1.000677131425054]
     treeNode		    [0 22 0 0]
     viewObj		    21
-    subviewS {
-    }
     ssIdHighWaterMark	    88
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -6127,7 +6089,7 @@ Stateflow {
   instance {
     id			    33
     machine		    1
-    name		    "readIMU_and_MotorPositions/w_H_root_link4/fromImuToHomogeousTransformFCN"
+    name		    "readIMU/w_H_root_link4/fromImuToHomogeousTransformFCN"
     chart		    21
   }
   chart {
