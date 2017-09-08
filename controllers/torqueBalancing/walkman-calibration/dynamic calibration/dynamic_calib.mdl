@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.61"
+    ComputedModelVersion    "1.65"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -40,7 +40,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [0.0, 28.0, 1920.0, 1019.0]
+      Location		      [133.0, 495.0, 1855.0, 1056.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -64,9 +64,9 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1886.0, 846.0]
-	ZoomFactor		[1.1906841339155749]
-	Offset			[-126.98166259168704, -56.757946210268983]
+	Extents			[1801.0, 863.0]
+	ZoomFactor		[1.2626760563380282]
+	Offset			[-56.087562744004458, -62.241773563859454]
       }
       Object {
 	$PropName		"DockComponentsInfo"
@@ -86,22 +86,22 @@ Model {
       "AAAAAAA+wAAABYARABvAGMAawBXAGkAZABnAGUAdAA0AAAAAAD/////AAAAAAAAAAD7AAAAUgBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0Ac"
       "ABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAAP////8AAABeAP///wAAAAEAAAAAAAAAAPwCA"
       "AAAAfsAAABUAEcATABVAEUAMgA6AFAAcgBvAHAAZQByAHQAeQBJAG4AcwBwAGUAYwB0AG8AcgAvAFAAcgBvAHAAZQByAHQAeQAgAEkAbgBzAHAAZ"
-      "QBjAHQAbwByAAAAAAD/////AAAAKAD///8AAAeAAAADiAAAAAEAAAACAAAAAQAAAAL8AAAAAQAAAAIAAAAP/////wAAAAAA/////wAAAAAAAAAA/"
+      "QBjAHQAbwByAAAAAAD/////AAAAKAD///8AAAcrAAADmQAAAAEAAAACAAAAAQAAAAL8AAAAAQAAAAIAAAAP/////wAAAAAA/////wAAAAAAAAAA/"
       "////wEAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/"
       "////wEAAACA/////wAAAAAAAAAA/////wEAAADo/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAFo/////wAAAAAAAAAA/"
       "////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAANR/////wAAAAAAAAAA/"
-      "////wEAAAOD/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA"
+      "////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA"
     }
   }
   Created		  "Sun May 14 21:05:02 2017"
   Creator		  "gabri"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "leo"
+  LastModifiedBy	  "gnava"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Sep 07 11:38:27 2017"
-  RTWModifiedTimeStamp	  426685106
-  ModelVersionFormat	  "1.%<AutoIncrement:61>"
+  LastModifiedDate	  "Fri Sep 08 18:05:58 2017"
+  RTWModifiedTimeStamp	  426794753
+  ModelVersionFormat	  "1.%<AutoIncrement:65>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1125,7 +1125,7 @@ Model {
   }
   System {
     Name		    "dynamic_calib"
-    Location		    [0, 28, 1920, 1047]
+    Location		    [133, 495, 1988, 1551]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1137,7 +1137,7 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "119"
+    ZoomFactor		    "126"
     ReportName		    "simulink-default.rpt"
     SIDHighWatermark	    "330"
     Block {
@@ -1185,7 +1185,7 @@ Model {
       Variant		      off
       System {
 	Name			"Compute w_H_b"
-	Location		[0, 28, 1920, 1047]
+	Location		[55, 28, 1930, 1047]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1197,7 +1197,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"400"
+	ZoomFactor		"452"
 	Block {
 	  BlockType		  Inport
 	  Name			  "qj"
@@ -1232,7 +1232,7 @@ Model {
 	  LibraryVersion	  "1.383"
 	  SourceBlock		  "WBToolboxLibrary/Utilities/Yarp Read"
 	  SourceType		  "YARP Read"
-	  portName		  "'/bigman/imu_link/inertial'"
+	  portName		  "PORTS.IMU_CALIB"
 	  signalSize		  "12"
 	  blocking		  off
 	  timestamp		  off
@@ -1997,7 +1997,7 @@ Model {
       Variant		      off
       System {
 	Name			"Generate torques from the model"
-	Location		[0, 28, 1920, 1047]
+	Location		[55, 28, 1930, 1047]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -2009,7 +2009,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"188"
+	ZoomFactor		"183"
 	Block {
 	  BlockType		  Inport
 	  Name			  "w_H_b"
@@ -2585,6 +2585,7 @@ Model {
       ForegroundColor	      "[0.916667, 0.916667, 0.916667]"
       BackgroundColor	      "gray"
       ShowName		      off
+      Commented		      "on"
       LibraryVersion	      "1.383"
       SourceBlock	      "WBToolboxLibrary/Utilities/Real Time Synchronizer"
       SourceType	      "Real Time Synchronizer"
@@ -2628,7 +2629,6 @@ Model {
       ZOrder		      25
       ForegroundColor	      "[0.490196, 0.000000, 0.000000]"
       ShowName		      off
-      Commented		      "on"
       LibraryVersion	      "1.383"
       SourceBlock	      "WBToolboxLibrary/Utilities/Simulator Synchronizer"
       SourceType	      "Simulator Synchronizer"
@@ -2693,7 +2693,7 @@ Model {
 	TiledPageScale		1
 	ShowPageBoundaries	off
 	ZoomFactor		"100"
-	SIDHighWatermark	"23"
+	SIDHighWatermark	"24"
 	Block {
 	  BlockType		  Inport
 	  Name			  "t"
@@ -2735,9 +2735,10 @@ Model {
 	  SID			  "89::19"
 	  Tag			  "Stateflow S-Function dynamic_calib 2"
 	  Ports			  [3, 2]
-	  Position		  [180, 100, 230, 180]
+	  Position		  [180, 105, 230, 185]
 	  ZOrder		  10
 	  FunctionName		  "sf_sfun"
+	  Parameters		  "CONFIG"
 	  PortCounts		  "[3 2]"
 	  SFunctionDeploymentMode off
 	  EnableBusSupport	  on
@@ -2765,22 +2766,21 @@ Model {
 	  IconDisplay		  "Port number"
 	}
 	Line {
-	  ZOrder		  14
+	  ZOrder		  27
 	  SrcBlock		  "t"
 	  SrcPort		  1
-	  Points		  [120, 0]
 	  DstBlock		  " SFunction "
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  15
+	  ZOrder		  28
 	  SrcBlock		  "tswitch"
 	  SrcPort		  1
 	  DstBlock		  " SFunction "
 	  DstPort		  2
 	}
 	Line {
-	  ZOrder		  16
+	  ZOrder		  29
 	  SrcBlock		  "qj0"
 	  SrcPort		  1
 	  DstBlock		  " SFunction "
@@ -2788,7 +2788,7 @@ Model {
 	}
 	Line {
 	  Name			  "qj"
-	  ZOrder		  17
+	  ZOrder		  30
 	  Labels		  [0, 0]
 	  SrcBlock		  " SFunction "
 	  SrcPort		  2
@@ -2796,14 +2796,14 @@ Model {
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  18
+	  ZOrder		  31
 	  SrcBlock		  " Demux "
 	  SrcPort		  1
 	  DstBlock		  " Terminator "
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  19
+	  ZOrder		  32
 	  SrcBlock		  " SFunction "
 	  SrcPort		  1
 	  DstBlock		  " Demux "
@@ -2836,7 +2836,7 @@ Model {
       Variant		      off
       System {
 	Name			"Visualization"
-	Location		[0, 28, 1920, 1047]
+	Location		[55, 28, 1930, 1047]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -2848,7 +2848,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"138"
+	ZoomFactor		"133"
 	Block {
 	  BlockType		  Inport
 	  Name			  "joint desired"
@@ -4081,7 +4081,7 @@ Model {
       Variant		      off
       System {
 	Name			"readIMU"
-	Location		[0, 28, 1920, 1047]
+	Location		[55, 28, 1930, 1047]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -4093,7 +4093,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"168"
+	ZoomFactor		"164"
 	Block {
 	  BlockType		  Inport
 	  Name			  "qj"
@@ -4242,7 +4242,7 @@ Model {
 	  LibraryVersion	  "1.383"
 	  SourceBlock		  "WBToolboxLibrary/Utilities/Yarp Read"
 	  SourceType		  "YARP Read"
-	  portName		  "'/bigman/imu_link/inertial'"
+	  portName		  "PORTS.IMU_CALIB"
 	  signalSize		  "12"
 	  blocking		  off
 	  timestamp		  off
@@ -4968,7 +4968,7 @@ Model {
       Variant		      off
       System {
 	Name			"readJointVelocities"
-	Location		[0, 28, 1920, 1047]
+	Location		[55, 28, 1930, 1047]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -4980,7 +4980,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"366"
+	ZoomFactor		"353"
 	Block {
 	  BlockType		  Inport
 	  Name			  "measured joint velocity "
@@ -5320,10 +5320,6 @@ Model {
       DstPort		      4
     }
     Line {
-      FontName		      "Helvetica"
-      FontSize		      9
-      FontWeight	      "normal"
-      FontAngle		      "normal"
       ZOrder		      212
       SrcBlock		      "                   "
       SrcPort		      1
@@ -5338,10 +5334,6 @@ Model {
       DstPort		      1
     }
     Line {
-      FontName		      "Helvetica"
-      FontSize		      9
-      FontWeight	      "normal"
-      FontAngle		      "normal"
       ZOrder		      214
       SrcBlock		      "Demux2"
       SrcPort		      2
@@ -5411,11 +5403,11 @@ Model {
       SID		      "70"
       Name		      "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
       "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }"
-      "\n</style></head><body style=\" font-family:'Liberation Sans'; font-size:10px; font-weight:400; font-style:norma"
-      "l;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; tex"
-      "t-indent:0px; line-height:100%;\"><span style=\" font-size:18px;\">RUN THE FILES initTorqueBalancing.m  BEFORE R"
-      "UNNING THIS SIMULINK MODEL</span></p></body></html>"
-      Position		      [357, -45, 1053, -22]
+      "\n</style></head><body style=\" font-family:'Arial'; font-size:10px; font-weight:400; font-style:normal;\">\n<p "
+      "style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0"
+      "px; line-height:100%;\"><span style=\" font-family:'Liberation Sans'; font-size:18px;\">RUN THE FILE initTorqueB"
+      "alancing.m  BEFORE RUNNING THIS SIMULINK MODEL</span></p></body></html>"
+      Position		      [357, -45, 1041, -22]
       InternalMargins	      [0, 0, 0, 0]
       FixedHeight	      off
       FixedWidth	      off
@@ -5438,7 +5430,7 @@ Stateflow {
     created		    "14-May-2017 21:07:58"
     isLibrary		    0
     sfVersion		    80000010
-    firstTarget		    47
+    firstTarget		    48
   }
   chart {
     id			    2
@@ -5648,7 +5640,10 @@ Stateflow {
     screen		    [1 1 3600 1200 1.180555555555556]
     treeNode		    [0 13 0 0]
     viewObj		    12
-    ssIdHighWaterMark	    7
+    visible		    1
+    subviewS {
+    }
+    ssIdHighWaterMark	    8
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
     chartFileNumber	    2
@@ -5657,8 +5652,8 @@ Stateflow {
       name		      "changeConfigFCN"
     }
     firstData		    14
-    firstTransition	    19
-    firstJunction	    18
+    firstTransition	    20
+    firstJunction	    19
   }
   state {
     id			    13
@@ -5674,7 +5669,8 @@ Stateflow {
     decomposition	    CLUSTER_STATE
     eml {
       isEML		      1
-      script		      "function qj = changeConfigFCN(t,tswitch,qj0)\n\nqj = changeConfig(t,tswitch,qj0);\n\nend\n"
+      script		      "function qj = changeConfigFCN(t,tswitch,qj0,CONFIG)\n\nqj = changeConfig(t,tswitch,qj0,CONFIG);\n"
+      "\nend\n"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
@@ -5771,10 +5767,35 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [12 16 0]
+    linkNode		    [12 16 18]
+  }
+  data {
+    id			    18
+    ssIdNumber		    8
+    name		    "CONFIG"
+    scope		    PARAMETER_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Inherit: Same as Simulink"
+    linkNode		    [12 17 0]
   }
   junction {
-    id			    18
+    id			    19
     position		    [23.5747 49.5747 7]
     chart		    12
     subviewer		    12
@@ -5783,7 +5804,7 @@ Stateflow {
     linkNode		    [12 0 0]
   }
   transition {
-    id			    19
+    id			    20
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [28.125 13.875 102.544 14.964]
     fontSize		    12
@@ -5791,7 +5812,7 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      18
+      id		      19
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
@@ -5807,20 +5828,20 @@ Stateflow {
     linkNode		    [12 0 0]
   }
   instance {
-    id			    20
+    id			    21
     machine		    1
     name		    "Switch Configuration"
     chart		    12
   }
   chart {
-    id			    21
+    id			    22
     machine		    1
     name		    "readIMU/w_H_root_link4/fromImuToHomogeousTransformFCN"
     windowPosition	    [326.89 491.339 161 328]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 1280 1024 1.000677131425054]
-    treeNode		    [0 22 0 0]
-    viewObj		    21
+    treeNode		    [0 23 0 0]
+    viewObj		    22
     ssIdHighWaterMark	    88
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -5829,19 +5850,19 @@ Stateflow {
     eml {
       name		      "fromBaseToWorldWithImuFCN"
     }
-    firstData		    23
-    firstTransition	    32
-    firstJunction	    31
+    firstData		    24
+    firstTransition	    33
+    firstJunction	    32
   }
   state {
-    id			    22
+    id			    23
     labelString		    "eML_blk_kernel()"
     position		    [18 64.5 118 66]
     fontSize		    12
-    chart		    21
-    treeNode		    [21 0 0 0]
+    chart		    22
+    treeNode		    [22 0 0 0]
     superState		    SUBCHART
-    subviewer		    21
+    subviewer		    22
     ssIdNumber		    1
     type		    FUNC_STATE
     decomposition	    CLUSTER_STATE
@@ -5854,7 +5875,7 @@ Stateflow {
     }
   }
   data {
-    id			    23
+    id			    24
     ssIdNumber		    82
     name		    "imu_H_link"
     scope		    INPUT_DATA
@@ -5876,10 +5897,10 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [21 0 24]
+    linkNode		    [22 0 25]
   }
   data {
-    id			    24
+    id			    25
     ssIdNumber		    83
     name		    "imu_H_link_0"
     scope		    INPUT_DATA
@@ -5901,10 +5922,10 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [21 23 25]
+    linkNode		    [22 24 26]
   }
   data {
-    id			    25
+    id			    26
     ssIdNumber		    81
     name		    "link_H_root"
     scope		    INPUT_DATA
@@ -5926,10 +5947,10 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [21 24 26]
+    linkNode		    [22 25 27]
   }
   data {
-    id			    26
+    id			    27
     ssIdNumber		    85
     name		    "inertial_0"
     scope		    INPUT_DATA
@@ -5951,10 +5972,10 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [21 25 27]
+    linkNode		    [22 26 28]
   }
   data {
-    id			    27
+    id			    28
     ssIdNumber		    65
     name		    "inertial"
     scope		    INPUT_DATA
@@ -5976,10 +5997,10 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [21 26 28]
+    linkNode		    [22 27 29]
   }
   data {
-    id			    28
+    id			    29
     ssIdNumber		    88
     name		    "neck"
     scope		    INPUT_DATA
@@ -6001,10 +6022,10 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [21 27 29]
+    linkNode		    [22 28 30]
   }
   data {
-    id			    29
+    id			    30
     ssIdNumber		    71
     name		    "w_H_root"
     scope		    OUTPUT_DATA
@@ -6026,10 +6047,10 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [21 28 30]
+    linkNode		    [22 29 31]
   }
   data {
-    id			    30
+    id			    31
     ssIdNumber		    87
     name		    "CONFIG"
     scope		    PARAMETER_DATA
@@ -6051,19 +6072,19 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [21 29 0]
+    linkNode		    [22 30 0]
   }
   junction {
-    id			    31
+    id			    32
     position		    [23.5747 49.5747 7]
-    chart		    21
-    subviewer		    21
+    chart		    22
+    subviewer		    22
     ssIdNumber		    3
     type		    CONNECTIVE_JUNCTION
-    linkNode		    [21 0 0]
+    linkNode		    [22 0 0]
   }
   transition {
-    id			    32
+    id			    33
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [28.125 13.875 102.544 14.964]
     fontSize		    12
@@ -6071,36 +6092,36 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      31
+      id		      32
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
-    chart		    21
+    chart		    22
     dataLimits		    [21.175 25.975 14.625 42.575]
-    subviewer		    21
+    subviewer		    22
     drawStyle		    SMART
     slide {
       sticky		      BOTH_STICK
     }
     executionOrder	    1
     ssIdNumber		    2
-    linkNode		    [21 0 0]
+    linkNode		    [22 0 0]
   }
   instance {
-    id			    33
+    id			    34
     machine		    1
     name		    "readIMU/w_H_root_link4/fromImuToHomogeousTransformFCN"
-    chart		    21
+    chart		    22
   }
   chart {
-    id			    34
+    id			    35
     machine		    1
     name		    "Compute w_H_b/w_H_root_link4/fromImuToHomogeousTransformFCN"
     windowPosition	    [326.89 491.339 161 328]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 1280 1024 1.000677131425054]
-    treeNode		    [0 35 0 0]
-    viewObj		    34
+    treeNode		    [0 36 0 0]
+    viewObj		    35
     ssIdHighWaterMark	    88
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -6109,19 +6130,19 @@ Stateflow {
     eml {
       name		      "fromBaseToWorldWithImuFCN"
     }
-    firstData		    36
-    firstTransition	    45
-    firstJunction	    44
+    firstData		    37
+    firstTransition	    46
+    firstJunction	    45
   }
   state {
-    id			    35
+    id			    36
     labelString		    "eML_blk_kernel()"
     position		    [18 64.5 118 66]
     fontSize		    12
-    chart		    34
-    treeNode		    [34 0 0 0]
+    chart		    35
+    treeNode		    [35 0 0 0]
     superState		    SUBCHART
-    subviewer		    34
+    subviewer		    35
     ssIdNumber		    1
     type		    FUNC_STATE
     decomposition	    CLUSTER_STATE
@@ -6134,7 +6155,7 @@ Stateflow {
     }
   }
   data {
-    id			    36
+    id			    37
     ssIdNumber		    82
     name		    "imu_H_link"
     scope		    INPUT_DATA
@@ -6156,10 +6177,10 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [34 0 37]
+    linkNode		    [35 0 38]
   }
   data {
-    id			    37
+    id			    38
     ssIdNumber		    83
     name		    "imu_H_link_0"
     scope		    INPUT_DATA
@@ -6181,10 +6202,10 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [34 36 38]
+    linkNode		    [35 37 39]
   }
   data {
-    id			    38
+    id			    39
     ssIdNumber		    81
     name		    "link_H_root"
     scope		    INPUT_DATA
@@ -6206,10 +6227,10 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [34 37 39]
+    linkNode		    [35 38 40]
   }
   data {
-    id			    39
+    id			    40
     ssIdNumber		    85
     name		    "inertial_0"
     scope		    INPUT_DATA
@@ -6231,10 +6252,10 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [34 38 40]
+    linkNode		    [35 39 41]
   }
   data {
-    id			    40
+    id			    41
     ssIdNumber		    65
     name		    "inertial"
     scope		    INPUT_DATA
@@ -6256,10 +6277,10 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [34 39 41]
+    linkNode		    [35 40 42]
   }
   data {
-    id			    41
+    id			    42
     ssIdNumber		    88
     name		    "neck"
     scope		    INPUT_DATA
@@ -6281,10 +6302,10 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [34 40 42]
+    linkNode		    [35 41 43]
   }
   data {
-    id			    42
+    id			    43
     ssIdNumber		    71
     name		    "w_H_root"
     scope		    OUTPUT_DATA
@@ -6306,10 +6327,10 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [34 41 43]
+    linkNode		    [35 42 44]
   }
   data {
-    id			    43
+    id			    44
     ssIdNumber		    87
     name		    "CONFIG"
     scope		    PARAMETER_DATA
@@ -6331,19 +6352,19 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [34 42 0]
+    linkNode		    [35 43 0]
   }
   junction {
-    id			    44
+    id			    45
     position		    [23.5747 49.5747 7]
-    chart		    34
-    subviewer		    34
+    chart		    35
+    subviewer		    35
     ssIdNumber		    3
     type		    CONNECTIVE_JUNCTION
-    linkNode		    [34 0 0]
+    linkNode		    [35 0 0]
   }
   transition {
-    id			    45
+    id			    46
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [28.125 13.875 102.544 14.964]
     fontSize		    12
@@ -6351,29 +6372,29 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      44
+      id		      45
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
-    chart		    34
+    chart		    35
     dataLimits		    [21.175 25.975 14.625 42.575]
-    subviewer		    34
+    subviewer		    35
     drawStyle		    SMART
     slide {
       sticky		      BOTH_STICK
     }
     executionOrder	    1
     ssIdNumber		    2
-    linkNode		    [34 0 0]
+    linkNode		    [35 0 0]
   }
   instance {
-    id			    46
+    id			    47
     machine		    1
     name		    "Compute w_H_b/w_H_root_link4/fromImuToHomogeousTransformFCN"
-    chart		    34
+    chart		    35
   }
   target {
-    id			    47
+    id			    48
     machine		    1
     name		    "sfun"
     description		    "Default Simulink S-Function Target."

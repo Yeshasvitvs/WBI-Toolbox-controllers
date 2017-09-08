@@ -33,18 +33,33 @@ clear; clc;
 setenv('YARP_ROBOT_NAME','bigman');
 % setenv('YARP_ROBOT_NAME','bigman_only_legs');
 
+CONFIG.ON_WALKMAN_PILOT_PC = false;
+CONFIG.ON_REAL_WALKMAN     = false;
+
+% dynamic calibration parameters
+USE_h_ONLY         = true;
+USE_JOINT_VELOCITY = 1;
+tSwitch            = [10 20 30 40 50 60 70 80 90 100];
+tEnd               = tSwitch(end) + 10;
+
+% Simulation time in seconds
+CONFIG.SIMULATION_TIME = inf;
+
+% Available movesets: 'air_1', 'air_2', 'yoga'
+CONFIG.moveset = 'air_1';
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% %%%%% SET ENVIRONEMENTAL VARIABLES (only for walkman-pilot-pc) %%%%%% %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-setenv('CODYCO_SUPERBUILD_ROOT','/home/lucamuratore/src/codyco-superbuild');
+if CONFIG.ON_WALKMAN_PILOT_PC
 
-current_path = getenv('PATH');
-setenv('PATH',fullfile(current_path, ':/home/lucamuratore/src/codyco-superbuild/build/install/bin'));
-
-current_ld_library_path = getenv('LD_LIBRARY_PATH');
-setenv('LD_LIBRARY_PATH',fullfile(current_ld_library_path, ':home/lucamuratore/src/codyco-superbuild/build/install/lib'));
-
-setenv('YARP_DATA_DIRS','/home/lucamuratore/src/codyco-superbuild/build/install/share/yarp:/home/lucamuratore/src/codyco-superbuild/build/install/share/iCub:/home/lucamuratore/src/codyco-superbuild/build/install/share/codyco');
+    setenv('CODYCO_SUPERBUILD_ROOT','/home/lucamuratore/src/codyco-superbuild');
+    current_path = getenv('PATH');
+    setenv('PATH',fullfile(current_path, ':/home/lucamuratore/src/codyco-superbuild/build/install/bin'));
+    current_ld_library_path = getenv('LD_LIBRARY_PATH');
+    setenv('LD_LIBRARY_PATH',fullfile(current_ld_library_path, ':home/lucamuratore/src/codyco-superbuild/build/install/lib'));
+    setenv('YARP_DATA_DIRS','/home/lucamuratore/src/codyco-superbuild/build/install/share/yarp:/home/lucamuratore/src/codyco-superbuild/build/install/share/iCub:/home/lucamuratore/src/codyco-superbuild/build/install/share/codyco');
+end
 
 % calibration delta for legs joints
 newOffsets = [0.12753
@@ -62,21 +77,17 @@ newOffsets = [0.12753
 
 % calibration delta (real - desired) 
 calibDelta = newOffsets*pi/180;
+PORTS.IMU_CALIB = '/bigman/imu_link/inertial';
 
-% dynamic calibration parameters
-USE_h_ONLY         = true;
-USE_JOINT_VELOCITY = 1;
-tSwitch            = [10 20 30 40 50 60 70 80 90 100];
-tEnd               = tSwitch(end) + 10;
+if CONFIG.ON_REAL_WALKMAN == 0
 
-% ONLY FOR SIMULATION
-% calibDelta = 0.*calibDelta;
+    % ONLY FOR SIMULATION
+    calibDelta = 0.*calibDelta;
+     PORTS.IMU_CALIB = '/bigman/inertial';
+end
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% Simulation time in seconds
-CONFIG.SIMULATION_TIME     = inf;   
 
 %% PRELIMINARY CONFIGURATIONS 
 % SM.SM_TYPE: defines the kind of state machines that can be chosen.
@@ -142,7 +153,6 @@ CONFIG.PITCH_IMU_FILTER    = false;
 % IMU and the contact foot is corrected by using the neck angles. If it set
 % equal to false, recall that the neck is assumed to be in (0,0,0)
 CONFIG.CORRECT_NECK_IMU    = true;
-
 
 % CONFIG.ONSOFTCARPET: the third year CoDyCo review meeting consisted also
 % of a validation scenarion in which the robot had to balance on a soft

@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.50"
+    ComputedModelVersion    "1.52"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -40,7 +40,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [0.0, 28.0, 1920.0, 1019.0]
+      Location		      [65.0, 28.0, 1875.0, 1019.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -64,9 +64,9 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1886.0, 846.0]
-	ZoomFactor		[1.6626016260162602]
-	Offset			[247.81662591687041, 162.57946210268949]
+	Extents			[1821.0, 826.0]
+	ZoomFactor		[1.6219512195121952]
+	Offset			[246.13909774436092, 162.36842105263159]
       }
       Object {
 	$PropName		"DockComponentsInfo"
@@ -86,22 +86,22 @@ Model {
       "AAAAAAA+wAAABYARABvAGMAawBXAGkAZABnAGUAdAA0AAAAAAD/////AAAAAAAAAAD7AAAAUgBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0Ac"
       "ABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAAP////8AAABeAP///wAAAAEAAAAAAAAAAPwCA"
       "AAAAfsAAABUAEcATABVAEUAMgA6AFAAcgBvAHAAZQByAHQAeQBJAG4AcwBwAGUAYwB0AG8AcgAvAFAAcgBvAHAAZQByAHQAeQAgAEkAbgBzAHAAZ"
-      "QBjAHQAbwByAAAAAAD/////AAAAKAD///8AAAeAAAADiAAAAAEAAAACAAAAAQAAAAL8AAAAAQAAAAIAAAAP/////wAAAAAA/////wAAAAAAAAAA/"
+      "QBjAHQAbwByAAAAAAD/////AAAAKAD///8AAAc/AAADdAAAAAEAAAACAAAAAQAAAAL8AAAAAQAAAAIAAAAP/////wAAAAAA/////wAAAAAAAAAA/"
       "////wEAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/"
       "////wEAAACA/////wAAAAAAAAAA/////wEAAADo/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAFo/////wAAAAAAAAAA/"
       "////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAANR/////wAAAAAAAAAA/"
-      "////wEAAAOD/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA"
+      "////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA"
     }
   }
   Created		  "Sun May 14 21:05:02 2017"
   Creator		  "gabri"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "leo"
+  LastModifiedBy	  "gnava"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Aug 30 17:01:28 2017"
-  RTWModifiedTimeStamp	  426013018
-  ModelVersionFormat	  "1.%<AutoIncrement:50>"
+  LastModifiedDate	  "Fri Sep 08 18:03:05 2017"
+  RTWModifiedTimeStamp	  426794584
+  ModelVersionFormat	  "1.%<AutoIncrement:52>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1079,7 +1079,7 @@ Model {
   }
   System {
     Name		    "readIMU"
-    Location		    [0, 28, 1920, 1047]
+    Location		    [65, 28, 1940, 1047]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1091,7 +1091,7 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "166"
+    ZoomFactor		    "162"
     ReportName		    "simulink-default.rpt"
     SIDHighWatermark	    "244"
     Block {
@@ -1242,7 +1242,7 @@ Model {
       Name		      "Real Time Synchronizer"
       SID		      "2"
       Ports		      []
-      Position		      [1210, 419, 1335, 456]
+      Position		      [920, 379, 1045, 416]
       ZOrder		      26
       ForegroundColor	      "[0.916667, 0.916667, 0.916667]"
       BackgroundColor	      "gray"
@@ -1257,7 +1257,7 @@ Model {
       Name		      "Simulator Synchronizer"
       SID		      "1"
       Ports		      []
-      Position		      [1210, 474, 1340, 511]
+      Position		      [920, 449, 1050, 486]
       ZOrder		      25
       ForegroundColor	      "[0.490196, 0.000000, 0.000000]"
       ShowName		      off
@@ -1287,7 +1287,7 @@ Model {
       LibraryVersion	      "1.383"
       SourceBlock	      "WBToolboxLibrary/Utilities/Yarp Read"
       SourceType	      "YARP Read"
-      portName		      "'/bigman/imu_link/inertial'"
+      portName		      "PORTS.IMU_CALIB"
       signalSize	      "12"
       blocking		      off
       timestamp		      off
@@ -2024,9 +2024,6 @@ Stateflow {
     screen		    [1 1 1280 1024 1.000677131425054]
     treeNode		    [0 3 0 0]
     viewObj		    2
-    visible		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    88
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
