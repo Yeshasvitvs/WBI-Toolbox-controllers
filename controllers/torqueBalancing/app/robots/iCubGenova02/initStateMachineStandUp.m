@@ -70,7 +70,7 @@ sm.armsDown                    = false;
 sm.jointsAndCoMSmoothingTimes = [1;    % state ==  1  BALANCING ON THE LEGS
                                  0.5;  % state ==  2  MOVE COM FORWARD
                                  0;    % state ==  3  TWO FEET BALANCING
-                                 1;    % state ==  4  LIFTING UP  
+                                 2;    % state ==  4  LIFTING UP  
                                  1     % state ==  5  MOVE ARMS FORWARD
                                  6     % state ==  6  LOOKING FOR CONTACT
                                  4     % state ==  7  SITTING DOWN
