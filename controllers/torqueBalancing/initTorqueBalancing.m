@@ -45,8 +45,8 @@ tEnd               = tSwitch(end) + 10;
 % Simulation time in seconds
 CONFIG.SIMULATION_TIME = inf;
 
-% Available movesets: 'air_1', 'air_2', 'yoga'
-CONFIG.moveset = 'air_1';
+% Available movesets: 1 = air_1; 2 = air_2, 3 = yoga
+CONFIG.moveset = 3;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% %%%%% SET ENVIRONEMENTAL VARIABLES (only for walkman-pilot-pc) %%%%%% %%
@@ -84,6 +84,12 @@ if CONFIG.ON_REAL_WALKMAN == 0
     % ONLY FOR SIMULATION
     calibDelta = 0.*calibDelta;
      PORTS.IMU_CALIB = '/bigman/inertial';
+end
+
+if CONFIG.moveset == 3
+   
+    tSwitch  = [10, 20];
+    tEnd     = tSwitch(end) + 10;    
 end
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

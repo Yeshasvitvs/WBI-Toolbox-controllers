@@ -5,8 +5,10 @@
 %
 function jointPos = loadJointConfiguration(qj0,CONFIG)
 
+jointPos = qj0;
+
 % select a moveset
-if strcmp(CONFIG.moveset,'air_1')
+if CONFIG.moveset == 1
     
                         % torso       % left arm            % right arm           % left leg                % right leg        
     customValues   = [ 0  0   0      0  20  0  0  0      0  -20   0   0  0     0  20   0 0   0    0       0  -20   0  0   0   0;   % q1
@@ -22,7 +24,7 @@ if strcmp(CONFIG.moveset,'air_1')
     % add the initial joint configuration and convert to radians
     jointPos = [qj0 transpose(customValues)*pi/180 qj0];
     
-elseif strcmp(CONFIG.moveset,'air_2')
+elseif CONFIG.moveset == 2
     
                         % torso       % left arm            % right arm           % left leg                % right leg                      
     customValues   = [ 0  0   0     0  45   0   0   0     0 -45   0   0   0     0  45   0   0   0   0     0 -45   0   0   0   0;   % q1
@@ -38,19 +40,28 @@ elseif strcmp(CONFIG.moveset,'air_2')
      % add the initial joint configuration and convert to radians             
      jointPos = [qj0 transpose(customValues)*pi/180 qj0];                 
     
-elseif strcmp(CONFIG.moveset,'yoga')
+elseif CONFIG.moveset == 3
     
+                     % torso      % left arm         % right arm          % left leg              % right leg      
+    customValues = [0, 0,  0,    0, 50, 0, 0, 0,    0, 0, 0, 0, 0,      0, -55, 0, 0, 0, -10,    0, -15, 0, 0, 0, -10;  %% State 2 CoM transition to left
+                    0, 0,  0,    0, 50, 0, 0, 0,    0, 0, 0, 0, 0,      0, -55, 0, 0, 0, -10,    0, -15, 0, 0, 0, -10;
+                    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;
+                   -2,-4,-2,-9,49,-14,-50,0,-9,-49,14,-50,0,0,-11,0,0,1,9,0,-11,0,0,0,7;
+                   -5,-1,-1,7,52,-17,-46,0,3,-52,19,-36,0,-1,-4,0,2,1,8,0,-2,-1,0,0,2;
+                    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;
+                    5,-11,-1,7,81,-17,-45,0,3,-15,19,-36,0,-1,-4,0,1,1,8,0,-2,-1,0,0,2;
+                    5,-11,-1,7,47,-17,-45,0,3,-5,19,-36,0,0,5,0,0,0,-7,0,6,0,0,1,-9;
+                    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;
+                   -2,-4,-3,-9,49,-14,-50,0,-9,-49,14,-50,0,0,5,0,0,0,-7,0,6,0,0,1,-9;
+                    5,-1,-1,7,47,-17,-45,0,3,-39,19,-36,0,0,1,1,0,0,-2,-1,4,0,1,1,-8;
+                    0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 
     
     
-    
-    
-    
-    
-    
-    
-    
-    
+       
+      % add the initial joint configuration and convert to radians             
+     jointPos = [qj0 transpose(customValues)*pi/180 qj0];  
+        
 end
 end
 
