@@ -33,8 +33,8 @@ clear; clc;
 setenv('YARP_ROBOT_NAME','bigman');
 % setenv('YARP_ROBOT_NAME','bigman_only_legs');
 
-CONFIG.ON_WALKMAN_PILOT_PC = false;
-CONFIG.ON_REAL_WALKMAN     = false;
+CONFIG.ON_WALKMAN_PILOT_PC = true;
+CONFIG.ON_REAL_WALKMAN     = true;
 
 % dynamic calibration parameters
 USE_h_ONLY         = true;
@@ -83,12 +83,12 @@ if CONFIG.ON_REAL_WALKMAN == 0
 
     % ONLY FOR SIMULATION
     calibDelta = 0.*calibDelta;
-     PORTS.IMU_CALIB = '/bigman/inertial';
+    PORTS.IMU_CALIB = '/bigman/inertial';
 end
 
 if CONFIG.moveset == 3
    
-    tSwitch  = [10, 20];
+    tSwitch  = [10,20];
     tEnd     = tSwitch(end) + 10;    
 end
 
@@ -111,7 +111,7 @@ end
 %               robots/YARP_ROBOT_NAME/initRegGen.m
 % 
 % 'WALKING': under development.
-SM.SM_TYPE                   = 'YOGA';
+SM.SM_TYPE                   = 'COORDINATOR';
 
 % CONFIG.SCOPES: if set to true, all visualizers for debugging are active
 CONFIG.SCOPES.ALL            = true;
