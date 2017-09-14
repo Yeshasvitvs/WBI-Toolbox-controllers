@@ -43,11 +43,12 @@ elseif CONFIG.moveset == 2
 elseif CONFIG.moveset == 3
     
                      % torso      % left arm         % right arm          % left leg              % right leg      
-    customValues = [-10, 0,  0,    0, 5, 0, 0, 0,    0, -25, 0, 0, 0,      0, 20, 0, 0, 0, -20,    0, 20, 0, 0, 0, -20];  %% State 2 CoM transition to left
+    customValues = [-10, 0,  0,   0, 45, 0, 0, 0,    0,   0, 0, 0, 0,      0, -10, 0, 0, 0, 10,     0,  -5, 0, 0, 0,-15;
+                    -10, 0,  0,   0,  0, 0, 0, 0,    0, -45, 0, 0, 0,      0,   5, 0, 0, 0, 15,     0,  10, 0, 0, 0, 10];  %% State 2 CoM transition to left
                     
        
       % add the initial joint configuration and convert to radians             
-     jointPos = [qj0 transpose(customValues)*pi/180 qj0];  
+     jointPos = [qj0 transpose(customValues(1,:))*pi/180 qj0 transpose(customValues(2,:))*pi/180 qj0];  
         
 end
 end

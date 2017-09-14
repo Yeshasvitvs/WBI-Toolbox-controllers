@@ -33,8 +33,8 @@ clear; clc;
 setenv('YARP_ROBOT_NAME','bigman');
 % setenv('YARP_ROBOT_NAME','bigman_only_legs');
 
-CONFIG.ON_WALKMAN_PILOT_PC = true;
-CONFIG.ON_REAL_WALKMAN     = true;
+CONFIG.ON_WALKMAN_PILOT_PC = false;
+CONFIG.ON_REAL_WALKMAN     = false;
 
 % dynamic calibration parameters
 USE_h_ONLY         = true;
@@ -88,7 +88,7 @@ end
 
 if CONFIG.moveset == 3
    
-    tSwitch  = [10,20];
+    tSwitch  = [10,20,30,40];
     tEnd     = tSwitch(end) + 10;    
 end
 
