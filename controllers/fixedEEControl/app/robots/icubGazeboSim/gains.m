@@ -1,5 +1,5 @@
 
-ROBOT_DOF                                   = 11;
+ROBOT_DOF                                   =4;
 CONFIG.ON_GAZEBO                            = true;
 PORTS.IMU                                   = '/icubSim/inertial';
 
@@ -9,7 +9,7 @@ CONFIG.SMOOTH_DES_COM                       = 0;
 CONFIG.SMOOTH_DES_EE                        = 0;
 CONFIG.SMOOTH_DES_Q                         = 0;
 
-WBT_wbiList                                 = '(torso_pitch,torso_roll,torso_yaw,l_shoulder_pitch, l_shoulder_roll, l_shoulder_yaw, l_elbow, r_shoulder_pitch,r_shoulder_roll, r_shoulder_yaw, r_elbow)';
+WBT_wbiList                                 = '(r_shoulder_pitch,r_shoulder_roll, r_shoulder_yaw, r_elbow)';
 WBT_robotName                               = 'icubSim';
 
 dump.left_hand_wrench_port                  = '/icubSim/left_hand/analog:o';
