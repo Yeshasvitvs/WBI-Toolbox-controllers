@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.389"
+    ComputedModelVersion    "1.394"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -32,7 +32,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [489.0, 63.0, 1899.0, 1078.0]
+      Location		      [37.0, 18.0, 1883.0, 1062.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -54,21 +54,21 @@ Model {
 	Dimension		2
 	Object {
 	  $ObjectID		  5
-	  IsActive		  [1]
+	  IsActive		  [0]
 	  ViewObjType		  "SimulinkTopLevel"
 	  LoadSaveID		  "0"
-	  Extents		  [1847.0, 894.0]
+	  Extents		  [1849.0, 916.0]
 	  ZoomFactor		  [1.5]
-	  Offset		  [249.76112635930377, 195.66666666666669]
+	  Offset		  [249.76112635930383, 195.66666666666669]
 	}
 	Object {
 	  $ObjectID		  6
-	  IsActive		  [0]
+	  IsActive		  [1]
 	  ViewObjType		  "SimulinkSubsys"
 	  LoadSaveID		  "142"
 	  Extents		  [1849.0, 916.0]
 	  ZoomFactor		  [1.0698795180722891]
-	  Offset		  [-421.03696860923435, -246.08558558558559]
+	  Offset		  [-401.005639428491, -246.08558558558559]
 	}
 	PropName		"EditorsInfo"
       }
@@ -80,9 +80,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "yeshi"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Dec 14 16:39:56 2017"
-  RTWModifiedTimeStamp	  435170396
-  ModelVersionFormat	  "1.%<AutoIncrement:389>"
+  LastModifiedDate	  "Thu Dec 14 18:16:42 2017"
+  RTWModifiedTimeStamp	  435176019
+  ModelVersionFormat	  "1.%<AutoIncrement:394>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -183,7 +183,7 @@ Model {
 	  $ObjectID		  9
 	  Version		  "1.16.2"
 	  StartTime		  "0.0"
-	  StopTime		  "30"
+	  StopTime		  "50"
 	  AbsTol		  "auto"
 	  FixedStep		  "0.01"
 	  InitialStep		  "auto"
@@ -978,7 +978,7 @@ Model {
   }
   System {
     Name		    "fixedEEControlR2016a"
-    Location		    [489, 63, 2388, 1141]
+    Location		    [37, 18, 1920, 1080]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1000,20 +1000,6 @@ Model {
       Position		      [595, 355, 625, 385]
       ZOrder		      174
       Value		      "zeros(1,6)"
-    }
-    Block {
-      BlockType		      ToWorkspace
-      Name		      "Bias Forces"
-      SID		      "19"
-      Ports		      [1]
-      Position		      [1095, 430, 1155, 460]
-      ZOrder		      171
-      VariableName	      "h"
-      MaxDataPoints	      "inf"
-      SaveFormat	      "Timeseries"
-      Save2DSignal	      "3-D array (concatenate along third dimension)"
-      FixptAsFi		      on
-      SampleTime	      "-1"
     }
     Block {
       BlockType		      Reference
@@ -1302,34 +1288,6 @@ Model {
       measuredType	      "Joints Position"
     }
     Block {
-      BlockType		      ToWorkspace
-      Name		      "Joint Positions\n"
-      SID		      "23"
-      Ports		      [1]
-      Position		      [735, 255, 795, 285]
-      ZOrder		      175
-      VariableName	      "q"
-      MaxDataPoints	      "inf"
-      SaveFormat	      "Timeseries"
-      Save2DSignal	      "3-D array (concatenate along third dimension)"
-      FixptAsFi		      on
-      SampleTime	      "-1"
-    }
-    Block {
-      BlockType		      ToWorkspace
-      Name		      "Joint Velocities"
-      SID		      "24"
-      Ports		      [1]
-      Position		      [735, 450, 795, 480]
-      ZOrder		      176
-      VariableName	      "dq"
-      MaxDataPoints	      "inf"
-      SaveFormat	      "Timeseries"
-      Save2DSignal	      "3-D array (concatenate along third dimension)"
-      FixptAsFi		      on
-      SampleTime	      "-1"
-    }
-    Block {
       BlockType		      Reference
       Name		      "Joint Velocity"
       SID		      "18"
@@ -1342,20 +1300,6 @@ Model {
       SourceType	      "Get Measurement"
       ContentPreviewEnabled   off
       measuredType	      "Joints Velocity"
-    }
-    Block {
-      BlockType		      ToWorkspace
-      Name		      "Mass Matrix\n"
-      SID		      "16"
-      Ports		      [1]
-      Position		      [1095, 205, 1155, 235]
-      ZOrder		      168
-      VariableName	      "M"
-      MaxDataPoints	      "inf"
-      SaveFormat	      "Timeseries"
-      Save2DSignal	      "3-D array (concatenate along third dimension)"
-      FixptAsFi		      on
-      SampleTime	      "-1"
     }
     Block {
       BlockType		      SubSystem
@@ -1969,20 +1913,20 @@ Model {
 	  "Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('Sources"
 	  "','WiredSimulink',true,'DataLoggingLimitDataPoints',true,'DataLoggingSaveFormat','Array','DataLoggingDecimation','1"
 	  "','DataLoggingDecimateData',true,'DataLoggingVariableName','ScopeData1'),extmgr.Configuration('Visuals','Time Domai"
-	  "n',true,'SerializedDisplays',{struct('MinYLimReal','-0.29129','MaxYLimReal','0.54081','YLabelReal','','MinYLimMag',"
-	  "'0.00000','MaxYLimMag','0.54081','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor'"
-	  ",[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.06666666666666"
-	  "67;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 "
-	  "0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156"
-	  "863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{'X Position','Y Position','Z P"
-	  "osition'}},'NumLines',3,'LineNames',{{'X Position','Y Position','Z Position'}},'ShowContent',true,'Placement',1)},'"
-	  "DisplayPropertyDefaults',struct('MinYLimReal','-0.29129','MaxYLimReal','0.54081','YLabelReal','','MinYLimMag','0.00"
-	  "000','MaxYLimMag','0.54081','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0"
-	  " 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[0.0745098039215686 0.6235"
-	  "29411764706 1;1 0.411764705882353 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.3"
-	  "92156862745098 0.831372549019608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])"
-	  "),extmgr.Configuration('Tools','Plot Navigation',true),extmgr.Configuration('Tools','Measurements',true,'Version','"
-	  "2016a')),'Version','2016a','Position',[-719 -114 590 510])"
+	  "n',true,'SerializedDisplays',{struct('MinYLimReal','-0.32302','MaxYLimReal','0.4173','YLabelReal','','MinYLimMag','"
+	  "0.00000','MaxYLimMag','0.4173','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',["
+	  "0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667"
+	  ";0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0."
+	  "0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.65098039215686"
+	  "3],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{'X Position','Y Position','Z Pos"
+	  "ition'}},'NumLines',3,'LineNames',{{'X Position','Y Position','Z Position'}},'ShowContent',true,'Placement',1)},'Di"
+	  "splayPropertyDefaults',struct('MinYLimReal','-0.32302','MaxYLimReal','0.4173','YLabelReal','','MinYLimMag','0.00000"
+	  "','MaxYLimMag','0.4173','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],"
+	  "'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[0.0745098039215686 0.62352941"
+	  "1764706 1;1 0.411764705882353 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.39215"
+	  "6862745098 0.831372549019608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])),ex"
+	  "tmgr.Configuration('Tools','Plot Navigation',true),extmgr.Configuration('Tools','Measurements',true,'Version','2016"
+	  "a')),'Version','2016a','Position',[-719 -114 590 510])"
 	}
 	Block {
 	  BlockType		  Scope
@@ -1995,20 +1939,20 @@ Model {
 	  "Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('Sources"
 	  "','WiredSimulink',true,'DataLoggingLimitDataPoints',true,'DataLoggingSaveFormat','Array','DataLoggingDecimation','1"
 	  "','DataLoggingDecimateData',true,'DataLoggingVariableName','ScopeData1'),extmgr.Configuration('Visuals','Time Domai"
-	  "n',true,'SerializedDisplays',{struct('MinYLimReal','-0.23376','MaxYLimReal','0.10381','YLabelReal','','MinYLimMag',"
-	  "'0.00000','MaxYLimMag','0.23376','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor'"
-	  ",[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.06666666666666"
-	  "67;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 "
-	  "0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156"
-	  "863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{'X Position','Y Position','Z P"
-	  "osition'}},'NumLines',3,'LineNames',{{'X Position','Y Position','Z Position'}},'ShowContent',true,'Placement',1)},'"
-	  "DisplayPropertyDefaults',struct('MinYLimReal','-0.23376','MaxYLimReal','0.10381','YLabelReal','','MinYLimMag','0.00"
-	  "000','MaxYLimMag','0.23376','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0"
-	  " 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[0.0745098039215686 0.6235"
-	  "29411764706 1;1 0.411764705882353 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.3"
-	  "92156862745098 0.831372549019608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])"
-	  "),extmgr.Configuration('Tools','Plot Navigation',true),extmgr.Configuration('Tools','Measurements',true,'Version','"
-	  "2016a')),'Version','2016a','Position',[-1582 -20 590 510])"
+	  "n',true,'SerializedDisplays',{struct('MinYLimReal','-0.23111','MaxYLimReal','0.0809','YLabelReal','','MinYLimMag','"
+	  "0.00000','MaxYLimMag','0.23111','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',"
+	  "[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.066666666666666"
+	  "7;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0"
+	  ".0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.6509803921568"
+	  "63],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{'X Position','Y Position','Z Po"
+	  "sition'}},'NumLines',3,'LineNames',{{'X Position','Y Position','Z Position'}},'ShowContent',true,'Placement',1)},'D"
+	  "isplayPropertyDefaults',struct('MinYLimReal','-0.23111','MaxYLimReal','0.0809','YLabelReal','','MinYLimMag','0.0000"
+	  "0','MaxYLimMag','0.23111','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0"
+	  "],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[0.0745098039215686 0.623529"
+	  "411764706 1;1 0.411764705882353 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.392"
+	  "156862745098 0.831372549019608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])),"
+	  "extmgr.Configuration('Tools','Plot Navigation',true),extmgr.Configuration('Tools','Measurements',true,'Version','20"
+	  "16a')),'Version','2016a','Position',[-1582 -20 590 510])"
 	}
 	Block {
 	  BlockType		  Scope
@@ -2061,20 +2005,6 @@ Model {
 	  ")),'Version','2016a','Position',[399 170 568 424])"
 	}
 	Block {
-	  BlockType		  ToWorkspace
-	  Name			  "reshape_check"
-	  SID			  "186"
-	  Ports			  [1]
-	  Position		  [5, 400, 45, 420]
-	  ZOrder		  264
-	  VariableName		  "reshape_check"
-	  MaxDataPoints		  "inf"
-	  SaveFormat		  "Timeseries"
-	  Save2DSignal		  "3-D array (concatenate along third dimension)"
-	  FixptAsFi		  on
-	  SampleTime		  "-1"
-	}
-	Block {
 	  BlockType		  Fcn
 	  Name			  "x"
 	  SID			  "198"
@@ -2089,20 +2019,6 @@ Model {
 	  Position		  [70, 107, 120, 133]
 	  ZOrder		  222
 	  Expr			  "u(13)"
-	}
-	Block {
-	  BlockType		  ToWorkspace
-	  Name			  "x0_check"
-	  SID			  "183"
-	  Ports			  [1]
-	  Position		  [175, 40, 215, 60]
-	  ZOrder		  261
-	  VariableName		  "x0_check"
-	  MaxDataPoints		  "inf"
-	  SaveFormat		  "Timeseries"
-	  Save2DSignal		  "3-D array (concatenate along third dimension)"
-	  FixptAsFi		  on
-	  SampleTime		  "-1"
 	}
 	Block {
 	  BlockType		  Sin
@@ -2123,20 +2039,6 @@ Model {
 	  Expr			  "u(14)"
 	}
 	Block {
-	  BlockType		  ToWorkspace
-	  Name			  "y0_check"
-	  SID			  "184"
-	  Ports			  [1]
-	  Position		  [250, 165, 290, 185]
-	  ZOrder		  262
-	  VariableName		  "y0_check"
-	  MaxDataPoints		  "inf"
-	  SaveFormat		  "Timeseries"
-	  Save2DSignal		  "3-D array (concatenate along third dimension)"
-	  FixptAsFi		  on
-	  SampleTime		  "-1"
-	}
-	Block {
 	  BlockType		  Fcn
 	  Name			  "y1"
 	  SID			  "199"
@@ -2151,7 +2053,7 @@ Model {
 	  Ports			  [0, 1]
 	  Position		  [170, 195, 220, 245]
 	  ZOrder		  227
-	  Amplitude		  "0.2"
+	  Amplitude		  "0.1"
 	  SampleTime		  "0"
 	}
 	Block {
@@ -2161,20 +2063,6 @@ Model {
 	  Position		  [70, 302, 120, 328]
 	  ZOrder		  242
 	  Expr			  "u(15)"
-	}
-	Block {
-	  BlockType		  ToWorkspace
-	  Name			  "z0_check"
-	  SID			  "185"
-	  Ports			  [1]
-	  Position		  [265, 415, 305, 435]
-	  ZOrder		  263
-	  VariableName		  "z0_check"
-	  MaxDataPoints		  "inf"
-	  SaveFormat		  "Timeseries"
-	  Save2DSignal		  "3-D array (concatenate along third dimension)"
-	  FixptAsFi		  on
-	  SampleTime		  "-1"
 	}
 	Block {
 	  BlockType		  Fcn
@@ -2191,7 +2079,7 @@ Model {
 	  Ports			  [0, 1]
 	  Position		  [170, 290, 220, 340]
 	  ZOrder		  238
-	  Amplitude		  "0.2"
+	  Amplitude		  "0.1"
 	  Phase			  "pi/2"
 	  SampleTime		  "0"
 	}
@@ -2281,19 +2169,9 @@ Model {
 	  ZOrder		  298
 	  SrcBlock		  "y0"
 	  SrcPort		  1
-	  Points		  [25, 0]
-	  Branch {
-	    ZOrder		    409
-	    Points		    [0, 42; 120, 0]
-	    DstBlock		    "Sum1"
-	    DstPort		    2
-	  }
-	  Branch {
-	    ZOrder		    408
-	    Points		    [0, -45]
-	    DstBlock		    "y0_check"
-	    DstPort		    1
-	  }
+	  Points		  [25, 0; 0, 42; 120, 0]
+	  DstBlock		  "Sum1"
+	  DstPort		  2
 	}
 	Line {
 	  ZOrder		  304
@@ -2436,70 +2314,40 @@ Model {
 	  ZOrder		  303
 	  SrcBlock		  "z0"
 	  SrcPort		  1
-	  Points		  [30, 0; 0, 42; 21, 0]
-	  Branch {
-	    ZOrder		    411
-	    Points		    [0, 68]
-	    DstBlock		    "z0_check"
-	    DstPort		    1
-	  }
-	  Branch {
-	    ZOrder		    410
-	    Points		    [94, 0]
-	    DstBlock		    "Sum2"
-	    DstPort		    2
-	  }
+	  Points		  [30, 0; 0, 42; 115, 0]
+	  DstBlock		  "Sum2"
+	  DstPort		  2
 	}
 	Line {
 	  ZOrder		  399
 	  SrcBlock		  "Reshape"
 	  SrcPort		  1
-	  Points		  [9, 0]
+	  Points		  [52, 0]
 	  Branch {
-	    ZOrder		    413
-	    Points		    [0, 190]
-	    DstBlock		    "reshape_check"
+	    ZOrder		    402
+	    Points		    [0, 95]
+	    DstBlock		    "z0"
 	    DstPort		    1
 	  }
 	  Branch {
-	    ZOrder		    412
-	    Points		    [43, 0]
-	    Branch {
-	      ZOrder		      402
-	      Points		      [0, 95]
-	      DstBlock		      "z0"
-	      DstPort		      1
-	    }
-	    Branch {
-	      ZOrder		      401
-	      Points		      [0, -100]
-	      DstBlock		      "x0"
-	      DstPort		      1
-	    }
-	    Branch {
-	      ZOrder		      400
-	      DstBlock		      "y0"
-	      DstPort		      1
-	    }
+	    ZOrder		    401
+	    Points		    [0, -100]
+	    DstBlock		    "x0"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    400
+	    DstBlock		    "y0"
+	    DstPort		    1
 	  }
 	}
 	Line {
 	  ZOrder		  297
 	  SrcBlock		  "x0"
 	  SrcPort		  1
-	  Points		  [21, 0]
-	  Branch {
-	    ZOrder		    406
-	    Points		    [0, -70]
-	    DstBlock		    "x0_check"
-	    DstPort		    1
-	  }
-	  Branch {
-	    ZOrder		    405
-	    Points		    [4, 0; 0, 42; 120, 0]
-	    DstBlock		    "Sum"
-	    DstPort		    2
-	  }
+	  Points		  [25, 0; 0, 42; 120, 0]
+	  DstBlock		  "Sum"
+	  DstPort		  2
 	}
 	Line {
 	  ZOrder		  414
@@ -2619,20 +2467,6 @@ Model {
       Position		      [595, 225, 625, 255]
       ZOrder		      173
       Value		      "eye(4)"
-    }
-    Block {
-      BlockType		      ToWorkspace
-      Name		      "X0"
-      SID		      "124"
-      Ports		      [1]
-      Position		      [1010, 650, 1050, 670]
-      ZOrder		      246
-      VariableName	      "X0"
-      MaxDataPoints	      "inf"
-      SaveFormat	      "Timeseries"
-      Save2DSignal	      "3-D array (concatenate along third dimension)"
-      FixptAsFi		      on
-      SampleTime	      "-1"
     }
     Block {
       BlockType		      SubSystem
@@ -2802,18 +2636,8 @@ Model {
       Points		      [27, 0]
       Branch {
 	ZOrder			198
-	Points			[17, 0]
-	Branch {
-	  ZOrder		  65
-	  Points		  [0, -35]
-	  DstBlock		  "Joint Positions\n"
-	  DstPort		  1
-	}
-	Branch {
-	  ZOrder		  64
-	  DstBlock		  "Robot Dynamics"
-	  DstPort		  2
-	}
+	DstBlock		"Robot Dynamics"
+	DstPort			2
       }
       Branch {
 	ZOrder			70
@@ -2838,18 +2662,9 @@ Model {
       Points		      [41, 0]
       Branch {
 	ZOrder			67
-	Points			[0, 30; 1, 0]
-	Branch {
-	  ZOrder		  230
-	  Points		  [0, 36; 479, 0; 0, 119]
-	  DstBlock		  "Control Objective"
-	  DstPort		  3
-	}
-	Branch {
-	  ZOrder		  229
-	  DstBlock		  "Joint Velocities"
-	  DstPort		  1
-	}
+	Points			[0, 66; 480, 0; 0, 119]
+	DstBlock		"Control Objective"
+	DstPort			3
       }
       Branch {
 	ZOrder			66
@@ -2894,19 +2709,9 @@ Model {
       ZOrder		      94
       SrcBlock		      "Robot Dynamics"
       SrcPort		      1
-      Points		      [53, 0]
-      Branch {
-	ZOrder			208
-	Points			[0, 40]
-	DstBlock		"computeTorque"
-	DstPort			2
-      }
-      Branch {
-	ZOrder			99
-	Points			[0, -55]
-	DstBlock		"Mass Matrix\n"
-	DstPort			1
-      }
+      Points		      [53, 0; 0, 40]
+      DstBlock		      "computeTorque"
+      DstPort		      2
     }
     Line {
       ZOrder		      97
@@ -2929,19 +2734,9 @@ Model {
       ZOrder		      59
       SrcBlock		      "Robot Dynamics"
       SrcPort		      2
-      Points		      [46, 0]
-      Branch {
-	ZOrder			209
-	Points			[0, -40]
-	DstBlock		"computeTorque"
-	DstPort			3
-      }
-      Branch {
-	ZOrder			102
-	Points			[0, 40]
-	DstBlock		"Bias Forces"
-	DstPort			1
-      }
+      Points		      [46, 0; 0, -40]
+      DstBlock		      "computeTorque"
+      DstPort		      3
     }
     Line {
       ZOrder		      225
@@ -3014,18 +2809,9 @@ Model {
 	}
 	Branch {
 	  ZOrder		  389
-	  Points		  [0, 54; -23, 0; 0, 26]
-	  Branch {
-	    ZOrder		    429
-	    Points		    [0, 45]
-	    DstBlock		    "Initial\nPosition\n"
-	    DstPort		    1
-	  }
-	  Branch {
-	    ZOrder		    428
-	    DstBlock		    "X0"
-	    DstPort		    1
-	  }
+	  Points		  [0, 54; -23, 0; 0, 71]
+	  DstBlock		  "Initial\nPosition\n"
+	  DstPort		  1
 	}
       }
     }
@@ -3062,10 +2848,7 @@ Stateflow {
     firstTransition	    12
     firstJunction	    11
     viewObj		    2
-    visible		    1
     machine		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    10
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -3514,10 +3297,7 @@ Stateflow {
     firstTransition	    31
     firstJunction	    30
     viewObj		    24
-    visible		    1
     machine		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    8
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
