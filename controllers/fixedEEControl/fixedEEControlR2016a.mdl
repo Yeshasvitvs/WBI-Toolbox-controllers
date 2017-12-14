@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.333"
+    ComputedModelVersion    "1.389"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -32,7 +32,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [37.0, 18.0, 1883.0, 1062.0]
+      Location		      [489.0, 63.0, 1899.0, 1078.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -54,16 +54,16 @@ Model {
 	Dimension		2
 	Object {
 	  $ObjectID		  5
-	  IsActive		  [0]
+	  IsActive		  [1]
 	  ViewObjType		  "SimulinkTopLevel"
 	  LoadSaveID		  "0"
-	  Extents		  [1849.0, 916.0]
+	  Extents		  [1847.0, 894.0]
 	  ZoomFactor		  [1.5]
-	  Offset		  [281.16666666666663, 195.66666666666669]
+	  Offset		  [249.76112635930377, 195.66666666666669]
 	}
 	Object {
 	  $ObjectID		  6
-	  IsActive		  [1]
+	  IsActive		  [0]
 	  ViewObjType		  "SimulinkSubsys"
 	  LoadSaveID		  "142"
 	  Extents		  [1849.0, 916.0]
@@ -80,9 +80,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "yeshi"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Dec 14 16:01:08 2017"
-  RTWModifiedTimeStamp	  435168065
-  ModelVersionFormat	  "1.%<AutoIncrement:333>"
+  LastModifiedDate	  "Thu Dec 14 16:39:56 2017"
+  RTWModifiedTimeStamp	  435170396
+  ModelVersionFormat	  "1.%<AutoIncrement:389>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -978,7 +978,7 @@ Model {
   }
   System {
     Name		    "fixedEEControlR2016a"
-    Location		    [37, 18, 1920, 1080]
+    Location		    [489, 63, 2388, 1141]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -992,7 +992,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "150"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "206"
+    SIDHighWatermark	    "208"
     Block {
       BlockType		      Constant
       Name		      "Base Velocity\n"
@@ -1750,7 +1750,7 @@ Model {
 	}
 	Block {
 	  BlockType		  SubSystem
-	  Name			  "Position Error\nPlots\n"
+	  Name			  "Position Error Plots\n"
 	  SID			  "202"
 	  Ports			  [4]
 	  Position		  [945, -117, 1065, -18]
@@ -1763,7 +1763,7 @@ Model {
 	  SFBlockType		  "MATLAB Function"
 	  Variant		  off
 	  System {
-	    Name		    "Position Error\nPlots\n"
+	    Name		    "Position Error Plots\n"
 	    Location		    [223, 338, 826, 833]
 	    Open		    off
 	    ModelBrowserVisibility  off
@@ -1969,15 +1969,15 @@ Model {
 	  "Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('Sources"
 	  "','WiredSimulink',true,'DataLoggingLimitDataPoints',true,'DataLoggingSaveFormat','Array','DataLoggingDecimation','1"
 	  "','DataLoggingDecimateData',true,'DataLoggingVariableName','ScopeData1'),extmgr.Configuration('Visuals','Time Domai"
-	  "n',true,'SerializedDisplays',{struct('MinYLimReal','-0.32263','MaxYLimReal','0.41874','YLabelReal','','MinYLimMag',"
-	  "'0.00000','MaxYLimMag','0.41874','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor'"
+	  "n',true,'SerializedDisplays',{struct('MinYLimReal','-0.29129','MaxYLimReal','0.54081','YLabelReal','','MinYLimMag',"
+	  "'0.00000','MaxYLimMag','0.54081','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor'"
 	  ",[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.06666666666666"
 	  "67;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 "
 	  "0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156"
 	  "863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{'X Position','Y Position','Z P"
 	  "osition'}},'NumLines',3,'LineNames',{{'X Position','Y Position','Z Position'}},'ShowContent',true,'Placement',1)},'"
-	  "DisplayPropertyDefaults',struct('MinYLimReal','-0.32263','MaxYLimReal','0.41874','YLabelReal','','MinYLimMag','0.00"
-	  "000','MaxYLimMag','0.41874','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0"
+	  "DisplayPropertyDefaults',struct('MinYLimReal','-0.29129','MaxYLimReal','0.54081','YLabelReal','','MinYLimMag','0.00"
+	  "000','MaxYLimMag','0.54081','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0"
 	  " 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[0.0745098039215686 0.6235"
 	  "29411764706 1;1 0.411764705882353 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.3"
 	  "92156862745098 0.831372549019608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])"
@@ -1995,15 +1995,15 @@ Model {
 	  "Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('Sources"
 	  "','WiredSimulink',true,'DataLoggingLimitDataPoints',true,'DataLoggingSaveFormat','Array','DataLoggingDecimation','1"
 	  "','DataLoggingDecimateData',true,'DataLoggingVariableName','ScopeData1'),extmgr.Configuration('Visuals','Time Domai"
-	  "n',true,'SerializedDisplays',{struct('MinYLimReal','-0.04619','MaxYLimReal','0.05844','YLabelReal','','MinYLimMag',"
-	  "'0.00000','MaxYLimMag','0.05844','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor'"
+	  "n',true,'SerializedDisplays',{struct('MinYLimReal','-0.23376','MaxYLimReal','0.10381','YLabelReal','','MinYLimMag',"
+	  "'0.00000','MaxYLimMag','0.23376','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor'"
 	  ",[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.06666666666666"
 	  "67;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 "
 	  "0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156"
 	  "863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{'X Position','Y Position','Z P"
 	  "osition'}},'NumLines',3,'LineNames',{{'X Position','Y Position','Z Position'}},'ShowContent',true,'Placement',1)},'"
-	  "DisplayPropertyDefaults',struct('MinYLimReal','-0.04619','MaxYLimReal','0.05844','YLabelReal','','MinYLimMag','0.00"
-	  "000','MaxYLimMag','0.05844','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0"
+	  "DisplayPropertyDefaults',struct('MinYLimReal','-0.23376','MaxYLimReal','0.10381','YLabelReal','','MinYLimMag','0.00"
+	  "000','MaxYLimMag','0.23376','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0"
 	  " 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[0.0745098039215686 0.6235"
 	  "29411764706 1;1 0.411764705882353 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.3"
 	  "92156862745098 0.831372549019608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])"
@@ -2373,7 +2373,7 @@ Model {
 	  Branch {
 	    ZOrder		    468
 	    Points		    [0, -90]
-	    DstBlock		    "Position Error\nPlots\n"
+	    DstBlock		    "Position Error Plots\n"
 	    DstPort		    4
 	  }
 	  Branch {
@@ -2565,7 +2565,7 @@ Model {
 	  ZOrder		  463
 	  SrcBlock		  "Clock"
 	  SrcPort		  1
-	  DstBlock		  "Position Error\nPlots\n"
+	  DstBlock		  "Position Error Plots\n"
 	  DstPort		  2
 	}
 	Line {
@@ -2590,7 +2590,7 @@ Model {
 	    }
 	    Branch {
 	      ZOrder		      508
-	      DstBlock		      "Position Error\nPlots\n"
+	      DstBlock		      "Position Error Plots\n"
 	      DstPort		      3
 	    }
 	  }
@@ -2600,7 +2600,7 @@ Model {
 	  SrcBlock		  "Constant"
 	  SrcPort		  1
 	  Points		  [41, 0; 0, 35]
-	  DstBlock		  "Position Error\nPlots\n"
+	  DstBlock		  "Position Error Plots\n"
 	  DstPort		  1
 	}
 	Line {
@@ -3506,7 +3506,7 @@ Stateflow {
   }
   chart {
     id			    24
-    name		    "Subsystem/Position Error\nPlots\n"
+    name		    "Subsystem/Position Error Plots\n"
     windowPosition	    [422 539.941 189 413]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 3600 1200 1.180555555555556]
@@ -3685,7 +3685,7 @@ Stateflow {
   }
   instance {
     id			    32
-    name		    "Subsystem/Position Error\nPlots\n"
+    name		    "Subsystem/Position Error Plots\n"
     machine		    1
     chart		    24
   }
