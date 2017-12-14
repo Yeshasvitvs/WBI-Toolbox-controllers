@@ -1,5 +1,10 @@
 
-ROBOT_DOF                                   = 11;
+if(strcmp(CONFIG.PARTS,'single_arm'))
+    ROBOT_DOF                                   = 4;
+else
+    ROBOT_DOF                                   = 11;
+end
+
 CONFIG.ON_GAZEBO                            = true;
 PORTS.IMU                                   = '/icubSim/inertial';
 
