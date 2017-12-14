@@ -17,7 +17,7 @@
 clear; clc;
 
 % End Effector link name
-CONFIG.EE                               = 'l_hand';
+CONFIG.EE                               = 'r_hand';
 
 % This sections contains information on the robot parts considered
 %
@@ -30,8 +30,8 @@ CONFIG.EE                               = 'l_hand';
 %               the torso of the robot
 %               moved along a desired trajectory using 
 
-%CONFIG.PARTS                            = 'single_arm';
-CONFIG.PARTS                            = 'upper_body';
+CONFIG.PARTS                            = 'single_arm';
+%CONFIG.PARTS                            = 'upper_body';
 
 %% Configuration Object
 WBTConfigRobot                          = WBToolbox.Configuration;
@@ -74,6 +74,9 @@ if ~WBTConfigRobot.ValidConfiguration
     return
 end
 
+%%Runtime Position Error Visualization
+CONFIG.PLOT.POS_ERR                      = false;
+
 %% GENERAL SIMULATION INFOR
 % If you are simulating the robot with Gazebo, 
 % remember that you have to launch Gazebo as follow:
@@ -104,7 +107,7 @@ SM.SM_TYPE                              = 'simpleEE';
 CONFIG.SCOPES.ALL                       = true;
 
 % You can also activate only some specific scopes for debugging
-CONFI.SCOPES.BASE_EST_IMU               = false;
+CONFIG.SCOPES.BASE_EST_IMU               = false;
 CONFIG.SCOPES.EXTWRENCHES               = false;
 CONFIG.SCOPES.GAIN_SCHE_INFO            = false;
 CONFIG.SCOPES.MAIN                      = false;
