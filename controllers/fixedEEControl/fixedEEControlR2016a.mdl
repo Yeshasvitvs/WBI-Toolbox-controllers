@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.394"
+    ComputedModelVersion    "1.423"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -51,24 +51,33 @@ Model {
       }
       Array {
 	Type			"Simulink.EditorInfo"
-	Dimension		2
+	Dimension		3
 	Object {
 	  $ObjectID		  5
-	  IsActive		  [0]
+	  IsActive		  [1]
 	  ViewObjType		  "SimulinkTopLevel"
 	  LoadSaveID		  "0"
 	  Extents		  [1849.0, 916.0]
-	  ZoomFactor		  [1.5]
-	  Offset		  [249.76112635930383, 195.66666666666669]
+	  ZoomFactor		  [1.50253807106599]
+	  Offset		  [289.29898648648657, 196.68243243243245]
 	}
 	Object {
 	  $ObjectID		  6
-	  IsActive		  [1]
+	  IsActive		  [0]
 	  ViewObjType		  "SimulinkSubsys"
 	  LoadSaveID		  "142"
 	  Extents		  [1849.0, 916.0]
-	  ZoomFactor		  [1.0698795180722891]
-	  Offset		  [-401.005639428491, -246.08558558558559]
+	  ZoomFactor		  [1.1240506329113924]
+	  Offset		  [-359.3614952843468, -205.45495495495521]
+	}
+	Object {
+	  $ObjectID		  7
+	  IsActive		  [0]
+	  ViewObjType		  "SimulinkSubsys"
+	  LoadSaveID		  "223"
+	  Extents		  [1849.0, 916.0]
+	  ZoomFactor		  [3.6846473029045641]
+	  Offset		  [4.7024299690315274, -58.799549549549553]
 	}
 	PropName		"EditorsInfo"
       }
@@ -80,9 +89,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "yeshi"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Dec 14 18:16:42 2017"
-  RTWModifiedTimeStamp	  435176019
-  ModelVersionFormat	  "1.%<AutoIncrement:394>"
+  LastModifiedDate	  "Fri Dec 15 14:08:10 2017"
+  RTWModifiedTimeStamp	  435247688
+  ModelVersionFormat	  "1.%<AutoIncrement:423>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -130,7 +139,7 @@ Model {
   TryForcingSFcnDF	  off
   Object {
     $PropName		    "DataLoggingOverride"
-    $ObjectID		    7
+    $ObjectID		    8
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "fixedEEControlR2016a"
     overrideMode_	    [0.0]
@@ -174,16 +183,16 @@ Model {
     Type		    "Handle"
     Dimension		    1
     Simulink.ConfigSet {
-      $ObjectID		      8
+      $ObjectID		      9
       Version		      "1.16.2"
       Array {
 	Type			"Handle"
 	Dimension		9
 	Simulink.SolverCC {
-	  $ObjectID		  9
+	  $ObjectID		  10
 	  Version		  "1.16.2"
 	  StartTime		  "0.0"
-	  StopTime		  "50"
+	  StopTime		  "100"
 	  AbsTol		  "auto"
 	  FixedStep		  "0.01"
 	  InitialStep		  "auto"
@@ -217,7 +226,7 @@ Model {
 	  InsertRTBMode		  "Whenever possible"
 	}
 	Simulink.DataIOCC {
-	  $ObjectID		  10
+	  $ObjectID		  11
 	  Version		  "1.16.2"
 	  Decimation		  "1"
 	  ExternalInput		  "[t, u]"
@@ -255,7 +264,7 @@ Model {
 	  LoggingIntervals	  "[-inf, inf]"
 	}
 	Simulink.OptimizationCC {
-	  $ObjectID		  11
+	  $ObjectID		  12
 	  Version		  "1.16.2"
 	  Array {
 	    Type		    "Cell"
@@ -312,7 +321,7 @@ Model {
 	  AccelVerboseBuild	  off
 	}
 	Simulink.DebuggingCC {
-	  $ObjectID		  12
+	  $ObjectID		  13
 	  Version		  "1.16.2"
 	  RTPrefix		  "error"
 	  ConsistencyChecking	  "none"
@@ -407,7 +416,7 @@ Model {
 	  AllowAutomaticUnitConversions	on
 	}
 	Simulink.HardwareCC {
-	  $ObjectID		  13
+	  $ObjectID		  14
 	  Version		  "1.16.2"
 	  ProdBitPerChar	  8
 	  ProdBitPerShort	  16
@@ -449,7 +458,7 @@ Model {
 	  UseSimulinkCoderFeatures on
 	}
 	Simulink.ModelReferenceCC {
-	  $ObjectID		  14
+	  $ObjectID		  15
 	  Version		  "1.16.2"
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
 	  EnableRefExpFcnMdlSchedulingChecks on
@@ -465,7 +474,7 @@ Model {
 	  SupportModelReferenceSimTargetCustomCode off
 	}
 	Simulink.SFSimCC {
-	  $ObjectID		  15
+	  $ObjectID		  16
 	  Version		  "1.16.2"
 	  SFSimEcho		  on
 	  SimCtrlC		  on
@@ -477,7 +486,7 @@ Model {
 	}
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
-	  $ObjectID		  16
+	  $ObjectID		  17
 	  Version		  "1.16.2"
 	  Array {
 	    Type		    "Cell"
@@ -549,7 +558,7 @@ Model {
 	    Type		    "Handle"
 	    Dimension		    2
 	    Simulink.CodeAppCC {
-	      $ObjectID		      17
+	      $ObjectID		      18
 	      Version		      "1.16.2"
 	      Array {
 		Type			"Cell"
@@ -620,7 +629,7 @@ Model {
 	    }
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
-	      $ObjectID		      18
+	      $ObjectID		      19
 	      Version		      "1.16.2"
 	      Array {
 		Type			"Cell"
@@ -705,7 +714,7 @@ Model {
 	  }
 	}
 	SlCovCC.ConfigComp {
-	  $ObjectID		  19
+	  $ObjectID		  20
 	  Version		  "1.16.2"
 	  Description		  "Simulink Coverage Configuration Component"
 	  Name			  "Simulink Coverage"
@@ -747,11 +756,11 @@ Model {
   }
   Simulink.ConfigSet {
     $PropName		    "ActiveConfigurationSet"
-    $ObjectID		    8
+    $ObjectID		    9
   }
   Object {
     $PropName		    "DataTransfer"
-    $ObjectID		    20
+    $ObjectID		    21
     $ClassName		    "Simulink.GlobalDataTransfer"
     DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
     DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
@@ -992,7 +1001,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "150"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "208"
+    SIDHighWatermark	    "240"
     Block {
       BlockType		      Constant
       Name		      "Base Velocity\n"
@@ -1045,8 +1054,8 @@ Model {
       BlockType		      SubSystem
       Name		      "Control Objective"
       SID		      "88"
-      Ports		      [6, 1]
-      Position		      [1225, 566, 1365, 694]
+      Ports		      [8, 1]
+      Position		      [1305, 545, 1465, 715]
       ZOrder		      220
       LibraryVersion	      "1.32"
       ErrorFcn		      "Stateflow.Translate.translate"
@@ -1070,7 +1079,7 @@ Model {
 	TiledPageScale		1
 	ShowPageBoundaries	off
 	ZoomFactor		"100"
-	SIDHighWatermark	"23"
+	SIDHighWatermark	"25"
 	Block {
 	  BlockType		  Inport
 	  Name			  "W_H_EE"
@@ -1125,6 +1134,24 @@ Model {
 	  IconDisplay		  "Port number"
 	}
 	Block {
+	  BlockType		  Inport
+	  Name			  "Kp"
+	  SID			  "88::24"
+	  Position		  [20, 316, 40, 334]
+	  ZOrder		  15
+	  Port			  "7"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Kd"
+	  SID			  "88::25"
+	  Position		  [20, 351, 40, 369]
+	  ZOrder		  16
+	  Port			  "8"
+	  IconDisplay		  "Port number"
+	}
+	Block {
 	  BlockType		  Demux
 	  Name			  " Demux "
 	  SID			  "88::17"
@@ -1138,11 +1165,11 @@ Model {
 	  Name			  " SFunction "
 	  SID			  "88::16"
 	  Tag			  "Stateflow S-Function fixedEEControlR2016a 1"
-	  Ports			  [6, 2]
-	  Position		  [180, 107, 230, 248]
+	  Ports			  [8, 2]
+	  Position		  [180, 110, 230, 290]
 	  ZOrder		  7
 	  FunctionName		  "sf_sfun"
-	  PortCounts		  "[6 2]"
+	  PortCounts		  "[8 2]"
 	  SFunctionDeploymentMode off
 	  EnableBusSupport	  on
 	  Port {
@@ -1168,50 +1195,64 @@ Model {
 	  IconDisplay		  "Port number"
 	}
 	Line {
-	  ZOrder		  44
+	  ZOrder		  63
 	  SrcBlock		  "W_H_EE"
 	  SrcPort		  1
 	  DstBlock		  " SFunction "
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  45
+	  ZOrder		  64
 	  SrcBlock		  "W_J_EE"
 	  SrcPort		  1
 	  DstBlock		  " SFunction "
 	  DstPort		  2
 	}
 	Line {
-	  ZOrder		  46
+	  ZOrder		  65
 	  SrcBlock		  "dq"
 	  SrcPort		  1
 	  DstBlock		  " SFunction "
 	  DstPort		  3
 	}
 	Line {
-	  ZOrder		  47
+	  ZOrder		  66
 	  SrcBlock		  "x_des"
 	  SrcPort		  1
 	  DstBlock		  " SFunction "
 	  DstPort		  4
 	}
 	Line {
-	  ZOrder		  48
+	  ZOrder		  67
 	  SrcBlock		  "dx_des"
 	  SrcPort		  1
 	  DstBlock		  " SFunction "
 	  DstPort		  5
 	}
 	Line {
-	  ZOrder		  49
+	  ZOrder		  68
 	  SrcBlock		  "ddx_des"
 	  SrcPort		  1
 	  DstBlock		  " SFunction "
 	  DstPort		  6
 	}
 	Line {
+	  ZOrder		  69
+	  SrcBlock		  "Kp"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  7
+	}
+	Line {
+	  ZOrder		  70
+	  SrcBlock		  "Kd"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  8
+	}
+	Line {
 	  Name			  "ddx"
-	  ZOrder		  50
+	  ZOrder		  71
 	  Labels		  [0, 0]
 	  SrcBlock		  " SFunction "
 	  SrcPort		  2
@@ -1219,14 +1260,14 @@ Model {
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  51
+	  ZOrder		  72
 	  SrcBlock		  " Demux "
 	  SrcPort		  1
 	  DstBlock		  " Terminator "
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  52
+	  ZOrder		  73
 	  SrcBlock		  " SFunction "
 	  SrcPort		  1
 	  DstBlock		  " Demux "
@@ -1246,6 +1287,354 @@ Model {
       SourceType	      "Forward Kinematics"
       ContentPreviewEnabled   off
       frameName		      "CONFIG.EE"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Gain\nSliders"
+      SID		      "223"
+      Ports		      [0, 2]
+      Position		      [1230, 670, 1270, 710]
+      ZOrder		      -39
+      RequestExecContextInheritance off
+      Variant		      off
+      System {
+	Name			"Gain\nSliders"
+	Location		[37, 18, 1920, 1080]
+	Open			on
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"368"
+	Block {
+	  BlockType		  BusCreator
+	  Name			  "Bus\nCreator1"
+	  SID			  "216"
+	  Ports			  [3, 1]
+	  Position		  [415, 56, 420, 134]
+	  ZOrder		  282
+	  ShowName		  off
+	  Inputs		  "3"
+	  DisplayOption		  "bar"
+	  InheritFromInputs	  on
+	}
+	Block {
+	  BlockType		  BusCreator
+	  Name			  "Bus\nCreator3"
+	  SID			  "211"
+	  Ports			  [3, 1]
+	  Position		  [170, 56, 175, 134]
+	  ZOrder		  275
+	  ShowName		  off
+	  Inputs		  "3"
+	  DisplayOption		  "bar"
+	  InheritFromInputs	  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  SID			  "210"
+	  Position		  [20, 20, 50, 50]
+	  ZOrder		  254
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant1"
+	  SID			  "212"
+	  Position		  [20, 80, 50, 110]
+	  ZOrder		  277
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant2"
+	  SID			  "214"
+	  Position		  [20, 140, 50, 170]
+	  ZOrder		  279
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant3"
+	  SID			  "217"
+	  Position		  [270, 20, 300, 50]
+	  ZOrder		  281
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant4"
+	  SID			  "218"
+	  Position		  [270, 80, 300, 110]
+	  ZOrder		  284
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant5"
+	  SID			  "219"
+	  Position		  [270, 140, 300, 170]
+	  ZOrder		  286
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "Kd\nValues"
+	  SID			  "240"
+	  Ports			  [1]
+	  Position		  [440, 10, 500, 40]
+	  ZOrder		  298
+	  VariableName		  "Kd"
+	  MaxDataPoints		  "inf"
+	  SaveFormat		  "Timeseries"
+	  Save2DSignal		  "3-D array (concatenate along third dimension)"
+	  FixptAsFi		  on
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Kdx"
+	  SID			  "220"
+	  Ports			  [1, 1]
+	  Position		  [335, 20, 365, 50]
+	  ZOrder		  280
+	  LibraryVersion	  "1.386"
+	  SourceBlock		  "simulink/Math\nOperations/Slider\nGain"
+	  SourceType		  "Slider Gain"
+	  ContentPreviewEnabled	  off
+	  low			  "0"
+	  gain			  "76"
+	  high			  "5000"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Kdy"
+	  SID			  "221"
+	  Ports			  [1, 1]
+	  Position		  [335, 80, 365, 110]
+	  ZOrder		  283
+	  LibraryVersion	  "1.386"
+	  SourceBlock		  "simulink/Math\nOperations/Slider\nGain"
+	  SourceType		  "Slider Gain"
+	  ContentPreviewEnabled	  off
+	  low			  "0"
+	  gain			  "84"
+	  high			  "5000"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Kdz"
+	  SID			  "222"
+	  Ports			  [1, 1]
+	  Position		  [335, 140, 365, 170]
+	  ZOrder		  285
+	  LibraryVersion	  "1.386"
+	  SourceBlock		  "simulink/Math\nOperations/Slider\nGain"
+	  SourceType		  "Slider Gain"
+	  ContentPreviewEnabled	  off
+	  low			  "0"
+	  gain			  "76"
+	  high			  "5000"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "Kp\nValues"
+	  SID			  "239"
+	  Ports			  [1]
+	  Position		  [195, 0, 255, 30]
+	  ZOrder		  297
+	  VariableName		  "Kp"
+	  MaxDataPoints		  "inf"
+	  SaveFormat		  "Timeseries"
+	  Save2DSignal		  "3-D array (concatenate along third dimension)"
+	  FixptAsFi		  on
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Kpx"
+	  SID			  "209"
+	  Ports			  [1, 1]
+	  Position		  [85, 20, 115, 50]
+	  ZOrder		  253
+	  LibraryVersion	  "1.386"
+	  SourceBlock		  "simulink/Math\nOperations/Slider\nGain"
+	  SourceType		  "Slider Gain"
+	  ContentPreviewEnabled	  off
+	  low			  "0"
+	  gain			  "1000"
+	  high			  "5000"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Kpy"
+	  SID			  "213"
+	  Ports			  [1, 1]
+	  Position		  [85, 80, 115, 110]
+	  ZOrder		  276
+	  LibraryVersion	  "1.386"
+	  SourceBlock		  "simulink/Math\nOperations/Slider\nGain"
+	  SourceType		  "Slider Gain"
+	  ContentPreviewEnabled	  off
+	  low			  "0"
+	  gain			  "1000"
+	  high			  "5000"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Kpz"
+	  SID			  "215"
+	  Ports			  [1, 1]
+	  Position		  [85, 140, 115, 170]
+	  ZOrder		  278
+	  LibraryVersion	  "1.386"
+	  SourceBlock		  "simulink/Math\nOperations/Slider\nGain"
+	  SourceType		  "Slider Gain"
+	  ContentPreviewEnabled	  off
+	  low			  "0"
+	  gain			  "1000"
+	  high			  "5000"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Kp"
+	  SID			  "224"
+	  Position		  [210, 88, 240, 102]
+	  ZOrder		  287
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Kd"
+	  SID			  "225"
+	  Position		  [455, 88, 485, 102]
+	  ZOrder		  288
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  ZOrder		  437
+	  SrcBlock		  "Constant3"
+	  SrcPort		  1
+	  DstBlock		  "Kdx"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  436
+	  SrcBlock		  "Kdz"
+	  SrcPort		  1
+	  Points		  [23, 0; 0, -35]
+	  DstBlock		  "Bus\nCreator1"
+	  DstPort		  3
+	}
+	Line {
+	  ZOrder		  438
+	  SrcBlock		  "Constant4"
+	  SrcPort		  1
+	  DstBlock		  "Kdy"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  439
+	  SrcBlock		  "Constant5"
+	  SrcPort		  1
+	  DstBlock		  "Kdz"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  434
+	  SrcBlock		  "Kdx"
+	  SrcPort		  1
+	  Points		  [23, 0; 0, 35]
+	  DstBlock		  "Bus\nCreator1"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  430
+	  SrcBlock		  "Kpz"
+	  SrcPort		  1
+	  Points		  [23, 0; 0, -35]
+	  DstBlock		  "Bus\nCreator3"
+	  DstPort		  3
+	}
+	Line {
+	  ZOrder		  433
+	  SrcBlock		  "Constant2"
+	  SrcPort		  1
+	  DstBlock		  "Kpz"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  435
+	  SrcBlock		  "Kdy"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nCreator1"
+	  DstPort		  2
+	}
+	Line {
+	  ZOrder		  428
+	  SrcBlock		  "Kpx"
+	  SrcPort		  1
+	  Points		  [23, 0; 0, 35]
+	  DstBlock		  "Bus\nCreator3"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  429
+	  SrcBlock		  "Kpy"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nCreator3"
+	  DstPort		  2
+	}
+	Line {
+	  ZOrder		  432
+	  SrcBlock		  "Constant1"
+	  SrcPort		  1
+	  DstBlock		  "Kpy"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  431
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  DstBlock		  "Kpx"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  443
+	  SrcBlock		  "Bus\nCreator1"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  Branch {
+	    ZOrder		    449
+	    DstBlock		    "Kd"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    447
+	    DstBlock		    "Kd\nValues"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  ZOrder		  442
+	  SrcBlock		  "Bus\nCreator3"
+	  SrcPort		  1
+	  Points		  [1, 0]
+	  Branch {
+	    ZOrder		    448
+	    DstBlock		    "Kp"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    445
+	    Points		    [0, -80]
+	    DstBlock		    "Kp\nValues"
+	    DstPort		    1
+	  }
+	}
+      }
     }
     Block {
       BlockType		      Reference
@@ -1501,6 +1890,852 @@ Model {
     }
     Block {
       BlockType		      SubSystem
+      Name		      "Slider1"
+      SID		      "234"
+      Ports		      []
+      Position		      [300, 574, 480, 629]
+      ZOrder		      298
+      ShowName		      off
+      DialogController	      "hmiCreateDDGDialog"
+      DialogControllerArgs    "DataTag0"
+      RequestExecContextInheritance off
+      MaskHideContents	      on
+      Variant		      off
+      IsWebBlock	      on
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		22
+	$ClassName		"Simulink.Mask"
+	Type			"MWDashboardBlock"
+	Help			"helpview([docroot '/mapfiles/simulink.map'], 'hmi_slider')"
+	Display			"if strcmp(get_param(bdroot(gcb),'BlockDiagramType'), 'library')\n    image([(matlabroot) '/toolbox/simulin"
+	"k/hmi/icons/Slider.png']);\nend"
+	IconFrame		"off"
+	Array {
+	  Type			  "Simulink.MaskParameter"
+	  Dimension		  5
+	  Object {
+	    $ObjectID		    23
+	    Type		    "edit"
+	    Name		    "webBlockId"
+	    Prompt		    "WebBlock Id"
+	    Value		    "7b15bbf5-f5f1-4730-8a01-8483796d0a72"
+	    Evaluate		    "off"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    24
+	    Type		    "edit"
+	    Name		    "webBlockType"
+	    Prompt		    "WebBlock Type"
+	    Value		    "slider"
+	    Evaluate		    "off"
+	    Tunable		    "off"
+	    Internal		    "on"
+	    ReadOnly		    "on"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    25
+	    Type		    "checkbox"
+	    Name		    "ShowInLibBrowser"
+	    Prompt		    ""
+	    Value		    "on"
+	    Evaluate		    "off"
+	    Tunable		    "off"
+	    Internal		    "on"
+	    ReadOnly		    "on"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    26
+	    Type		    "checkbox"
+	    Name		    "ShowInitialText"
+	    Prompt		    ""
+	    Value		    "on"
+	    Evaluate		    "off"
+	    Tunable		    "off"
+	    Internal		    "on"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    27
+	    Type		    "edit"
+	    Name		    "HMISrcModelName"
+	    Prompt		    "Source Model"
+	    Value		    "fixedEEControlR2016a"
+	    Evaluate		    "off"
+	    Tunable		    "off"
+	    NeverSave		    "on"
+	    Internal		    "on"
+	    Visible		    "off"
+	  }
+	  PropName		  "Parameters"
+	}
+	Object {
+	  $PropName		  "DialogControls"
+	  $ObjectID		  28
+	  $ClassName		  "Simulink.dialog.Group"
+	  Prompt		  "Simulink:studio:ToolBarParametersMenu"
+	  Array {
+	    Type		    "Simulink.dialog.parameter.Control"
+	    Dimension		    5
+	    Object {
+	      $ObjectID		      29
+	      $ClassName	      "Simulink.dialog.parameter.Edit"
+	      Name		      "webBlockId"
+	    }
+	    Object {
+	      $ObjectID		      30
+	      $ClassName	      "Simulink.dialog.parameter.Edit"
+	      Name		      "webBlockType"
+	    }
+	    Object {
+	      $ObjectID		      31
+	      $ClassName	      "Simulink.dialog.parameter.CheckBox"
+	      Name		      "ShowInLibBrowser"
+	    }
+	    Object {
+	      $ObjectID		      32
+	      $ClassName	      "Simulink.dialog.parameter.CheckBox"
+	      Name		      "ShowInitialText"
+	    }
+	    Object {
+	      $ObjectID		      33
+	      $ClassName	      "Simulink.dialog.parameter.Edit"
+	      Name		      "HMISrcModelName"
+	    }
+	    PropName		    "DialogControls"
+	  }
+	  Name			  "ParameterGroupVar"
+	}
+      }
+      System {
+	Name			"Slider1"
+	Location		[-1639, 178, -956, 660]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Slider2"
+      SID		      "233"
+      Ports		      []
+      Position		      [300, 644, 480, 699]
+      ZOrder		      297
+      ShowName		      off
+      DialogController	      "hmiCreateDDGDialog"
+      DialogControllerArgs    "DataTag1"
+      RequestExecContextInheritance off
+      MaskHideContents	      on
+      Variant		      off
+      IsWebBlock	      on
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		34
+	$ClassName		"Simulink.Mask"
+	Type			"MWDashboardBlock"
+	Help			"helpview([docroot '/mapfiles/simulink.map'], 'hmi_slider')"
+	Display			"if strcmp(get_param(bdroot(gcb),'BlockDiagramType'), 'library')\n    image([(matlabroot) '/toolbox/simulin"
+	"k/hmi/icons/Slider.png']);\nend"
+	IconFrame		"off"
+	Array {
+	  Type			  "Simulink.MaskParameter"
+	  Dimension		  5
+	  Object {
+	    $ObjectID		    35
+	    Type		    "edit"
+	    Name		    "webBlockId"
+	    Prompt		    "WebBlock Id"
+	    Value		    "892d6364-26ad-4154-986f-749a3704cc7a"
+	    Evaluate		    "off"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    36
+	    Type		    "edit"
+	    Name		    "webBlockType"
+	    Prompt		    "WebBlock Type"
+	    Value		    "slider"
+	    Evaluate		    "off"
+	    Tunable		    "off"
+	    Internal		    "on"
+	    ReadOnly		    "on"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    37
+	    Type		    "checkbox"
+	    Name		    "ShowInLibBrowser"
+	    Prompt		    ""
+	    Value		    "on"
+	    Evaluate		    "off"
+	    Tunable		    "off"
+	    Internal		    "on"
+	    ReadOnly		    "on"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    38
+	    Type		    "checkbox"
+	    Name		    "ShowInitialText"
+	    Prompt		    ""
+	    Value		    "on"
+	    Evaluate		    "off"
+	    Tunable		    "off"
+	    Internal		    "on"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    39
+	    Type		    "edit"
+	    Name		    "HMISrcModelName"
+	    Prompt		    "Source Model"
+	    Value		    "fixedEEControlR2016a"
+	    Evaluate		    "off"
+	    Tunable		    "off"
+	    NeverSave		    "on"
+	    Internal		    "on"
+	    Visible		    "off"
+	  }
+	  PropName		  "Parameters"
+	}
+	Object {
+	  $PropName		  "DialogControls"
+	  $ObjectID		  40
+	  $ClassName		  "Simulink.dialog.Group"
+	  Prompt		  "Simulink:studio:ToolBarParametersMenu"
+	  Array {
+	    Type		    "Simulink.dialog.parameter.Control"
+	    Dimension		    5
+	    Object {
+	      $ObjectID		      41
+	      $ClassName	      "Simulink.dialog.parameter.Edit"
+	      Name		      "webBlockId"
+	    }
+	    Object {
+	      $ObjectID		      42
+	      $ClassName	      "Simulink.dialog.parameter.Edit"
+	      Name		      "webBlockType"
+	    }
+	    Object {
+	      $ObjectID		      43
+	      $ClassName	      "Simulink.dialog.parameter.CheckBox"
+	      Name		      "ShowInLibBrowser"
+	    }
+	    Object {
+	      $ObjectID		      44
+	      $ClassName	      "Simulink.dialog.parameter.CheckBox"
+	      Name		      "ShowInitialText"
+	    }
+	    Object {
+	      $ObjectID		      45
+	      $ClassName	      "Simulink.dialog.parameter.Edit"
+	      Name		      "HMISrcModelName"
+	    }
+	    PropName		    "DialogControls"
+	  }
+	  Name			  "ParameterGroupVar"
+	}
+      }
+      System {
+	Name			"Slider2"
+	Location		[-1639, 178, -956, 660]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Slider3"
+      SID		      "235"
+      Ports		      []
+      Position		      [300, 514, 480, 569]
+      ZOrder		      299
+      ShowName		      off
+      DialogController	      "hmiCreateDDGDialog"
+      DialogControllerArgs    "DataTag2"
+      RequestExecContextInheritance off
+      MaskHideContents	      on
+      Variant		      off
+      IsWebBlock	      on
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		46
+	$ClassName		"Simulink.Mask"
+	Type			"MWDashboardBlock"
+	Help			"helpview([docroot '/mapfiles/simulink.map'], 'hmi_slider')"
+	Display			"if strcmp(get_param(bdroot(gcb),'BlockDiagramType'), 'library')\n    image([(matlabroot) '/toolbox/simulin"
+	"k/hmi/icons/Slider.png']);\nend"
+	IconFrame		"off"
+	Array {
+	  Type			  "Simulink.MaskParameter"
+	  Dimension		  5
+	  Object {
+	    $ObjectID		    47
+	    Type		    "edit"
+	    Name		    "webBlockId"
+	    Prompt		    "WebBlock Id"
+	    Value		    "c4877367-f846-46f6-9270-7c2cbcfa7865"
+	    Evaluate		    "off"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    48
+	    Type		    "edit"
+	    Name		    "webBlockType"
+	    Prompt		    "WebBlock Type"
+	    Value		    "slider"
+	    Evaluate		    "off"
+	    Tunable		    "off"
+	    Internal		    "on"
+	    ReadOnly		    "on"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    49
+	    Type		    "checkbox"
+	    Name		    "ShowInLibBrowser"
+	    Prompt		    ""
+	    Value		    "on"
+	    Evaluate		    "off"
+	    Tunable		    "off"
+	    Internal		    "on"
+	    ReadOnly		    "on"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    50
+	    Type		    "checkbox"
+	    Name		    "ShowInitialText"
+	    Prompt		    ""
+	    Value		    "on"
+	    Evaluate		    "off"
+	    Tunable		    "off"
+	    Internal		    "on"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    51
+	    Type		    "edit"
+	    Name		    "HMISrcModelName"
+	    Prompt		    "Source Model"
+	    Value		    "fixedEEControlR2016a"
+	    Evaluate		    "off"
+	    Tunable		    "off"
+	    NeverSave		    "on"
+	    Internal		    "on"
+	    Visible		    "off"
+	  }
+	  PropName		  "Parameters"
+	}
+	Object {
+	  $PropName		  "DialogControls"
+	  $ObjectID		  52
+	  $ClassName		  "Simulink.dialog.Group"
+	  Prompt		  "Simulink:studio:ToolBarParametersMenu"
+	  Array {
+	    Type		    "Simulink.dialog.parameter.Control"
+	    Dimension		    5
+	    Object {
+	      $ObjectID		      53
+	      $ClassName	      "Simulink.dialog.parameter.Edit"
+	      Name		      "webBlockId"
+	    }
+	    Object {
+	      $ObjectID		      54
+	      $ClassName	      "Simulink.dialog.parameter.Edit"
+	      Name		      "webBlockType"
+	    }
+	    Object {
+	      $ObjectID		      55
+	      $ClassName	      "Simulink.dialog.parameter.CheckBox"
+	      Name		      "ShowInLibBrowser"
+	    }
+	    Object {
+	      $ObjectID		      56
+	      $ClassName	      "Simulink.dialog.parameter.CheckBox"
+	      Name		      "ShowInitialText"
+	    }
+	    Object {
+	      $ObjectID		      57
+	      $ClassName	      "Simulink.dialog.parameter.Edit"
+	      Name		      "HMISrcModelName"
+	    }
+	    PropName		    "DialogControls"
+	  }
+	  Name			  "ParameterGroupVar"
+	}
+      }
+      System {
+	Name			"Slider3"
+	Location		[-1639, 178, -956, 660]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Slider4"
+      SID		      "236"
+      Ports		      []
+      Position		      [485, 574, 665, 629]
+      ZOrder		      301
+      ShowName		      off
+      DialogController	      "hmiCreateDDGDialog"
+      DialogControllerArgs    "DataTag3"
+      RequestExecContextInheritance off
+      MaskHideContents	      on
+      Variant		      off
+      IsWebBlock	      on
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		58
+	$ClassName		"Simulink.Mask"
+	Type			"MWDashboardBlock"
+	Help			"helpview([docroot '/mapfiles/simulink.map'], 'hmi_slider')"
+	Display			"if strcmp(get_param(bdroot(gcb),'BlockDiagramType'), 'library')\n    image([(matlabroot) '/toolbox/simulin"
+	"k/hmi/icons/Slider.png']);\nend"
+	IconFrame		"off"
+	Array {
+	  Type			  "Simulink.MaskParameter"
+	  Dimension		  5
+	  Object {
+	    $ObjectID		    59
+	    Type		    "edit"
+	    Name		    "webBlockId"
+	    Prompt		    "WebBlock Id"
+	    Value		    "73ca03e5-23df-431f-a2c7-9290daae07ad"
+	    Evaluate		    "off"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    60
+	    Type		    "edit"
+	    Name		    "webBlockType"
+	    Prompt		    "WebBlock Type"
+	    Value		    "slider"
+	    Evaluate		    "off"
+	    Tunable		    "off"
+	    Internal		    "on"
+	    ReadOnly		    "on"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    61
+	    Type		    "checkbox"
+	    Name		    "ShowInLibBrowser"
+	    Prompt		    ""
+	    Value		    "on"
+	    Evaluate		    "off"
+	    Tunable		    "off"
+	    Internal		    "on"
+	    ReadOnly		    "on"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    62
+	    Type		    "checkbox"
+	    Name		    "ShowInitialText"
+	    Prompt		    ""
+	    Value		    "on"
+	    Evaluate		    "off"
+	    Tunable		    "off"
+	    Internal		    "on"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    63
+	    Type		    "edit"
+	    Name		    "HMISrcModelName"
+	    Prompt		    "Source Model"
+	    Value		    "fixedEEControlR2016a"
+	    Evaluate		    "off"
+	    Tunable		    "off"
+	    NeverSave		    "on"
+	    Internal		    "on"
+	    Visible		    "off"
+	  }
+	  PropName		  "Parameters"
+	}
+	Object {
+	  $PropName		  "DialogControls"
+	  $ObjectID		  64
+	  $ClassName		  "Simulink.dialog.Group"
+	  Prompt		  "Simulink:studio:ToolBarParametersMenu"
+	  Array {
+	    Type		    "Simulink.dialog.parameter.Control"
+	    Dimension		    5
+	    Object {
+	      $ObjectID		      65
+	      $ClassName	      "Simulink.dialog.parameter.Edit"
+	      Name		      "webBlockId"
+	    }
+	    Object {
+	      $ObjectID		      66
+	      $ClassName	      "Simulink.dialog.parameter.Edit"
+	      Name		      "webBlockType"
+	    }
+	    Object {
+	      $ObjectID		      67
+	      $ClassName	      "Simulink.dialog.parameter.CheckBox"
+	      Name		      "ShowInLibBrowser"
+	    }
+	    Object {
+	      $ObjectID		      68
+	      $ClassName	      "Simulink.dialog.parameter.CheckBox"
+	      Name		      "ShowInitialText"
+	    }
+	    Object {
+	      $ObjectID		      69
+	      $ClassName	      "Simulink.dialog.parameter.Edit"
+	      Name		      "HMISrcModelName"
+	    }
+	    PropName		    "DialogControls"
+	  }
+	  Name			  "ParameterGroupVar"
+	}
+      }
+      System {
+	Name			"Slider4"
+	Location		[-1639, 178, -956, 660]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Slider5"
+      SID		      "237"
+      Ports		      []
+      Position		      [485, 644, 665, 699]
+      ZOrder		      300
+      ShowName		      off
+      DialogController	      "hmiCreateDDGDialog"
+      DialogControllerArgs    "DataTag4"
+      RequestExecContextInheritance off
+      MaskHideContents	      on
+      Variant		      off
+      IsWebBlock	      on
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		70
+	$ClassName		"Simulink.Mask"
+	Type			"MWDashboardBlock"
+	Help			"helpview([docroot '/mapfiles/simulink.map'], 'hmi_slider')"
+	Display			"if strcmp(get_param(bdroot(gcb),'BlockDiagramType'), 'library')\n    image([(matlabroot) '/toolbox/simulin"
+	"k/hmi/icons/Slider.png']);\nend"
+	IconFrame		"off"
+	Array {
+	  Type			  "Simulink.MaskParameter"
+	  Dimension		  5
+	  Object {
+	    $ObjectID		    71
+	    Type		    "edit"
+	    Name		    "webBlockId"
+	    Prompt		    "WebBlock Id"
+	    Value		    "ece376a0-6faa-43de-a6d1-f865810f490d"
+	    Evaluate		    "off"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    72
+	    Type		    "edit"
+	    Name		    "webBlockType"
+	    Prompt		    "WebBlock Type"
+	    Value		    "slider"
+	    Evaluate		    "off"
+	    Tunable		    "off"
+	    Internal		    "on"
+	    ReadOnly		    "on"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    73
+	    Type		    "checkbox"
+	    Name		    "ShowInLibBrowser"
+	    Prompt		    ""
+	    Value		    "on"
+	    Evaluate		    "off"
+	    Tunable		    "off"
+	    Internal		    "on"
+	    ReadOnly		    "on"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    74
+	    Type		    "checkbox"
+	    Name		    "ShowInitialText"
+	    Prompt		    ""
+	    Value		    "on"
+	    Evaluate		    "off"
+	    Tunable		    "off"
+	    Internal		    "on"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    75
+	    Type		    "edit"
+	    Name		    "HMISrcModelName"
+	    Prompt		    "Source Model"
+	    Value		    "fixedEEControlR2016a"
+	    Evaluate		    "off"
+	    Tunable		    "off"
+	    NeverSave		    "on"
+	    Internal		    "on"
+	    Visible		    "off"
+	  }
+	  PropName		  "Parameters"
+	}
+	Object {
+	  $PropName		  "DialogControls"
+	  $ObjectID		  76
+	  $ClassName		  "Simulink.dialog.Group"
+	  Prompt		  "Simulink:studio:ToolBarParametersMenu"
+	  Array {
+	    Type		    "Simulink.dialog.parameter.Control"
+	    Dimension		    5
+	    Object {
+	      $ObjectID		      77
+	      $ClassName	      "Simulink.dialog.parameter.Edit"
+	      Name		      "webBlockId"
+	    }
+	    Object {
+	      $ObjectID		      78
+	      $ClassName	      "Simulink.dialog.parameter.Edit"
+	      Name		      "webBlockType"
+	    }
+	    Object {
+	      $ObjectID		      79
+	      $ClassName	      "Simulink.dialog.parameter.CheckBox"
+	      Name		      "ShowInLibBrowser"
+	    }
+	    Object {
+	      $ObjectID		      80
+	      $ClassName	      "Simulink.dialog.parameter.CheckBox"
+	      Name		      "ShowInitialText"
+	    }
+	    Object {
+	      $ObjectID		      81
+	      $ClassName	      "Simulink.dialog.parameter.Edit"
+	      Name		      "HMISrcModelName"
+	    }
+	    PropName		    "DialogControls"
+	  }
+	  Name			  "ParameterGroupVar"
+	}
+      }
+      System {
+	Name			"Slider5"
+	Location		[-1639, 178, -956, 660]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Slider6"
+      SID		      "238"
+      Ports		      []
+      Position		      [485, 514, 665, 569]
+      ZOrder		      302
+      ShowName		      off
+      DialogController	      "hmiCreateDDGDialog"
+      DialogControllerArgs    "DataTag5"
+      RequestExecContextInheritance off
+      MaskHideContents	      on
+      Variant		      off
+      IsWebBlock	      on
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		82
+	$ClassName		"Simulink.Mask"
+	Type			"MWDashboardBlock"
+	Help			"helpview([docroot '/mapfiles/simulink.map'], 'hmi_slider')"
+	Display			"if strcmp(get_param(bdroot(gcb),'BlockDiagramType'), 'library')\n    image([(matlabroot) '/toolbox/simulin"
+	"k/hmi/icons/Slider.png']);\nend"
+	IconFrame		"off"
+	Array {
+	  Type			  "Simulink.MaskParameter"
+	  Dimension		  5
+	  Object {
+	    $ObjectID		    83
+	    Type		    "edit"
+	    Name		    "webBlockId"
+	    Prompt		    "WebBlock Id"
+	    Value		    "9ce41da6-82cb-4a2f-894f-660941c2500d"
+	    Evaluate		    "off"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    84
+	    Type		    "edit"
+	    Name		    "webBlockType"
+	    Prompt		    "WebBlock Type"
+	    Value		    "slider"
+	    Evaluate		    "off"
+	    Tunable		    "off"
+	    Internal		    "on"
+	    ReadOnly		    "on"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    85
+	    Type		    "checkbox"
+	    Name		    "ShowInLibBrowser"
+	    Prompt		    ""
+	    Value		    "on"
+	    Evaluate		    "off"
+	    Tunable		    "off"
+	    Internal		    "on"
+	    ReadOnly		    "on"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    86
+	    Type		    "checkbox"
+	    Name		    "ShowInitialText"
+	    Prompt		    ""
+	    Value		    "on"
+	    Evaluate		    "off"
+	    Tunable		    "off"
+	    Internal		    "on"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    87
+	    Type		    "edit"
+	    Name		    "HMISrcModelName"
+	    Prompt		    "Source Model"
+	    Value		    "fixedEEControlR2016a"
+	    Evaluate		    "off"
+	    Tunable		    "off"
+	    NeverSave		    "on"
+	    Internal		    "on"
+	    Visible		    "off"
+	  }
+	  PropName		  "Parameters"
+	}
+	Object {
+	  $PropName		  "DialogControls"
+	  $ObjectID		  88
+	  $ClassName		  "Simulink.dialog.Group"
+	  Prompt		  "Simulink:studio:ToolBarParametersMenu"
+	  Array {
+	    Type		    "Simulink.dialog.parameter.Control"
+	    Dimension		    5
+	    Object {
+	      $ObjectID		      89
+	      $ClassName	      "Simulink.dialog.parameter.Edit"
+	      Name		      "webBlockId"
+	    }
+	    Object {
+	      $ObjectID		      90
+	      $ClassName	      "Simulink.dialog.parameter.Edit"
+	      Name		      "webBlockType"
+	    }
+	    Object {
+	      $ObjectID		      91
+	      $ClassName	      "Simulink.dialog.parameter.CheckBox"
+	      Name		      "ShowInLibBrowser"
+	    }
+	    Object {
+	      $ObjectID		      92
+	      $ClassName	      "Simulink.dialog.parameter.CheckBox"
+	      Name		      "ShowInitialText"
+	    }
+	    Object {
+	      $ObjectID		      93
+	      $ClassName	      "Simulink.dialog.parameter.Edit"
+	      Name		      "HMISrcModelName"
+	    }
+	    PropName		    "DialogControls"
+	  }
+	  Name			  "ParameterGroupVar"
+	}
+      }
+      System {
+	Name			"Slider6"
+	Location		[-1639, 178, -956, 660]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+      }
+    }
+    Block {
+      BlockType		      SubSystem
       Name		      "Subsystem"
       SID		      "142"
       Ports		      [2, 3]
@@ -1522,7 +2757,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"107"
+	ZoomFactor		"112"
 	Block {
 	  BlockType		  Inport
 	  Name			  "initial\nPosition"
@@ -1913,20 +3148,20 @@ Model {
 	  "Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('Sources"
 	  "','WiredSimulink',true,'DataLoggingLimitDataPoints',true,'DataLoggingSaveFormat','Array','DataLoggingDecimation','1"
 	  "','DataLoggingDecimateData',true,'DataLoggingVariableName','ScopeData1'),extmgr.Configuration('Visuals','Time Domai"
-	  "n',true,'SerializedDisplays',{struct('MinYLimReal','-0.32302','MaxYLimReal','0.4173','YLabelReal','','MinYLimMag','"
-	  "0.00000','MaxYLimMag','0.4173','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',["
-	  "0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667"
-	  ";0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0."
-	  "0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.65098039215686"
-	  "3],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{'X Position','Y Position','Z Pos"
-	  "ition'}},'NumLines',3,'LineNames',{{'X Position','Y Position','Z Position'}},'ShowContent',true,'Placement',1)},'Di"
-	  "splayPropertyDefaults',struct('MinYLimReal','-0.32302','MaxYLimReal','0.4173','YLabelReal','','MinYLimMag','0.00000"
-	  "','MaxYLimMag','0.4173','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],"
-	  "'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[0.0745098039215686 0.62352941"
-	  "1764706 1;1 0.411764705882353 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.39215"
-	  "6862745098 0.831372549019608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])),ex"
-	  "tmgr.Configuration('Tools','Plot Navigation',true),extmgr.Configuration('Tools','Measurements',true,'Version','2016"
-	  "a')),'Version','2016a','Position',[-719 -114 590 510])"
+	  "n',true,'SerializedDisplays',{struct('MinYLimReal','-0.31425','MaxYLimReal','0.33824','YLabelReal','','MinYLimMag',"
+	  "'0.00000','MaxYLimMag','0.33824','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor'"
+	  ",[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.06666666666666"
+	  "67;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 "
+	  "0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156"
+	  "863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{'X Position','Y Position','Z P"
+	  "osition'}},'NumLines',3,'LineNames',{{'X Position','Y Position','Z Position'}},'ShowContent',true,'Placement',1)},'"
+	  "DisplayPropertyDefaults',struct('MinYLimReal','-0.31425','MaxYLimReal','0.33824','YLabelReal','','MinYLimMag','0.00"
+	  "000','MaxYLimMag','0.33824','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0"
+	  " 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[0.0745098039215686 0.6235"
+	  "29411764706 1;1 0.411764705882353 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.3"
+	  "92156862745098 0.831372549019608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])"
+	  "),extmgr.Configuration('Tools','Plot Navigation',true),extmgr.Configuration('Tools','Measurements',true,'Version','"
+	  "2016a')),'Version','2016a','Position',[-818 -112 590 510])"
 	}
 	Block {
 	  BlockType		  Scope
@@ -1939,20 +3174,20 @@ Model {
 	  "Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('Sources"
 	  "','WiredSimulink',true,'DataLoggingLimitDataPoints',true,'DataLoggingSaveFormat','Array','DataLoggingDecimation','1"
 	  "','DataLoggingDecimateData',true,'DataLoggingVariableName','ScopeData1'),extmgr.Configuration('Visuals','Time Domai"
-	  "n',true,'SerializedDisplays',{struct('MinYLimReal','-0.23111','MaxYLimReal','0.0809','YLabelReal','','MinYLimMag','"
-	  "0.00000','MaxYLimMag','0.23111','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',"
-	  "[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.066666666666666"
-	  "7;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0"
-	  ".0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.6509803921568"
-	  "63],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{'X Position','Y Position','Z Po"
-	  "sition'}},'NumLines',3,'LineNames',{{'X Position','Y Position','Z Position'}},'ShowContent',true,'Placement',1)},'D"
-	  "isplayPropertyDefaults',struct('MinYLimReal','-0.23111','MaxYLimReal','0.0809','YLabelReal','','MinYLimMag','0.0000"
-	  "0','MaxYLimMag','0.23111','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0"
-	  "],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[0.0745098039215686 0.623529"
-	  "411764706 1;1 0.411764705882353 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.392"
-	  "156862745098 0.831372549019608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])),"
-	  "extmgr.Configuration('Tools','Plot Navigation',true),extmgr.Configuration('Tools','Measurements',true,'Version','20"
-	  "16a')),'Version','2016a','Position',[-1582 -20 590 510])"
+	  "n',true,'SerializedDisplays',{struct('MinYLimReal','-0.12104','MaxYLimReal','0.08936','YLabelReal','','MinYLimMag',"
+	  "'0.00000','MaxYLimMag','0.12104','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor'"
+	  ",[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.06666666666666"
+	  "67;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 "
+	  "0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156"
+	  "863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{'X Position','Y Position','Z P"
+	  "osition'}},'NumLines',3,'LineNames',{{'X Position','Y Position','Z Position'}},'ShowContent',true,'Placement',1)},'"
+	  "DisplayPropertyDefaults',struct('MinYLimReal','-0.12104','MaxYLimReal','0.08936','YLabelReal','','MinYLimMag','0.00"
+	  "000','MaxYLimMag','0.12104','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0"
+	  " 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[0.0745098039215686 0.6235"
+	  "29411764706 1;1 0.411764705882353 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.3"
+	  "92156862745098 0.831372549019608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])"
+	  "),extmgr.Configuration('Tools','Plot Navigation',true),extmgr.Configuration('Tools','Measurements',true,'Version','"
+	  "2016a')),'Version','2016a','Position',[-1584 -58 590 510])"
 	}
 	Block {
 	  BlockType		  Scope
@@ -2008,7 +3243,7 @@ Model {
 	  BlockType		  Fcn
 	  Name			  "x"
 	  SID			  "198"
-	  Position		  [535, -233, 585, -207]
+	  Position		  [535, -193, 585, -167]
 	  ZOrder		  275
 	  Expr			  "u(13)"
 	}
@@ -2054,7 +3289,8 @@ Model {
 	  Position		  [170, 195, 220, 245]
 	  ZOrder		  227
 	  Amplitude		  "0.1"
-	  SampleTime		  "0"
+	  Samples		  "1000"
+	  SampleTime		  "0.01"
 	}
 	Block {
 	  BlockType		  Fcn
@@ -2068,7 +3304,7 @@ Model {
 	  BlockType		  Fcn
 	  Name			  "z1"
 	  SID			  "200"
-	  Position		  [535, -38, 585, -12]
+	  Position		  [535, -68, 585, -42]
 	  ZOrder		  277
 	  Expr			  "u(15)"
 	}
@@ -2081,7 +3317,9 @@ Model {
 	  ZOrder		  238
 	  Amplitude		  "0.1"
 	  Phase			  "pi/2"
-	  SampleTime		  "0"
+	  Samples		  "1000"
+	  Offset		  "250"
+	  SampleTime		  "0.01"
 	}
 	Block {
 	  BlockType		  Outport
@@ -2370,13 +3608,13 @@ Model {
 	  Points		  [48, 0]
 	  Branch {
 	    ZOrder		    458
-	    Points		    [0, 95]
+	    Points		    [0, 65]
 	    DstBlock		    "z1"
 	    DstPort		    1
 	  }
 	  Branch {
 	    ZOrder		    457
-	    Points		    [0, -100]
+	    Points		    [0, -60]
 	    DstBlock		    "x"
 	    DstPort		    1
 	  }
@@ -2390,7 +3628,7 @@ Model {
 	  ZOrder		  459
 	  SrcBlock		  "x"
 	  SrcPort		  1
-	  Points		  [33, 0; 0, 75]
+	  Points		  [33, 0; 0, 35]
 	  DstBlock		  "Bus\nCreator3"
 	  DstPort		  1
 	}
@@ -2405,7 +3643,7 @@ Model {
 	  ZOrder		  461
 	  SrcBlock		  "z1"
 	  SrcPort		  1
-	  Points		  [33, 0; 0, -70]
+	  Points		  [33, 0; 0, -40]
 	  DstBlock		  "Bus\nCreator3"
 	  DstPort		  3
 	}
@@ -2662,7 +3900,7 @@ Model {
       Points		      [41, 0]
       Branch {
 	ZOrder			67
-	Points			[0, 66; 480, 0; 0, 119]
+	Points			[0, 66; 480, 0; 0, 99]
 	DstBlock		"Control Objective"
 	DstPort			3
       }
@@ -2751,7 +3989,7 @@ Model {
       }
       Branch {
 	ZOrder			232
-	Points			[167, 0; 0, -20]
+	Points			[167, 0; 0, -40]
 	DstBlock		"Control Objective"
 	DstPort			2
       }
@@ -2760,7 +3998,7 @@ Model {
       ZOrder		      231
       SrcBlock		      "Control Objective"
       SrcPort		      1
-      Points		      [9, 0; 0, -149; -318, 0; 0, -216]
+      Points		      [9, 0; 0, -149; -418, 0; 0, -216]
       DstBlock		      "computeTorque"
       DstPort		      1
     }
@@ -2768,7 +4006,7 @@ Model {
       ZOrder		      393
       SrcBlock		      "Subsystem"
       SrcPort		      1
-      Points		      [0, -55]
+      Points		      [14, 0; 0, -75]
       DstBlock		      "Control Objective"
       DstPort		      4
     }
@@ -2776,7 +4014,7 @@ Model {
       ZOrder		      394
       SrcBlock		      "Subsystem"
       SrcPort		      2
-      Points		      [14, 0; 0, -70]
+      Points		      [32, 0; 0, -90]
       DstBlock		      "Control Objective"
       DstPort		      5
     }
@@ -2784,7 +4022,7 @@ Model {
       ZOrder		      395
       SrcBlock		      "Subsystem"
       SrcPort		      3
-      Points		      [26, 0; 0, -85]
+      Points		      [49, 0; 0, -105]
       DstBlock		      "Control Objective"
       DstPort		      6
     }
@@ -2801,16 +4039,16 @@ Model {
       }
       Branch {
 	ZOrder			421
-	Points			[36, 0; 0, 40]
+	Points			[36, 0; 0, 20]
 	Branch {
-	  ZOrder		  425
-	  DstBlock		  "Control Objective"
+	  ZOrder		  444
+	  Points		  [0, 74; -23, 0; 0, 71]
+	  DstBlock		  "Initial\nPosition\n"
 	  DstPort		  1
 	}
 	Branch {
-	  ZOrder		  389
-	  Points		  [0, 54; -23, 0; 0, 71]
-	  DstBlock		  "Initial\nPosition\n"
+	  ZOrder		  425
+	  DstBlock		  "Control Objective"
 	  DstPort		  1
 	}
       }
@@ -2822,6 +4060,53 @@ Model {
       DstBlock		      "Subsystem"
       DstPort		      1
     }
+    Line {
+      ZOrder		      448
+      SrcBlock		      "Gain\nSliders"
+      SrcPort		      1
+      DstBlock		      "Control Objective"
+      DstPort		      7
+    }
+    Line {
+      ZOrder		      449
+      SrcBlock		      "Gain\nSliders"
+      SrcPort		      2
+      DstBlock		      "Control Objective"
+      DstPort		      8
+    }
+  }
+}
+MatData {
+  NumRecords		  6
+  DataRecord {
+    Tag			    DataTag0
+    Data		    "  %)30     .    :     8    (     0         %    \"     $    !     0         .    .     8    (    !     "
+    "     %    \"     $    &     0         0    !@   %-L:61E<@  "
+  }
+  DataRecord {
+    Tag			    DataTag1
+    Data		    "  %)30     .    :     8    (     0         %    \"     $    !     0         .    .     8    (    !     "
+    "     %    \"     $    &     0         0    !@   %-L:61E<@  "
+  }
+  DataRecord {
+    Tag			    DataTag2
+    Data		    "  %)30     .    :     8    (     0         %    \"     $    !     0         .    .     8    (    !     "
+    "     %    \"     $    &     0         0    !@   %-L:61E<@  "
+  }
+  DataRecord {
+    Tag			    DataTag3
+    Data		    "  %)30     .    :     8    (     0         %    \"     $    !     0         .    .     8    (    !     "
+    "     %    \"     $    &     0         0    !@   %-L:61E<@  "
+  }
+  DataRecord {
+    Tag			    DataTag4
+    Data		    "  %)30     .    :     8    (     0         %    \"     $    !     0         .    .     8    (    !     "
+    "     %    \"     $    &     0         0    !@   %-L:61E<@  "
+  }
+  DataRecord {
+    Tag			    DataTag5
+    Data		    "  %)30     .    :     8    (     0         %    \"     $    !     0         .    .     8    (    !     "
+    "     %    \"     $    &     0         0    !@   %-L:61E<@  "
   }
 }
 #Finite State Machines
@@ -2835,7 +4120,7 @@ Stateflow {
     name		    "fixedEEControlR2016a"
     created		    "07-Dec-2017 15:23:47"
     isLibrary		    0
-    firstTarget		    33
+    firstTarget		    35
     sfVersion		    80000009
   }
   chart {
@@ -2845,11 +4130,14 @@ Stateflow {
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 3600 1200 1.180555555555556]
     treeNode		    [0 3 0 0]
-    firstTransition	    12
-    firstJunction	    11
+    firstTransition	    14
+    firstJunction	    13
     viewObj		    2
+    visible		    1
     machine		    1
-    ssIdHighWaterMark	    10
+    subviewS {
+    }
+    ssIdHighWaterMark	    12
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
     firstData		    4
@@ -2873,9 +4161,9 @@ Stateflow {
     decomposition	    CLUSTER_STATE
     eml {
       isEML		      1
-      script		      "function ddx = controlObjective(W_H_EE,W_J_EE,dq,x_des,dx_des,ddx_des)\n   \n    x = W_H_EE(1:3,4"
-      ")-x_des;\n    dx = W_J_EE(1:3,7:end)*dq-dx_des;\n   \n    Kp = [100;100;100];\n    Kd = [1;1;1];\n\n    ddx = dd"
-      "x_des-Kp.*x-Kd.*dx; \n\nend"
+      script		      "function ddx = controlObjective(W_H_EE,W_J_EE,dq,x_des,dx_des,ddx_des,Kp,Kd)\n   \n    x = W_H_EE"
+      "(1:3,4)-x_des;\n    dx = W_J_EE(1:3,7:end)*dq-dx_des;\n   \n    kp = Kp;\n    kd = Kd;\n\n    ddx = ddx_des-kp.*"
+      "x-kd.*dx; \n\nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
@@ -3028,7 +4316,57 @@ Stateflow {
     id			    10
     ssIdNumber		    9
     name		    "ddx_des"
-    linkNode		    [2 9 0]
+    linkNode		    [2 9 11]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    11
+    ssIdNumber		    11
+    name		    "Kp"
+    linkNode		    [2 10 12]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    12
+    ssIdNumber		    12
+    name		    "Kd"
+    linkNode		    [2 11 0]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -3050,7 +4388,7 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   junction {
-    id			    11
+    id			    13
     position		    [23.5747 49.5747 7]
     chart		    2
     linkNode		    [2 0 0]
@@ -3059,7 +4397,7 @@ Stateflow {
     type		    CONNECTIVE_JUNCTION
   }
   transition {
-    id			    12
+    id			    14
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [28.125 13.875 102.544 14.964]
     fontSize		    12
@@ -3067,7 +4405,7 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      11
+      id		      13
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
@@ -3083,26 +4421,26 @@ Stateflow {
     ssIdNumber		    2
   }
   instance {
-    id			    13
+    id			    15
     name		    "Control Objective"
     machine		    1
     chart		    2
   }
   chart {
-    id			    14
+    id			    16
     name		    "computeTorque"
     windowPosition	    [422 539.941 189 413]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 3600 1200 1.180555555555556]
-    treeNode		    [0 15 0 0]
-    firstTransition	    22
-    firstJunction	    21
-    viewObj		    14
+    treeNode		    [0 17 0 0]
+    firstTransition	    24
+    firstJunction	    23
+    viewObj		    16
     machine		    1
     ssIdHighWaterMark	    8
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
-    firstData		    16
+    firstData		    18
     chartFileNumber	    2
     disableImplicitCasting  1
     eml {
@@ -3110,14 +4448,14 @@ Stateflow {
     }
   }
   state {
-    id			    15
+    id			    17
     labelString		    "eML_blk_kernel()"
     position		    [18 64.5 118 66]
     fontSize		    12
-    chart		    14
-    treeNode		    [14 0 0 0]
+    chart		    16
+    treeNode		    [16 0 0 0]
     superState		    SUBCHART
-    subviewer		    14
+    subviewer		    16
     ssIdNumber		    1
     type		    FUNC_STATE
     decomposition	    CLUSTER_STATE
@@ -3129,57 +4467,10 @@ Stateflow {
     }
   }
   data {
-    id			    16
+    id			    18
     ssIdNumber		    8
     name		    "ddx"
-    linkNode		    [14 0 17]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
-      unit {
-	name			"inherit"
-      }
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    17
-    ssIdNumber		    4
-    name		    "M"
-    linkNode		    [14 16 18]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      unit {
-	name			"inherit"
-      }
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    18
-    ssIdNumber		    7
-    name		    "h"
-    linkNode		    [14 17 19]
+    linkNode		    [16 0 19]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -3202,9 +4493,56 @@ Stateflow {
   }
   data {
     id			    19
+    ssIdNumber		    4
+    name		    "M"
+    linkNode		    [16 18 20]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    20
+    ssIdNumber		    7
+    name		    "h"
+    linkNode		    [16 19 21]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    21
     ssIdNumber		    5
     name		    "t"
-    linkNode		    [14 18 20]
+    linkNode		    [16 20 22]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -3224,10 +4562,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    20
+    id			    22
     ssIdNumber		    6
     name		    "J"
-    linkNode		    [14 19 0]
+    linkNode		    [16 21 0]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -3249,16 +4587,16 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   junction {
-    id			    21
+    id			    23
     position		    [23.5747 49.5747 7]
-    chart		    14
-    linkNode		    [14 0 0]
-    subviewer		    14
+    chart		    16
+    linkNode		    [16 0 0]
+    subviewer		    16
     ssIdNumber		    3
     type		    CONNECTIVE_JUNCTION
   }
   transition {
-    id			    22
+    id			    24
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [28.125 13.875 102.544 14.964]
     fontSize		    12
@@ -3266,14 +4604,14 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      21
+      id		      23
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
-    chart		    14
-    linkNode		    [14 0 0]
+    chart		    16
+    linkNode		    [16 0 0]
     dataLimits		    [21.175 25.975 14.625 42.575]
-    subviewer		    14
+    subviewer		    16
     drawStyle		    SMART
     slide {
       sticky		      BOTH_STICK
@@ -3282,26 +4620,26 @@ Stateflow {
     ssIdNumber		    2
   }
   instance {
-    id			    23
+    id			    25
     name		    "computeTorque"
     machine		    1
-    chart		    14
+    chart		    16
   }
   chart {
-    id			    24
+    id			    26
     name		    "Subsystem/Position Error Plots\n"
     windowPosition	    [422 539.941 189 413]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 3600 1200 1.180555555555556]
-    treeNode		    [0 25 0 0]
-    firstTransition	    31
-    firstJunction	    30
-    viewObj		    24
+    treeNode		    [0 27 0 0]
+    firstTransition	    33
+    firstJunction	    32
+    viewObj		    26
     machine		    1
     ssIdHighWaterMark	    8
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
-    firstData		    26
+    firstData		    28
     chartFileNumber	    3
     disableImplicitCasting  1
     eml {
@@ -3309,14 +4647,14 @@ Stateflow {
     }
   }
   state {
-    id			    25
+    id			    27
     labelString		    "eML_blk_kernel()"
     position		    [18 64.5 118 66]
     fontSize		    12
-    chart		    24
-    treeNode		    [24 0 0 0]
+    chart		    26
+    treeNode		    [26 0 0 0]
     superState		    SUBCHART
-    subviewer		    24
+    subviewer		    26
     ssIdNumber		    1
     type		    FUNC_STATE
     decomposition	    CLUSTER_STATE
@@ -3334,57 +4672,10 @@ Stateflow {
     }
   }
   data {
-    id			    26
+    id			    28
     ssIdNumber		    8
     name		    "viz_flag"
-    linkNode		    [24 0 27]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
-      unit {
-	name			"inherit"
-      }
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    27
-    ssIdNumber		    4
-    name		    "sim_time"
-    linkNode		    [24 26 28]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      unit {
-	name			"inherit"
-      }
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    28
-    ssIdNumber		    7
-    name		    "Xactual"
-    linkNode		    [24 27 29]
+    linkNode		    [26 0 29]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -3407,9 +4698,56 @@ Stateflow {
   }
   data {
     id			    29
+    ssIdNumber		    4
+    name		    "sim_time"
+    linkNode		    [26 28 30]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    30
+    ssIdNumber		    7
+    name		    "Xactual"
+    linkNode		    [26 29 31]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    31
     ssIdNumber		    6
     name		    "Xdesired"
-    linkNode		    [24 28 0]
+    linkNode		    [26 30 0]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -3431,16 +4769,16 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   junction {
-    id			    30
+    id			    32
     position		    [23.5747 49.5747 7]
-    chart		    24
-    linkNode		    [24 0 0]
-    subviewer		    24
+    chart		    26
+    linkNode		    [26 0 0]
+    subviewer		    26
     ssIdNumber		    3
     type		    CONNECTIVE_JUNCTION
   }
   transition {
-    id			    31
+    id			    33
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [28.125 13.875 102.544 14.964]
     fontSize		    12
@@ -3448,14 +4786,14 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      30
+      id		      32
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
-    chart		    24
-    linkNode		    [24 0 0]
+    chart		    26
+    linkNode		    [26 0 0]
     dataLimits		    [21.175 25.975 14.625 42.575]
-    subviewer		    24
+    subviewer		    26
     drawStyle		    SMART
     slide {
       sticky		      BOTH_STICK
@@ -3464,13 +4802,13 @@ Stateflow {
     ssIdNumber		    2
   }
   instance {
-    id			    32
+    id			    34
     name		    "Subsystem/Position Error Plots\n"
     machine		    1
-    chart		    24
+    chart		    26
   }
   target {
-    id			    33
+    id			    35
     name		    "sfun"
     description		    "Default Simulink S-Function Target."
     machine		    1
