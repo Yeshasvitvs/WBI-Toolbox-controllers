@@ -30,8 +30,8 @@ CONFIG.EE                               = 'r_hand';
 %               the torso of the robot
 %               moved along a desired trajectory using 
 
-CONFIG.PARTS                            = 'single_arm';
-%CONFIG.PARTS                            = 'upper_body';
+%CONFIG.PARTS                            = 'single_arm';
+CONFIG.PARTS                            = 'upper_body';
 
 %% Configuration Object
 WBTConfigRobot                          = WBToolbox.Configuration;
