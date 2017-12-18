@@ -3,7 +3,7 @@ function offlinePositionErrorPlots
     clf;
     close all;
 
-    animated_plot = false;
+    animated_plot = true;
 
     %NOTE: using in evalin is discouraged!
     Xdes = evalin('base', 'Xdesired');
@@ -41,6 +41,9 @@ function offlinePositionErrorPlots
 
         plot3(Xdes.signal1.Data,Xdes.signal2.Data,Xdes.signal3.Data,'r');
         plot3(Xact.signal1.Data,Xact.signal2.Data,Xact.signal3.Data,'b');
+        
+        plot3(Xdes.signal1.Data(end,1),Xdes.signal2.Data(end,1),Xdes.signal3.Data(end,1),'r*');
+        plot3(Xact.signal1.Data(end,1),Xact.signal2.Data(end,1),Xact.signal3.Data(end,1),'bo');
 
     end
 
@@ -59,7 +62,7 @@ function offlinePositionErrorPlots
     if(animated_plot)
 
         curve_position_error = animatedline('LineWidth',1);
-        curve_position_error_marker = animatedline('LineWidth',1,'Marker','+');
+        curve_position_error_marker = animatedline('Color','r','LineWidth',1,'Marker','*');
 
         for i = 2:1:size(Xdes.signal1.Data,1)
 
@@ -112,6 +115,11 @@ function offlinePositionErrorPlots
         plot3(Xact.signal1.Data-Xdes.signal1.Data,...
               Xact.signal2.Data-Xdes.signal2.Data,...
               Xact.signal3.Data-Xdes.signal3.Data,'k');
+        
+        plot3(Xact.signal1.Data(end,1) -Xdes.signal1.Data(end,1) ,...
+              Xact.signal2.Data(end,1) -Xdes.signal2.Data(end,1),...
+              Xact.signal3.Data(end,1) -Xdes.signal3.Data(end,1) ,'r*');
+         
 
     end
 
