@@ -3,7 +3,7 @@ function offlinePositionErrorPlots
     clf;
     close all;
 
-    animated_plot = true;
+    animated_plot = false;
 
     %NOTE: using in evalin is discouraged!
     Xdes = evalin('base', 'Xdesired');
