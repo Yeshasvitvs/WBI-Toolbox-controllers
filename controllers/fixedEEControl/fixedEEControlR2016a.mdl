@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.818"
+    ComputedModelVersion    "1.828"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -32,7 +32,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [37.0, 18.0, 1883.0, 1062.0]
+      Location		      [49.0, 24.0, 1871.0, 1056.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -55,18 +55,18 @@ Model {
 	Object {
 	  $ObjectID		  5
 	  IsActive		  [1]
-	  ViewObjType		  "SimulinkTopLevel"
-	  LoadSaveID		  "0"
-	  Extents		  [1849.0, 916.0]
-	  ZoomFactor		  [1.4061776061776061]
-	  Offset		  [290.0439319055464, 156.4383974914453]
+	  ViewObjType		  "SimulinkSubsys"
+	  LoadSaveID		  "142"
+	  Extents		  [1837.0, 905.0]
+	  ZoomFactor		  [1.13]
+	  Offset		  [0.0, 0.0]
 	}
 	Object {
 	  $ObjectID		  6
 	  IsActive		  [0]
 	  ViewObjType		  "SimulinkSubsys"
 	  LoadSaveID		  "14"
-	  Extents		  [1849.0, 916.0]
+	  Extents		  [606.0, 448.0]
 	  ZoomFactor		  [6.0]
 	  Offset		  [0.0, 0.0]
 	}
@@ -80,9 +80,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "yeshi"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Dec 19 19:38:52 2017"
-  RTWModifiedTimeStamp	  435613128
-  ModelVersionFormat	  "1.%<AutoIncrement:818>"
+  LastModifiedDate	  "Thu Dec 21 16:13:42 2017"
+  RTWModifiedTimeStamp	  435773620
+  ModelVersionFormat	  "1.%<AutoIncrement:828>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -978,8 +978,8 @@ Model {
   }
   System {
     Name		    "fixedEEControlR2016a"
-    Location		    [37, 18, 1920, 1080]
-    Open		    on
+    Location		    [49, 24, 1920, 1080]
+    Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -990,7 +990,7 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "141"
+    ZoomFactor		    "140"
     ReportName		    "simulink-default.rpt"
     SIDHighWatermark	    "264"
     Block {
@@ -1983,852 +1983,6 @@ Model {
     }
     Block {
       BlockType		      SubSystem
-      Name		      "Slider1"
-      SID		      "234"
-      Ports		      []
-      Position		      [300, 574, 480, 629]
-      ZOrder		      298
-      ShowName		      off
-      DialogController	      "hmiCreateDDGDialog"
-      DialogControllerArgs    "DataTag0"
-      RequestExecContextInheritance off
-      MaskHideContents	      on
-      Variant		      off
-      IsWebBlock	      on
-      Object {
-	$PropName		"MaskObject"
-	$ObjectID		21
-	$ClassName		"Simulink.Mask"
-	Type			"MWDashboardBlock"
-	Help			"helpview([docroot '/mapfiles/simulink.map'], 'hmi_slider')"
-	Display			"if strcmp(get_param(bdroot(gcb),'BlockDiagramType'), 'library')\n    image([(matlabroot) '/toolbox/simulin"
-	"k/hmi/icons/Slider.png']);\nend"
-	IconFrame		"off"
-	Array {
-	  Type			  "Simulink.MaskParameter"
-	  Dimension		  5
-	  Object {
-	    $ObjectID		    22
-	    Type		    "edit"
-	    Name		    "webBlockId"
-	    Prompt		    "WebBlock Id"
-	    Value		    "7b15bbf5-f5f1-4730-8a01-8483796d0a72"
-	    Evaluate		    "off"
-	    Tunable		    "off"
-	  }
-	  Object {
-	    $ObjectID		    23
-	    Type		    "edit"
-	    Name		    "webBlockType"
-	    Prompt		    "WebBlock Type"
-	    Value		    "slider"
-	    Evaluate		    "off"
-	    Tunable		    "off"
-	    Internal		    "on"
-	    ReadOnly		    "on"
-	    Enabled		    "off"
-	    Visible		    "off"
-	  }
-	  Object {
-	    $ObjectID		    24
-	    Type		    "checkbox"
-	    Name		    "ShowInLibBrowser"
-	    Prompt		    ""
-	    Value		    "on"
-	    Evaluate		    "off"
-	    Tunable		    "off"
-	    Internal		    "on"
-	    ReadOnly		    "on"
-	    Enabled		    "off"
-	    Visible		    "off"
-	  }
-	  Object {
-	    $ObjectID		    25
-	    Type		    "checkbox"
-	    Name		    "ShowInitialText"
-	    Prompt		    ""
-	    Value		    "on"
-	    Evaluate		    "off"
-	    Tunable		    "off"
-	    Internal		    "on"
-	    Visible		    "off"
-	  }
-	  Object {
-	    $ObjectID		    26
-	    Type		    "edit"
-	    Name		    "HMISrcModelName"
-	    Prompt		    "Source Model"
-	    Value		    "fixedEEControlR2016a"
-	    Evaluate		    "off"
-	    Tunable		    "off"
-	    NeverSave		    "on"
-	    Internal		    "on"
-	    Visible		    "off"
-	  }
-	  PropName		  "Parameters"
-	}
-	Object {
-	  $PropName		  "DialogControls"
-	  $ObjectID		  27
-	  $ClassName		  "Simulink.dialog.Group"
-	  Prompt		  "Simulink:studio:ToolBarParametersMenu"
-	  Array {
-	    Type		    "Simulink.dialog.parameter.Control"
-	    Dimension		    5
-	    Object {
-	      $ObjectID		      28
-	      $ClassName	      "Simulink.dialog.parameter.Edit"
-	      Name		      "webBlockId"
-	    }
-	    Object {
-	      $ObjectID		      29
-	      $ClassName	      "Simulink.dialog.parameter.Edit"
-	      Name		      "webBlockType"
-	    }
-	    Object {
-	      $ObjectID		      30
-	      $ClassName	      "Simulink.dialog.parameter.CheckBox"
-	      Name		      "ShowInLibBrowser"
-	    }
-	    Object {
-	      $ObjectID		      31
-	      $ClassName	      "Simulink.dialog.parameter.CheckBox"
-	      Name		      "ShowInitialText"
-	    }
-	    Object {
-	      $ObjectID		      32
-	      $ClassName	      "Simulink.dialog.parameter.Edit"
-	      Name		      "HMISrcModelName"
-	    }
-	    PropName		    "DialogControls"
-	  }
-	  Name			  "ParameterGroupVar"
-	}
-      }
-      System {
-	Name			"Slider1"
-	Location		[-1639, 178, -956, 660]
-	Open			off
-	ModelBrowserVisibility	off
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"usletter"
-	PaperUnits		"inches"
-	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"100"
-      }
-    }
-    Block {
-      BlockType		      SubSystem
-      Name		      "Slider2"
-      SID		      "233"
-      Ports		      []
-      Position		      [300, 644, 480, 699]
-      ZOrder		      297
-      ShowName		      off
-      DialogController	      "hmiCreateDDGDialog"
-      DialogControllerArgs    "DataTag1"
-      RequestExecContextInheritance off
-      MaskHideContents	      on
-      Variant		      off
-      IsWebBlock	      on
-      Object {
-	$PropName		"MaskObject"
-	$ObjectID		33
-	$ClassName		"Simulink.Mask"
-	Type			"MWDashboardBlock"
-	Help			"helpview([docroot '/mapfiles/simulink.map'], 'hmi_slider')"
-	Display			"if strcmp(get_param(bdroot(gcb),'BlockDiagramType'), 'library')\n    image([(matlabroot) '/toolbox/simulin"
-	"k/hmi/icons/Slider.png']);\nend"
-	IconFrame		"off"
-	Array {
-	  Type			  "Simulink.MaskParameter"
-	  Dimension		  5
-	  Object {
-	    $ObjectID		    34
-	    Type		    "edit"
-	    Name		    "webBlockId"
-	    Prompt		    "WebBlock Id"
-	    Value		    "892d6364-26ad-4154-986f-749a3704cc7a"
-	    Evaluate		    "off"
-	    Tunable		    "off"
-	  }
-	  Object {
-	    $ObjectID		    35
-	    Type		    "edit"
-	    Name		    "webBlockType"
-	    Prompt		    "WebBlock Type"
-	    Value		    "slider"
-	    Evaluate		    "off"
-	    Tunable		    "off"
-	    Internal		    "on"
-	    ReadOnly		    "on"
-	    Enabled		    "off"
-	    Visible		    "off"
-	  }
-	  Object {
-	    $ObjectID		    36
-	    Type		    "checkbox"
-	    Name		    "ShowInLibBrowser"
-	    Prompt		    ""
-	    Value		    "on"
-	    Evaluate		    "off"
-	    Tunable		    "off"
-	    Internal		    "on"
-	    ReadOnly		    "on"
-	    Enabled		    "off"
-	    Visible		    "off"
-	  }
-	  Object {
-	    $ObjectID		    37
-	    Type		    "checkbox"
-	    Name		    "ShowInitialText"
-	    Prompt		    ""
-	    Value		    "on"
-	    Evaluate		    "off"
-	    Tunable		    "off"
-	    Internal		    "on"
-	    Visible		    "off"
-	  }
-	  Object {
-	    $ObjectID		    38
-	    Type		    "edit"
-	    Name		    "HMISrcModelName"
-	    Prompt		    "Source Model"
-	    Value		    "fixedEEControlR2016a"
-	    Evaluate		    "off"
-	    Tunable		    "off"
-	    NeverSave		    "on"
-	    Internal		    "on"
-	    Visible		    "off"
-	  }
-	  PropName		  "Parameters"
-	}
-	Object {
-	  $PropName		  "DialogControls"
-	  $ObjectID		  39
-	  $ClassName		  "Simulink.dialog.Group"
-	  Prompt		  "Simulink:studio:ToolBarParametersMenu"
-	  Array {
-	    Type		    "Simulink.dialog.parameter.Control"
-	    Dimension		    5
-	    Object {
-	      $ObjectID		      40
-	      $ClassName	      "Simulink.dialog.parameter.Edit"
-	      Name		      "webBlockId"
-	    }
-	    Object {
-	      $ObjectID		      41
-	      $ClassName	      "Simulink.dialog.parameter.Edit"
-	      Name		      "webBlockType"
-	    }
-	    Object {
-	      $ObjectID		      42
-	      $ClassName	      "Simulink.dialog.parameter.CheckBox"
-	      Name		      "ShowInLibBrowser"
-	    }
-	    Object {
-	      $ObjectID		      43
-	      $ClassName	      "Simulink.dialog.parameter.CheckBox"
-	      Name		      "ShowInitialText"
-	    }
-	    Object {
-	      $ObjectID		      44
-	      $ClassName	      "Simulink.dialog.parameter.Edit"
-	      Name		      "HMISrcModelName"
-	    }
-	    PropName		    "DialogControls"
-	  }
-	  Name			  "ParameterGroupVar"
-	}
-      }
-      System {
-	Name			"Slider2"
-	Location		[-1639, 178, -956, 660]
-	Open			off
-	ModelBrowserVisibility	off
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"usletter"
-	PaperUnits		"inches"
-	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"100"
-      }
-    }
-    Block {
-      BlockType		      SubSystem
-      Name		      "Slider3"
-      SID		      "235"
-      Ports		      []
-      Position		      [300, 514, 480, 569]
-      ZOrder		      299
-      ShowName		      off
-      DialogController	      "hmiCreateDDGDialog"
-      DialogControllerArgs    "DataTag2"
-      RequestExecContextInheritance off
-      MaskHideContents	      on
-      Variant		      off
-      IsWebBlock	      on
-      Object {
-	$PropName		"MaskObject"
-	$ObjectID		45
-	$ClassName		"Simulink.Mask"
-	Type			"MWDashboardBlock"
-	Help			"helpview([docroot '/mapfiles/simulink.map'], 'hmi_slider')"
-	Display			"if strcmp(get_param(bdroot(gcb),'BlockDiagramType'), 'library')\n    image([(matlabroot) '/toolbox/simulin"
-	"k/hmi/icons/Slider.png']);\nend"
-	IconFrame		"off"
-	Array {
-	  Type			  "Simulink.MaskParameter"
-	  Dimension		  5
-	  Object {
-	    $ObjectID		    46
-	    Type		    "edit"
-	    Name		    "webBlockId"
-	    Prompt		    "WebBlock Id"
-	    Value		    "c4877367-f846-46f6-9270-7c2cbcfa7865"
-	    Evaluate		    "off"
-	    Tunable		    "off"
-	  }
-	  Object {
-	    $ObjectID		    47
-	    Type		    "edit"
-	    Name		    "webBlockType"
-	    Prompt		    "WebBlock Type"
-	    Value		    "slider"
-	    Evaluate		    "off"
-	    Tunable		    "off"
-	    Internal		    "on"
-	    ReadOnly		    "on"
-	    Enabled		    "off"
-	    Visible		    "off"
-	  }
-	  Object {
-	    $ObjectID		    48
-	    Type		    "checkbox"
-	    Name		    "ShowInLibBrowser"
-	    Prompt		    ""
-	    Value		    "on"
-	    Evaluate		    "off"
-	    Tunable		    "off"
-	    Internal		    "on"
-	    ReadOnly		    "on"
-	    Enabled		    "off"
-	    Visible		    "off"
-	  }
-	  Object {
-	    $ObjectID		    49
-	    Type		    "checkbox"
-	    Name		    "ShowInitialText"
-	    Prompt		    ""
-	    Value		    "on"
-	    Evaluate		    "off"
-	    Tunable		    "off"
-	    Internal		    "on"
-	    Visible		    "off"
-	  }
-	  Object {
-	    $ObjectID		    50
-	    Type		    "edit"
-	    Name		    "HMISrcModelName"
-	    Prompt		    "Source Model"
-	    Value		    "fixedEEControlR2016a"
-	    Evaluate		    "off"
-	    Tunable		    "off"
-	    NeverSave		    "on"
-	    Internal		    "on"
-	    Visible		    "off"
-	  }
-	  PropName		  "Parameters"
-	}
-	Object {
-	  $PropName		  "DialogControls"
-	  $ObjectID		  51
-	  $ClassName		  "Simulink.dialog.Group"
-	  Prompt		  "Simulink:studio:ToolBarParametersMenu"
-	  Array {
-	    Type		    "Simulink.dialog.parameter.Control"
-	    Dimension		    5
-	    Object {
-	      $ObjectID		      52
-	      $ClassName	      "Simulink.dialog.parameter.Edit"
-	      Name		      "webBlockId"
-	    }
-	    Object {
-	      $ObjectID		      53
-	      $ClassName	      "Simulink.dialog.parameter.Edit"
-	      Name		      "webBlockType"
-	    }
-	    Object {
-	      $ObjectID		      54
-	      $ClassName	      "Simulink.dialog.parameter.CheckBox"
-	      Name		      "ShowInLibBrowser"
-	    }
-	    Object {
-	      $ObjectID		      55
-	      $ClassName	      "Simulink.dialog.parameter.CheckBox"
-	      Name		      "ShowInitialText"
-	    }
-	    Object {
-	      $ObjectID		      56
-	      $ClassName	      "Simulink.dialog.parameter.Edit"
-	      Name		      "HMISrcModelName"
-	    }
-	    PropName		    "DialogControls"
-	  }
-	  Name			  "ParameterGroupVar"
-	}
-      }
-      System {
-	Name			"Slider3"
-	Location		[-1639, 178, -956, 660]
-	Open			off
-	ModelBrowserVisibility	off
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"usletter"
-	PaperUnits		"inches"
-	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"100"
-      }
-    }
-    Block {
-      BlockType		      SubSystem
-      Name		      "Slider4"
-      SID		      "236"
-      Ports		      []
-      Position		      [485, 574, 665, 629]
-      ZOrder		      301
-      ShowName		      off
-      DialogController	      "hmiCreateDDGDialog"
-      DialogControllerArgs    "DataTag3"
-      RequestExecContextInheritance off
-      MaskHideContents	      on
-      Variant		      off
-      IsWebBlock	      on
-      Object {
-	$PropName		"MaskObject"
-	$ObjectID		57
-	$ClassName		"Simulink.Mask"
-	Type			"MWDashboardBlock"
-	Help			"helpview([docroot '/mapfiles/simulink.map'], 'hmi_slider')"
-	Display			"if strcmp(get_param(bdroot(gcb),'BlockDiagramType'), 'library')\n    image([(matlabroot) '/toolbox/simulin"
-	"k/hmi/icons/Slider.png']);\nend"
-	IconFrame		"off"
-	Array {
-	  Type			  "Simulink.MaskParameter"
-	  Dimension		  5
-	  Object {
-	    $ObjectID		    58
-	    Type		    "edit"
-	    Name		    "webBlockId"
-	    Prompt		    "WebBlock Id"
-	    Value		    "73ca03e5-23df-431f-a2c7-9290daae07ad"
-	    Evaluate		    "off"
-	    Tunable		    "off"
-	  }
-	  Object {
-	    $ObjectID		    59
-	    Type		    "edit"
-	    Name		    "webBlockType"
-	    Prompt		    "WebBlock Type"
-	    Value		    "slider"
-	    Evaluate		    "off"
-	    Tunable		    "off"
-	    Internal		    "on"
-	    ReadOnly		    "on"
-	    Enabled		    "off"
-	    Visible		    "off"
-	  }
-	  Object {
-	    $ObjectID		    60
-	    Type		    "checkbox"
-	    Name		    "ShowInLibBrowser"
-	    Prompt		    ""
-	    Value		    "on"
-	    Evaluate		    "off"
-	    Tunable		    "off"
-	    Internal		    "on"
-	    ReadOnly		    "on"
-	    Enabled		    "off"
-	    Visible		    "off"
-	  }
-	  Object {
-	    $ObjectID		    61
-	    Type		    "checkbox"
-	    Name		    "ShowInitialText"
-	    Prompt		    ""
-	    Value		    "on"
-	    Evaluate		    "off"
-	    Tunable		    "off"
-	    Internal		    "on"
-	    Visible		    "off"
-	  }
-	  Object {
-	    $ObjectID		    62
-	    Type		    "edit"
-	    Name		    "HMISrcModelName"
-	    Prompt		    "Source Model"
-	    Value		    "fixedEEControlR2016a"
-	    Evaluate		    "off"
-	    Tunable		    "off"
-	    NeverSave		    "on"
-	    Internal		    "on"
-	    Visible		    "off"
-	  }
-	  PropName		  "Parameters"
-	}
-	Object {
-	  $PropName		  "DialogControls"
-	  $ObjectID		  63
-	  $ClassName		  "Simulink.dialog.Group"
-	  Prompt		  "Simulink:studio:ToolBarParametersMenu"
-	  Array {
-	    Type		    "Simulink.dialog.parameter.Control"
-	    Dimension		    5
-	    Object {
-	      $ObjectID		      64
-	      $ClassName	      "Simulink.dialog.parameter.Edit"
-	      Name		      "webBlockId"
-	    }
-	    Object {
-	      $ObjectID		      65
-	      $ClassName	      "Simulink.dialog.parameter.Edit"
-	      Name		      "webBlockType"
-	    }
-	    Object {
-	      $ObjectID		      66
-	      $ClassName	      "Simulink.dialog.parameter.CheckBox"
-	      Name		      "ShowInLibBrowser"
-	    }
-	    Object {
-	      $ObjectID		      67
-	      $ClassName	      "Simulink.dialog.parameter.CheckBox"
-	      Name		      "ShowInitialText"
-	    }
-	    Object {
-	      $ObjectID		      68
-	      $ClassName	      "Simulink.dialog.parameter.Edit"
-	      Name		      "HMISrcModelName"
-	    }
-	    PropName		    "DialogControls"
-	  }
-	  Name			  "ParameterGroupVar"
-	}
-      }
-      System {
-	Name			"Slider4"
-	Location		[-1639, 178, -956, 660]
-	Open			off
-	ModelBrowserVisibility	off
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"usletter"
-	PaperUnits		"inches"
-	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"100"
-      }
-    }
-    Block {
-      BlockType		      SubSystem
-      Name		      "Slider5"
-      SID		      "237"
-      Ports		      []
-      Position		      [485, 644, 665, 699]
-      ZOrder		      300
-      ShowName		      off
-      DialogController	      "hmiCreateDDGDialog"
-      DialogControllerArgs    "DataTag4"
-      RequestExecContextInheritance off
-      MaskHideContents	      on
-      Variant		      off
-      IsWebBlock	      on
-      Object {
-	$PropName		"MaskObject"
-	$ObjectID		69
-	$ClassName		"Simulink.Mask"
-	Type			"MWDashboardBlock"
-	Help			"helpview([docroot '/mapfiles/simulink.map'], 'hmi_slider')"
-	Display			"if strcmp(get_param(bdroot(gcb),'BlockDiagramType'), 'library')\n    image([(matlabroot) '/toolbox/simulin"
-	"k/hmi/icons/Slider.png']);\nend"
-	IconFrame		"off"
-	Array {
-	  Type			  "Simulink.MaskParameter"
-	  Dimension		  5
-	  Object {
-	    $ObjectID		    70
-	    Type		    "edit"
-	    Name		    "webBlockId"
-	    Prompt		    "WebBlock Id"
-	    Value		    "ece376a0-6faa-43de-a6d1-f865810f490d"
-	    Evaluate		    "off"
-	    Tunable		    "off"
-	  }
-	  Object {
-	    $ObjectID		    71
-	    Type		    "edit"
-	    Name		    "webBlockType"
-	    Prompt		    "WebBlock Type"
-	    Value		    "slider"
-	    Evaluate		    "off"
-	    Tunable		    "off"
-	    Internal		    "on"
-	    ReadOnly		    "on"
-	    Enabled		    "off"
-	    Visible		    "off"
-	  }
-	  Object {
-	    $ObjectID		    72
-	    Type		    "checkbox"
-	    Name		    "ShowInLibBrowser"
-	    Prompt		    ""
-	    Value		    "on"
-	    Evaluate		    "off"
-	    Tunable		    "off"
-	    Internal		    "on"
-	    ReadOnly		    "on"
-	    Enabled		    "off"
-	    Visible		    "off"
-	  }
-	  Object {
-	    $ObjectID		    73
-	    Type		    "checkbox"
-	    Name		    "ShowInitialText"
-	    Prompt		    ""
-	    Value		    "on"
-	    Evaluate		    "off"
-	    Tunable		    "off"
-	    Internal		    "on"
-	    Visible		    "off"
-	  }
-	  Object {
-	    $ObjectID		    74
-	    Type		    "edit"
-	    Name		    "HMISrcModelName"
-	    Prompt		    "Source Model"
-	    Value		    "fixedEEControlR2016a"
-	    Evaluate		    "off"
-	    Tunable		    "off"
-	    NeverSave		    "on"
-	    Internal		    "on"
-	    Visible		    "off"
-	  }
-	  PropName		  "Parameters"
-	}
-	Object {
-	  $PropName		  "DialogControls"
-	  $ObjectID		  75
-	  $ClassName		  "Simulink.dialog.Group"
-	  Prompt		  "Simulink:studio:ToolBarParametersMenu"
-	  Array {
-	    Type		    "Simulink.dialog.parameter.Control"
-	    Dimension		    5
-	    Object {
-	      $ObjectID		      76
-	      $ClassName	      "Simulink.dialog.parameter.Edit"
-	      Name		      "webBlockId"
-	    }
-	    Object {
-	      $ObjectID		      77
-	      $ClassName	      "Simulink.dialog.parameter.Edit"
-	      Name		      "webBlockType"
-	    }
-	    Object {
-	      $ObjectID		      78
-	      $ClassName	      "Simulink.dialog.parameter.CheckBox"
-	      Name		      "ShowInLibBrowser"
-	    }
-	    Object {
-	      $ObjectID		      79
-	      $ClassName	      "Simulink.dialog.parameter.CheckBox"
-	      Name		      "ShowInitialText"
-	    }
-	    Object {
-	      $ObjectID		      80
-	      $ClassName	      "Simulink.dialog.parameter.Edit"
-	      Name		      "HMISrcModelName"
-	    }
-	    PropName		    "DialogControls"
-	  }
-	  Name			  "ParameterGroupVar"
-	}
-      }
-      System {
-	Name			"Slider5"
-	Location		[-1639, 178, -956, 660]
-	Open			off
-	ModelBrowserVisibility	off
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"usletter"
-	PaperUnits		"inches"
-	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"100"
-      }
-    }
-    Block {
-      BlockType		      SubSystem
-      Name		      "Slider6"
-      SID		      "238"
-      Ports		      []
-      Position		      [485, 514, 665, 569]
-      ZOrder		      302
-      ShowName		      off
-      DialogController	      "hmiCreateDDGDialog"
-      DialogControllerArgs    "DataTag5"
-      RequestExecContextInheritance off
-      MaskHideContents	      on
-      Variant		      off
-      IsWebBlock	      on
-      Object {
-	$PropName		"MaskObject"
-	$ObjectID		81
-	$ClassName		"Simulink.Mask"
-	Type			"MWDashboardBlock"
-	Help			"helpview([docroot '/mapfiles/simulink.map'], 'hmi_slider')"
-	Display			"if strcmp(get_param(bdroot(gcb),'BlockDiagramType'), 'library')\n    image([(matlabroot) '/toolbox/simulin"
-	"k/hmi/icons/Slider.png']);\nend"
-	IconFrame		"off"
-	Array {
-	  Type			  "Simulink.MaskParameter"
-	  Dimension		  5
-	  Object {
-	    $ObjectID		    82
-	    Type		    "edit"
-	    Name		    "webBlockId"
-	    Prompt		    "WebBlock Id"
-	    Value		    "9ce41da6-82cb-4a2f-894f-660941c2500d"
-	    Evaluate		    "off"
-	    Tunable		    "off"
-	  }
-	  Object {
-	    $ObjectID		    83
-	    Type		    "edit"
-	    Name		    "webBlockType"
-	    Prompt		    "WebBlock Type"
-	    Value		    "slider"
-	    Evaluate		    "off"
-	    Tunable		    "off"
-	    Internal		    "on"
-	    ReadOnly		    "on"
-	    Enabled		    "off"
-	    Visible		    "off"
-	  }
-	  Object {
-	    $ObjectID		    84
-	    Type		    "checkbox"
-	    Name		    "ShowInLibBrowser"
-	    Prompt		    ""
-	    Value		    "on"
-	    Evaluate		    "off"
-	    Tunable		    "off"
-	    Internal		    "on"
-	    ReadOnly		    "on"
-	    Enabled		    "off"
-	    Visible		    "off"
-	  }
-	  Object {
-	    $ObjectID		    85
-	    Type		    "checkbox"
-	    Name		    "ShowInitialText"
-	    Prompt		    ""
-	    Value		    "on"
-	    Evaluate		    "off"
-	    Tunable		    "off"
-	    Internal		    "on"
-	    Visible		    "off"
-	  }
-	  Object {
-	    $ObjectID		    86
-	    Type		    "edit"
-	    Name		    "HMISrcModelName"
-	    Prompt		    "Source Model"
-	    Value		    "fixedEEControlR2016a"
-	    Evaluate		    "off"
-	    Tunable		    "off"
-	    NeverSave		    "on"
-	    Internal		    "on"
-	    Visible		    "off"
-	  }
-	  PropName		  "Parameters"
-	}
-	Object {
-	  $PropName		  "DialogControls"
-	  $ObjectID		  87
-	  $ClassName		  "Simulink.dialog.Group"
-	  Prompt		  "Simulink:studio:ToolBarParametersMenu"
-	  Array {
-	    Type		    "Simulink.dialog.parameter.Control"
-	    Dimension		    5
-	    Object {
-	      $ObjectID		      88
-	      $ClassName	      "Simulink.dialog.parameter.Edit"
-	      Name		      "webBlockId"
-	    }
-	    Object {
-	      $ObjectID		      89
-	      $ClassName	      "Simulink.dialog.parameter.Edit"
-	      Name		      "webBlockType"
-	    }
-	    Object {
-	      $ObjectID		      90
-	      $ClassName	      "Simulink.dialog.parameter.CheckBox"
-	      Name		      "ShowInLibBrowser"
-	    }
-	    Object {
-	      $ObjectID		      91
-	      $ClassName	      "Simulink.dialog.parameter.CheckBox"
-	      Name		      "ShowInitialText"
-	    }
-	    Object {
-	      $ObjectID		      92
-	      $ClassName	      "Simulink.dialog.parameter.Edit"
-	      Name		      "HMISrcModelName"
-	    }
-	    PropName		    "DialogControls"
-	  }
-	  Name			  "ParameterGroupVar"
-	}
-      }
-      System {
-	Name			"Slider6"
-	Location		[-1639, 178, -956, 660]
-	Open			off
-	ModelBrowserVisibility	off
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"usletter"
-	PaperUnits		"inches"
-	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"100"
-      }
-    }
-    Block {
-      BlockType		      SubSystem
       Name		      "Subsystem"
       SID		      "142"
       Ports		      [2, 3]
@@ -2838,8 +1992,8 @@ Model {
       Variant		      off
       System {
 	Name			"Subsystem"
-	Location		[37, 18, 1920, 1080]
-	Open			off
+	Location		[49, 24, 1920, 1080]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -4388,39 +3542,6 @@ Model {
     }
   }
 }
-MatData {
-  NumRecords		  6
-  DataRecord {
-    Tag			    DataTag0
-    Data		    "  %)30     .    :     8    (     0         %    \"     $    !     0         .    .     8    (    !     "
-    "     %    \"     $    &     0         0    !@   %-L:61E<@  "
-  }
-  DataRecord {
-    Tag			    DataTag1
-    Data		    "  %)30     .    :     8    (     0         %    \"     $    !     0         .    .     8    (    !     "
-    "     %    \"     $    &     0         0    !@   %-L:61E<@  "
-  }
-  DataRecord {
-    Tag			    DataTag2
-    Data		    "  %)30     .    :     8    (     0         %    \"     $    !     0         .    .     8    (    !     "
-    "     %    \"     $    &     0         0    !@   %-L:61E<@  "
-  }
-  DataRecord {
-    Tag			    DataTag3
-    Data		    "  %)30     .    :     8    (     0         %    \"     $    !     0         .    .     8    (    !     "
-    "     %    \"     $    &     0         0    !@   %-L:61E<@  "
-  }
-  DataRecord {
-    Tag			    DataTag4
-    Data		    "  %)30     .    :     8    (     0         %    \"     $    !     0         .    .     8    (    !     "
-    "     %    \"     $    &     0         0    !@   %-L:61E<@  "
-  }
-  DataRecord {
-    Tag			    DataTag5
-    Data		    "  %)30     .    :     8    (     0         %    \"     $    !     0         .    .     8    (    !     "
-    "     %    \"     $    &     0         0    !@   %-L:61E<@  "
-  }
-}
 #Finite State Machines
 #
 #   Stateflow 80000009
@@ -4474,8 +3595,8 @@ Stateflow {
     eml {
       isEML		      1
       script		      "function ddx = controlObjective(W_H_EE,W_J_EE,dq,x_des,dx_des,ddx_des,Kp,Kd)\n   \n    x = W_H_EE"
-      "(1:3,4)-x_des;\n    dx = W_J_EE(1:3,7:end)*dq-dx_des;\n   \n    kp = Kp;\n    kd = Kd;\n\n    ddx = ddx_des-kp.*"
-      "x-kd.*dx; \n\nend"
+      "(1:3,4)-x_des;\n    dx = W_J_EE(1:3,7:end)*dq-dx_des;\n   \n    kp = 200;\n    kd = 2*sqrt(kp);\n\n    ddx = ddx"
+      "_des-kp.*x-kd.*dx; \n\nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
@@ -4781,11 +3902,10 @@ Stateflow {
       ");\n    Ss = eye(Dofs);\n    S = [Sb Ss]';\n\n    ddX = [ddx' 0 0 0]';\n\n    %%First Approach\n% %     Nullspac"
       "e = eye(size(J,2))-pinv(J)*J;\n% % \n% %     nu = [zeros(6,1); dq];\n% %     qStateErr = [zeros(6,1); q-q0];\n% "
       "% \n% %     Kp = 200;\n% %     Kd = 2*sqrt(Kp);\n% %     nuDot0 = -Kp*(qStateErr)-Kd*nu;\n% % \n% %     tau = pi"
-      "nv(S)*(M*( pinv(J)*(ddX-JdotNu) + Nullspace*nuDot0) + h);\n    \n    %%Second Approach\n    epsilon = 1e0;\n    "
-      "lambda = J*inv(M)*S;\n    alpha = pinvDamped(lambda,epsilon);\n    beta = J*inv(M)*h;\n    tau_pri = alpha*(ddX "
-      "-  JdotNu + beta);\n    \n    Nullspace = eye(size(lambda,2))-pinvDamped(lambda,epsilon)*lambda;\n    kp = 0.5;\n"
-      "    kd = 0*2*sqrt(kp);\n    tau_null = h(7:end) - kp*(q-q0) - kd*(dq);\n    \n    tau = tau_pri + Nullspace*tau_"
-      "null;\n    \nend"
+      "nv(S)*(M*( pinv(J)*(ddX-JdotNu) + Nullspace*nuDot0) + h);\n    \n    %%Second Approach\n    epsilon = 1e-20;\n  "
+      "  lambda = J*inv(M)*S;\n    alpha = pinvDamped(lambda,epsilon);\n    tau_pri = alpha*(ddX -  JdotNu +  J*inv(M)*"
+      "h);\n    \n    Nullspace = eye(size(lambda,2))-alpha*lambda;\n    kp = 10;\n    kd = 5;\n    tau_null = pinvDamp"
+      "ed(S,epsilon)*h - kp*(q-q0) - kd*(dq);\n    \n    tau = tau_pri + Nullspace*tau_null;\n    \nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
