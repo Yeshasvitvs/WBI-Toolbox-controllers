@@ -37,7 +37,7 @@ CONFIG.PARTS                            = 'upper_body';
 WBTConfigRobot                          = WBToolbox.Configuration;
 
 %% RobotConfiguration Data
-WBTConfigRobot.RobotName                = 'icubSim';
+WBTConfigRobot.RobotName                = 'icub';
 WBTConfigRobot.UrdfFile                 = 'model.urdf';
 
 if(strcmp(CONFIG.PARTS,'single_arm') && strcmp(CONFIG.EE,'r_hand'))
@@ -86,8 +86,9 @@ CONFIG.PLOT.POS_ERR                      = false;
 % and set the environmental variable YARP_ROBOT_NAME = icubGazeboSim.
 % To do this, you can uncomment the
 
- setenv('YARP_ROBOT_NAME','icubGazeboSim');
-% setenv('YARP_ROBOT_NAME','icubGenova04');
+%  setenv('YARP_ROBOT_NAME','icubGazeboSim');
+% setenv('YARP_ROBOT_NAME','iCubGenova04'); %%Greeny
+ setenv('YARP_ROBOT_NAME','iCubGenova02'); %%Purple
 
 
 %% Simulation time in seconds
@@ -177,6 +178,6 @@ CONFIG.Ts                               = 0.01;
 CONFIG.ON_GAZEBO                        = false; %%??
 baseToWorldRotationPort                 = ['/' WBT_modelName '/floatingBaseRotationMatrix:i'];
 
-run(strcat('app/robots/',getenv('YARP_ROBOT_NAME'),'/gains.m'));
+% run(strcat('app/robots/',getenv('YARP_ROBOT_NAME'),'/gains.m'));
 
 
