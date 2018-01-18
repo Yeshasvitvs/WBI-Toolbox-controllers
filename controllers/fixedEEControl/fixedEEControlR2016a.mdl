@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.844"
+    ComputedModelVersion    "1.925"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -32,7 +32,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [49.0, 24.0, 1871.0, 1056.0]
+      Location		      [37.0, 18.0, 1883.0, 1062.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -49,28 +49,16 @@ Model {
 	$ClassName		"Simulink.ExplorerBarInfo"
 	Visible			[1]
       }
-      Array {
-	Type			"Simulink.EditorInfo"
-	Dimension		2
-	Object {
-	  $ObjectID		  5
-	  IsActive		  [1]
-	  ViewObjType		  "SimulinkTopLevel"
-	  LoadSaveID		  "0"
-	  Extents		  [1819.0, 872.0]
-	  ZoomFactor		  [1.3514811849479584]
-	  Offset		  [289.53465639810429, 162.14099526066354]
-	}
-	Object {
-	  $ObjectID		  6
-	  IsActive		  [0]
-	  ViewObjType		  "SimulinkSubsys"
-	  LoadSaveID		  "14"
-	  Extents		  [606.0, 448.0]
-	  ZoomFactor		  [6.0]
-	  Offset		  [0.0, 0.0]
-	}
-	PropName		"EditorsInfo"
+      Object {
+	$PropName		"EditorsInfo"
+	$ObjectID		5
+	$ClassName		"Simulink.EditorInfo"
+	IsActive		[1]
+	ViewObjType		"SimulinkTopLevel"
+	LoadSaveID		"0"
+	Extents			[1849.0, 923.0]
+	ZoomFactor		[1.43229799944159]
+	Offset			[317.03376297360273, 162.35553330773917]
       }
     }
   }
@@ -80,9 +68,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "yeshi"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Jan 18 12:13:00 2018"
-  RTWModifiedTimeStamp	  438178378
-  ModelVersionFormat	  "1.%<AutoIncrement:844>"
+  LastModifiedDate	  "Thu Jan 18 19:41:06 2018"
+  RTWModifiedTimeStamp	  438205264
+  ModelVersionFormat	  "1.%<AutoIncrement:925>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -130,7 +118,7 @@ Model {
   TryForcingSFcnDF	  off
   Object {
     $PropName		    "DataLoggingOverride"
-    $ObjectID		    7
+    $ObjectID		    6
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "fixedEEControlR2016a"
     overrideMode_	    [0.0]
@@ -174,13 +162,13 @@ Model {
     Type		    "Handle"
     Dimension		    1
     Simulink.ConfigSet {
-      $ObjectID		      8
+      $ObjectID		      7
       Version		      "1.16.2"
       Array {
 	Type			"Handle"
 	Dimension		9
 	Simulink.SolverCC {
-	  $ObjectID		  9
+	  $ObjectID		  8
 	  Version		  "1.16.2"
 	  StartTime		  "0.0"
 	  StopTime		  "inf"
@@ -217,7 +205,7 @@ Model {
 	  InsertRTBMode		  "Whenever possible"
 	}
 	Simulink.DataIOCC {
-	  $ObjectID		  10
+	  $ObjectID		  9
 	  Version		  "1.16.2"
 	  Decimation		  "1"
 	  ExternalInput		  "[t, u]"
@@ -255,7 +243,7 @@ Model {
 	  LoggingIntervals	  "[-inf, inf]"
 	}
 	Simulink.OptimizationCC {
-	  $ObjectID		  11
+	  $ObjectID		  10
 	  Version		  "1.16.2"
 	  Array {
 	    Type		    "Cell"
@@ -312,7 +300,7 @@ Model {
 	  AccelVerboseBuild	  off
 	}
 	Simulink.DebuggingCC {
-	  $ObjectID		  12
+	  $ObjectID		  11
 	  Version		  "1.16.2"
 	  RTPrefix		  "error"
 	  ConsistencyChecking	  "none"
@@ -407,7 +395,7 @@ Model {
 	  AllowAutomaticUnitConversions	on
 	}
 	Simulink.HardwareCC {
-	  $ObjectID		  13
+	  $ObjectID		  12
 	  Version		  "1.16.2"
 	  ProdBitPerChar	  8
 	  ProdBitPerShort	  16
@@ -449,7 +437,7 @@ Model {
 	  UseSimulinkCoderFeatures on
 	}
 	Simulink.ModelReferenceCC {
-	  $ObjectID		  14
+	  $ObjectID		  13
 	  Version		  "1.16.2"
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
 	  EnableRefExpFcnMdlSchedulingChecks on
@@ -465,7 +453,7 @@ Model {
 	  SupportModelReferenceSimTargetCustomCode off
 	}
 	Simulink.SFSimCC {
-	  $ObjectID		  15
+	  $ObjectID		  14
 	  Version		  "1.16.2"
 	  SFSimEcho		  on
 	  SimCtrlC		  on
@@ -477,7 +465,7 @@ Model {
 	}
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
-	  $ObjectID		  16
+	  $ObjectID		  15
 	  Version		  "1.16.2"
 	  Array {
 	    Type		    "Cell"
@@ -549,7 +537,7 @@ Model {
 	    Type		    "Handle"
 	    Dimension		    2
 	    Simulink.CodeAppCC {
-	      $ObjectID		      17
+	      $ObjectID		      16
 	      Version		      "1.16.2"
 	      Array {
 		Type			"Cell"
@@ -620,7 +608,7 @@ Model {
 	    }
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
-	      $ObjectID		      18
+	      $ObjectID		      17
 	      Version		      "1.16.2"
 	      Array {
 		Type			"Cell"
@@ -705,7 +693,7 @@ Model {
 	  }
 	}
 	SlCovCC.ConfigComp {
-	  $ObjectID		  19
+	  $ObjectID		  18
 	  Version		  "1.16.2"
 	  Description		  "Simulink Coverage Configuration Component"
 	  Name			  "Simulink Coverage"
@@ -747,11 +735,11 @@ Model {
   }
   Simulink.ConfigSet {
     $PropName		    "ActiveConfigurationSet"
-    $ObjectID		    8
+    $ObjectID		    7
   }
   Object {
     $PropName		    "DataTransfer"
-    $ObjectID		    20
+    $ObjectID		    19
     $ClassName		    "Simulink.GlobalDataTransfer"
     DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
     DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
@@ -978,7 +966,7 @@ Model {
   }
   System {
     Name		    "fixedEEControlR2016a"
-    Location		    [49, 24, 1920, 1080]
+    Location		    [37, 18, 1920, 1080]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -990,9 +978,23 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "135"
+    ZoomFactor		    "143"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "264"
+    SIDHighWatermark	    "267"
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "Actual Joint\nPosition"
+      SID		      "266"
+      Ports		      [1]
+      Position		      [1220, 185, 1280, 215]
+      ZOrder		      313
+      VariableName	      "qActual"
+      MaxDataPoints	      "inf"
+      SaveFormat	      "Timeseries"
+      Save2DSignal	      "3-D array (concatenate along third dimension)"
+      FixptAsFi		      on
+      SampleTime	      "-1"
+    }
     Block {
       BlockType		      Constant
       Name		      "Base Velocity\n"
@@ -1247,6 +1249,20 @@ Model {
 	  DstPort		  1
 	}
       }
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "Desired Joint\nPosition"
+      SID		      "267"
+      Ports		      [1]
+      Position		      [1345, 185, 1405, 215]
+      ZOrder		      314
+      VariableName	      "qDesired"
+      MaxDataPoints	      "inf"
+      SaveFormat	      "Timeseries"
+      Save2DSignal	      "3-D array (concatenate along third dimension)"
+      FixptAsFi		      on
+      SampleTime	      "-1"
     }
     Block {
       BlockType		      Reference
@@ -1992,7 +2008,7 @@ Model {
       Variant		      off
       System {
 	Name			"Subsystem"
-	Location		[49, 24, 1920, 1080]
+	Location		[37, 18, 1920, 1080]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -2004,7 +2020,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"107"
+	ZoomFactor		"113"
 	Block {
 	  BlockType		  Inport
 	  Name			  "initial\nPosition"
@@ -3222,17 +3238,26 @@ Model {
 	Points			[27, 0]
 	Branch {
 	  ZOrder		  507
-	  Points		  [0, -113; 467, 0; 0, 98]
+	  Points		  [0, -113; 467, 0; 0, 8]
 	  Branch {
-	    ZOrder		    510
-	    DstBlock		    "computeTorque"
-	    DstPort		    2
+	    ZOrder		    584
+	    DstBlock		    "Actual Joint\nPosition"
+	    DstPort		    1
 	  }
 	  Branch {
-	    ZOrder		    509
-	    Points		    [0, 20]
-	    DstBlock		    "Initial\nJoint Position"
-	    DstPort		    1
+	    ZOrder		    583
+	    Points		    [0, 90]
+	    Branch {
+	      ZOrder		      510
+	      DstBlock		      "computeTorque"
+	      DstPort		      2
+	    }
+	    Branch {
+	      ZOrder		      509
+	      Points		      [0, 20]
+	      DstBlock		      "Initial\nJoint Position"
+	      DstPort		      1
+	    }
 	  }
 	}
 	Branch {
@@ -3504,8 +3529,18 @@ Model {
       ZOrder		      518
       SrcBlock		      "Initial\nJoint Position"
       SrcPort		      1
-      DstBlock		      "computeTorque"
-      DstPort		      3
+      Points		      [11, 0]
+      Branch {
+	ZOrder			586
+	Points			[0, -110]
+	DstBlock		"Desired Joint\nPosition"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			585
+	DstBlock		"computeTorque"
+	DstPort			3
+      }
     }
     Line {
       ZOrder		      562
@@ -3902,10 +3937,15 @@ Stateflow {
       ");\n    Ss = eye(Dofs);\n    S = [Sb Ss]';\n\n    ddX = [ddx' 0 0 0]';\n\n    %%First Approach\n% %     Nullspac"
       "e = eye(size(J,2))-pinv(J)*J;\n% % \n% %     nu = [zeros(6,1); dq];\n% %     qStateErr = [zeros(6,1); q-q0];\n% "
       "% \n% %     Kp = 200;\n% %     Kd = 2*sqrt(Kp);\n% %     nuDot0 = -Kp*(qStateErr)-Kd*nu;\n% % \n% %     tau = pi"
-      "nv(S)*(M*( pinv(J)*(ddX-JdotNu) + Nullspace*nuDot0) + h);\n    \n    %%Second Approach\n    epsilon = 1e-20;\n  "
-      "  lambda = J*inv(M)*S;\n    alpha = pinvDamped(lambda,epsilon);\n    tau_pri = alpha*(ddX -  JdotNu +  J*inv(M)*"
-      "h);\n    \n    Nullspace = eye(size(lambda,2))-alpha*lambda;\n    kp = 15;\n    kd = 2;\n    tau_null = pinvDamp"
-      "ed(S,epsilon)*h - kp*(q-q0) - kd*(dq);\n    \n    tau = tau_pri + Nullspace*tau_null;\n    \nend"
+      "nv(S)*(M*( pinv(J)*(ddX-JdotNu) + Nullspace*nuDot0) + h);\n\n    %%Position Task\n    epsilon_pos = 1e-20;\n    "
+      "lambda_pos = (J(1:3,:)/M)*S;\n    alpha_pos = pinvDamped(lambda_pos,epsilon_pos);\n    \n    tau_pos = alpha_pos"
+      "*(ddX(1:3) - JdotNu(1:3) + (J(1:3,:)/M)*h);\n    \n    nullspace_pos = eye(size(lambda_pos,2)) - alpha_pos*lambd"
+      "a_pos;\n    \n    %%Orientation Task\n    epsilon_ori = 1e-20;\n    lambda_ori = (J(4:6,:)/M)*S*nullspace_pos;\n"
+      "    alpha_ori = pinvDamped(lambda_ori,epsilon_ori);\n    \n    position_bias = (J(4:6,:)/M)*S*tau_pos;\n    tau_"
+      "ori = alpha_ori*(ddX(4:6) - JdotNu(4:6) + (J(4:6,:)/M)*h - position_bias);\n    \n    nullspace_ori = eye(size(l"
+      "ambda_ori,2)) - alpha_ori*lambda_ori;\n    \n    %%Second Approach\n    kp = diag([100,100,100,100,100,100,100,1"
+      "00,100,100,100,100,100]);\n    kd = 2;\n    tau_null = S'*h - kp*(q-q0) - kd*(dq);\n    \n% %     tau = tau_pos "
+      "+ nullspace_pos*tau_null;\n    tau = tau_pos + nullspace_pos*(tau_ori + nullspace_ori*tau_null);\n\nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
