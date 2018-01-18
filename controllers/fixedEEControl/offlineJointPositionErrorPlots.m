@@ -19,7 +19,8 @@ function offlineJointPositionErrorPlots
         plot(Qerr(:,i));
     end
     
-    legend('Torso Yaw','Torso Roll','Torso Pitch','Location','NorthWest');
+    legend('Torso Yaw','Torso Roll','Torso Pitch','Location','NorthEast');
+    print('figures/TorsoJointErrors','-dpng','-r300')
     
     figure;
     grid on;
@@ -32,7 +33,8 @@ function offlineJointPositionErrorPlots
     end
     
     legend('Shoulder Pitch','Shoulder Roll','Shoulder yaw',...
-           'Elbow','Wrist Prosup','Location','NorthWest');
+           'Elbow','Wrist Prosup','Location','NorthEast');
+    print('figures/RightArmJointErrors','-dpng','-r300')
        
     figure;
     grid on;
@@ -45,6 +47,6 @@ function offlineJointPositionErrorPlots
     end
     
     legend('Shoulder Pitch','Shoulder Roll','Shoulder yaw',...
-           'Elbow','Wrist Prosup','Location','NorthWest');
-    
+           'Elbow','Wrist Prosup','Location','NorthEast');
+    print('figures/LeftArmJointErrors','-dpng','-r300')
 end
