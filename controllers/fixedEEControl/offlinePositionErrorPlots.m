@@ -15,7 +15,7 @@ function offlinePositionErrorPlots
     xlabel('x');
     ylabel('y');
     zlabel('z');
-    title('Position'); hold on;
+    title('EE Position'); hold on;
 
     if(animated_plot)
 
@@ -56,7 +56,7 @@ function offlinePositionErrorPlots
     xlabel('x');
     ylabel('y');
     zlabel('z');
-    title('Position Error'); hold on;
+    title('EE Position Error'); hold on;
     axis([-0.2 0.2 -0.2 0.2 -0.2 0.2]);
 
     if(animated_plot)
