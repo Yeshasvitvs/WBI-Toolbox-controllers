@@ -15,7 +15,7 @@ function offlinePositionErrorPlots
     xlabel('x');
     ylabel('y');
     zlabel('z');
-    title('Position'); hold on;
+    title('EE Position'); hold on;
 
     if(animated_plot)
 
@@ -24,7 +24,7 @@ function offlinePositionErrorPlots
 
         curve_desired_position_marker = animatedline('Color','r','LineWidth',1,'Marker','*');
         curve_actual_position_marker  = animatedline('Color','b','LineWidth',1,'Marker','o');
-
+        
         addpoints(curve_desired_position,...
                   Xdes.signal1.Data(1,1),...
                   Xdes.signal2.Data(1,1),...
@@ -56,7 +56,7 @@ function offlinePositionErrorPlots
     xlabel('x');
     ylabel('y');
     zlabel('z');
-    title('Position Error'); hold on;
+    title('EE Position Error'); hold on;
     axis([-0.2 0.2 -0.2 0.2 -0.2 0.2]);
 
     if(animated_plot)

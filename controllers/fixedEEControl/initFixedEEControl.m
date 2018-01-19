@@ -36,6 +36,20 @@ CONFIG.PARTS                            = 'upper_body';
 %% Configuration Object
 WBTConfigRobot                          = WBToolbox.Configuration;
 
+%% Parameters for motors reflected inertia
+
+Config.USE_MOTOR_REFLECTED_INERTIA = false;
+
+% inverse of the transmission ratio
+Config.invGamma = 100*eye(13);
+
+% motors inertia (Kg*m^2)
+Config.I_m      = 0.0827*1e-5*eye(13);
+
+% gain for feedforward term in joint torques calculation. Valid range: a
+% value between 0 and 1
+Config.K_ff     = 0;
+
 %% RobotConfiguration Data
 WBTConfigRobot.RobotName                = 'icub';
 WBTConfigRobot.UrdfFile                 = 'model.urdf';
@@ -45,6 +59,7 @@ if(strcmp(CONFIG.PARTS,'single_arm') && strcmp(CONFIG.EE,'r_hand'))
     WBTConfigRobot.ControlledJoints     = {...
                                            'r_shoulder_pitch','r_shoulder_roll',...
                                            'r_shoulder_yaw','r_elbow',...
+                                           'r_wrist_prosup',...
                                           };
     WBTConfigRobot.ControlBoardsNames   = {'right_arm'};
 
@@ -53,6 +68,7 @@ elseif (strcmp(CONFIG.PARTS,'single_arm') && strcmp(CONFIG.EE,'l_hand'))
     WBTConfigRobot.ControlledJoints     = {...
                                            'l_shoulder_pitch','l_shoulder_roll',...
                                            'l_shoulder_yaw','l_elbow',...
+                                           'l_wrist_prosup',...
                                           };
     WBTConfigRobot.ControlBoardsNames   = {'left_arm'};
     
@@ -61,7 +77,9 @@ else
     WBTConfigRobot.ControlledJoints     = {...
                                            'torso_pitch','torso_roll','torso_yaw',...
                                            'r_shoulder_pitch','r_shoulder_roll','r_shoulder_yaw','r_elbow',...
+                                           'r_wrist_prosup',...
                                            'l_shoulder_pitch','l_shoulder_roll','l_shoulder_yaw','l_elbow',...
+                                           'l_wrist_prosup',...
                                           };
     WBTConfigRobot.ControlBoardsNames   = {'torso','left_arm','right_arm'};
 
