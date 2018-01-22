@@ -1,2 +1,5 @@
 *.mdl.autosave
 *.*~
+slprj/
+*.mat
+figures/
