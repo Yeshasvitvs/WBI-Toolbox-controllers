@@ -79,6 +79,19 @@ if ~WBTConfigRobot.ValidConfiguration
     return
 end
 
+%% GENERAL SIMULATION INFO
+% If you are simulating the robot with Gazebo, 
+% remember that you have to launch Gazebo as follow:
+% 
+% gazebo -slibgazebo_yarp_clock.so
+% 
+% and set the environmental variable YARP_ROBOT_NAME = icubGazeboSim.
+% To do this, you can uncomment the
+
+setenv('YARP_ROBOT_NAME','icubGazeboSim');
+% % setenv('YARP_ROBOT_NAME','iCubGenova04'); %%Greeny
+% % setenv('YARP_ROBOT_NAME','iCubGenova02'); %%Purple
+
 %% Load Gains
 run(strcat('app/robots/',getenv('YARP_ROBOT_NAME'),'/gains.m'));
 
