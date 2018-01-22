@@ -1,35 +1,24 @@
 
 if(strcmp(CONFIG.PARTS,'single_arm'))
-    ROBOT_DOF                                   = 4;
+    ROBOT_DOF                                   = 5;
 else
-    ROBOT_DOF                                   = 11;
+    ROBOT_DOF                                   = 13;
 end
 
-CONFIG.ON_GAZEBO                            = true;
-PORTS.IMU                                   = '/icubSim/inertial';
-
-%% Desired Trajectory Smoothing, if set to 1 the desired values are smoothed internally
-
-CONFIG.SMOOTH_DES_COM                       = 0;
-CONFIG.SMOOTH_DES_EE                        = 0;
-CONFIG.SMOOTH_DES_Q                         = 0;
-
-WBT_wbiList                                 = '(torso_pitch,torso_roll,torso_yaw,l_shoulder_pitch, l_shoulder_roll, l_shoulder_yaw, l_elbow, r_shoulder_pitch,r_shoulder_roll, r_shoulder_yaw, r_elbow)';
-WBT_robotName                               = 'icubSim';
-
-dump.left_hand_wrench_port                  = '/icubSim/left_hand/analog:o';
-dump.right_hand_wrench_port                 = '/icubSim/right_hand/analog:o';
-
-references.smoothingTimeMinJerkEEDesQDes    = 3.0;
-
-sat.torque                                  = 34;
-
-CONFIG.smoothingTimeTranDynamics            = 0.05;
-
 ROBOT_DOF_FOR_SIMULINK                      = eye(ROBOT_DOF);
-gain.qTildeMax                              = 20*pi/180;
-postures                                    = 0;
 
-gain.SmoothingTimeImp                       = 1;
-gain.SmoothingTimeGainScheduling            = 0.02;
+%% Position Control Gains
+GAINS.POSITION.Kp			    = 1000;
+GAINS.POSITION.Kd			    = 2*sqrt(GAINS.POSITION.Kp);
+GAINS.POSITION.Eps			    = 1e-20;
+
+%% Orientation Control Gains
+GAINS.ORIENTATION.Kp			    = 50;
+GAINS.ORIENTATION.Kd			    = 2*sqrt(GAINS.ORIENTATION.Kp);
+GAINS.ORIENTATION.Eps			    = 1e-20;
+
+%% Postural Task Gains
+GAINS.POSTURAL.Kp			    = diag([100,100,100,100,100,100,100,100,100,100,100,100,100]);
+GAINS.POSTURAL.Kd			    = 2;
+
 
