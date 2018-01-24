@@ -8,7 +8,7 @@ end
 ROBOT_DOF_FOR_SIMULINK                      = eye(ROBOT_DOF);
 
 %% Position Control Gains
-GAINS.POSITION.Kp			    = 1000;
+GAINS.POSITION.Kp			    = diag([1000,1000,1000]);
 GAINS.POSITION.Kd			    = 2*sqrt(GAINS.POSITION.Kp);
 GAINS.POSITION.Eps			    = 1e-20;
 

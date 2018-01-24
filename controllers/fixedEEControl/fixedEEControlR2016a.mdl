@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.947"
+    ComputedModelVersion    "1.948"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -80,9 +80,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "yeshi"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Jan 24 11:32:59 2018"
-  RTWModifiedTimeStamp	  438694376
-  ModelVersionFormat	  "1.%<AutoIncrement:947>"
+  LastModifiedDate	  "Wed Jan 24 11:39:08 2018"
+  RTWModifiedTimeStamp	  438694746
+  ModelVersionFormat	  "1.%<AutoIncrement:948>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -4425,7 +4425,10 @@ Stateflow {
     firstTransition	    14
     firstJunction	    13
     viewObj		    2
+    visible		    1
     machine		    1
+    subviewS {
+    }
     ssIdHighWaterMark	    12
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -4451,7 +4454,7 @@ Stateflow {
     eml {
       isEML		      1
       script		      "function ddx = controlObjective(W_H_EE,W_J_EE,dq,x_des,dx_des,ddx_des,Kp,Kd)\n   \n    x  = W_H_E"
-      "E(1:3,4)-x_des;\n    dx = W_J_EE(1:3,7:end)*dq-dx_des;\n    \n    ddx = ddx_des-Kp.*x-Kd.*dx; \n\nend"
+      "E(1:3,4)-x_des;\n    dx = W_J_EE(1:3,7:end)*dq-dx_des;\n    \n    ddx = ddx_des-Kp*x-Kd*dx; \n\nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
