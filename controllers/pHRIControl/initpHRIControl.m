@@ -97,7 +97,7 @@ run(strcat('app/robots/',getenv('YARP_ROBOT_NAME'),'/gains.m'));
 %% Human Configuration
 
 % End Effector link name
-HUMAN.CONFIG.EE                               = 'r_hand';
+HUMAN.CONFIG.EE                               = 'l_hand';
 
 % This sections contains information on the robot parts considered
 %
@@ -174,3 +174,12 @@ run(strcat('app/robots/',getenv('YARP_HUMAN_NAME'),'/gains.m'));
 
 %% Load Utility Files
 addpath('utils')
+
+%% Human Pose wrt the inertial frame
+HUMAN.thetaz = pi;
+HUMAN.posx = 0.7;
+% % HUMAN.CONFIG.POSE = eye(4);
+HUMAN.CONFIG.POSE = [cos(HUMAN.thetaz) -sin(HUMAN.thetaz) 0     0.7;
+                     sin(HUMAN.thetaz) cos(HUMAN.thetaz)  0     0;
+                     0                 0                  1     0;
+                     0                 0                  0     1];

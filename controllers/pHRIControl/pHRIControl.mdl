@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.973"
+    ComputedModelVersion    "1.1013"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -50,16 +50,28 @@ Model {
 	$ClassName		"Simulink.ExplorerBarInfo"
 	Visible			[1]
       }
-      Object {
-	$PropName		"EditorsInfo"
-	$ObjectID		5
-	$ClassName		"Simulink.EditorInfo"
-	IsActive		[1]
-	ViewObjType		"SimulinkTopLevel"
-	LoadSaveID		"0"
-	Extents			[1849.0, 923.0]
-	ZoomFactor		[1.2795389048991355]
-	Offset			[0.0, 0.0]
+      Array {
+	Type			"Simulink.EditorInfo"
+	Dimension		2
+	Object {
+	  $ObjectID		  5
+	  IsActive		  [0]
+	  ViewObjType		  "SimulinkSubsys"
+	  LoadSaveID		  "274"
+	  Extents		  [1831.0, 878.0]
+	  ZoomFactor		  [1.13]
+	  Offset		  [0.0, 0.0]
+	}
+	Object {
+	  $ObjectID		  6
+	  IsActive		  [1]
+	  ViewObjType		  "SimulinkTopLevel"
+	  LoadSaveID		  "0"
+	  Extents		  [1849.0, 916.0]
+	  ZoomFactor		  [1.5099999999999998]
+	  Offset		  [-1.1368683772161603e-13, 32.271523178807854]
+	}
+	PropName		"EditorsInfo"
       }
     }
   }
@@ -69,9 +81,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "yeshi"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Jan 29 18:10:48 2018"
-  RTWModifiedTimeStamp	  439149919
-  ModelVersionFormat	  "1.%<AutoIncrement:973>"
+  LastModifiedDate	  "Wed Jan 31 18:20:39 2018"
+  RTWModifiedTimeStamp	  439323636
+  ModelVersionFormat	  "1.%<AutoIncrement:1013>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -119,7 +131,7 @@ Model {
   TryForcingSFcnDF	  off
   Object {
     $PropName		    "DataLoggingOverride"
-    $ObjectID		    6
+    $ObjectID		    7
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "fixedEEControlR2016a"
     overrideMode_	    [0.0]
@@ -163,13 +175,13 @@ Model {
     Type		    "Handle"
     Dimension		    1
     Simulink.ConfigSet {
-      $ObjectID		      7
+      $ObjectID		      8
       Version		      "1.16.2"
       Array {
 	Type			"Handle"
 	Dimension		9
 	Simulink.SolverCC {
-	  $ObjectID		  8
+	  $ObjectID		  9
 	  Version		  "1.16.2"
 	  StartTime		  "0.0"
 	  StopTime		  "inf"
@@ -206,7 +218,7 @@ Model {
 	  InsertRTBMode		  "Whenever possible"
 	}
 	Simulink.DataIOCC {
-	  $ObjectID		  9
+	  $ObjectID		  10
 	  Version		  "1.16.2"
 	  Decimation		  "1"
 	  ExternalInput		  "[t, u]"
@@ -244,7 +256,7 @@ Model {
 	  LoggingIntervals	  "[-inf, inf]"
 	}
 	Simulink.OptimizationCC {
-	  $ObjectID		  10
+	  $ObjectID		  11
 	  Version		  "1.16.2"
 	  Array {
 	    Type		    "Cell"
@@ -301,7 +313,7 @@ Model {
 	  AccelVerboseBuild	  off
 	}
 	Simulink.DebuggingCC {
-	  $ObjectID		  11
+	  $ObjectID		  12
 	  Version		  "1.16.2"
 	  RTPrefix		  "error"
 	  ConsistencyChecking	  "none"
@@ -396,7 +408,7 @@ Model {
 	  AllowAutomaticUnitConversions	on
 	}
 	Simulink.HardwareCC {
-	  $ObjectID		  12
+	  $ObjectID		  13
 	  Version		  "1.16.2"
 	  ProdBitPerChar	  8
 	  ProdBitPerShort	  16
@@ -438,7 +450,7 @@ Model {
 	  UseSimulinkCoderFeatures on
 	}
 	Simulink.ModelReferenceCC {
-	  $ObjectID		  13
+	  $ObjectID		  14
 	  Version		  "1.16.2"
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
 	  EnableRefExpFcnMdlSchedulingChecks on
@@ -454,7 +466,7 @@ Model {
 	  SupportModelReferenceSimTargetCustomCode off
 	}
 	Simulink.SFSimCC {
-	  $ObjectID		  14
+	  $ObjectID		  15
 	  Version		  "1.16.2"
 	  SFSimEcho		  on
 	  SimCtrlC		  on
@@ -466,7 +478,7 @@ Model {
 	}
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
-	  $ObjectID		  15
+	  $ObjectID		  16
 	  Version		  "1.16.2"
 	  Array {
 	    Type		    "Cell"
@@ -539,7 +551,7 @@ Model {
 	    Type		    "Handle"
 	    Dimension		    2
 	    Simulink.CodeAppCC {
-	      $ObjectID		      16
+	      $ObjectID		      17
 	      Version		      "1.16.2"
 	      Array {
 		Type			"Cell"
@@ -614,7 +626,7 @@ Model {
 	    }
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
-	      $ObjectID		      17
+	      $ObjectID		      18
 	      Version		      "1.16.2"
 	      Array {
 		Type			"Cell"
@@ -702,7 +714,7 @@ Model {
 	  }
 	}
 	SlCovCC.ConfigComp {
-	  $ObjectID		  18
+	  $ObjectID		  19
 	  Version		  "1.16.2"
 	  Description		  "Simulink Coverage Configuration Component"
 	  Name			  "Simulink Coverage"
@@ -744,11 +756,11 @@ Model {
   }
   Simulink.ConfigSet {
     $PropName		    "ActiveConfigurationSet"
-    $ObjectID		    7
+    $ObjectID		    8
   }
   Object {
     $PropName		    "DataTransfer"
-    $ObjectID		    19
+    $ObjectID		    20
     $ClassName		    "Simulink.GlobalDataTransfer"
     DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
     DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
@@ -839,6 +851,14 @@ Model {
       BusSelectionMode	      off
     }
     Block {
+      BlockType		      Display
+      Format		      "short"
+      Decimation	      "10"
+      Floating		      off
+      Lockdown		      off
+      SampleTime	      "-1"
+    }
+    Block {
       BlockType		      Fcn
       Expr		      "sin(u[1])"
       SampleTime	      "-1"
@@ -861,6 +881,14 @@ Model {
       LatchByDelayingOutsideSignal off
       LatchInputForFeedbackSignals off
       Interpolate	      on
+    }
+    Block {
+      BlockType		      Mux
+      Inputs		      "4"
+      DisplayOption	      "none"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      NonVirtualBus	      off
     }
     Block {
       BlockType		      Outport
@@ -1009,21 +1037,49 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "128"
+    ZoomFactor		    "151"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "476"
+    SIDHighWatermark	    "493"
+    Block {
+      BlockType		      Scope
+      Name		      "External Wrench"
+      SID		      "492"
+      Ports		      [1]
+      Position		      [755, 394, 785, 426]
+      ZOrder		      325
+      ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
+      "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
+      "ources','WiredSimulink',true,'DataLoggingVariableName','ScopeData1'),extmgr.Configuration('Visuals','Time Domain"
+      "',true,'SerializedDisplays',{struct('MinYLimReal','-57.59595','MaxYLimReal','15.2165','YLabelReal','','MinYLimMa"
+      "g','0.00000','MaxYLimMag','57.59595','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'Axe"
+      "sColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666"
+      "666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831"
+      "372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.074509803921568"
+      "6 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLine"
+      "s',6,'LineNames',{{'Robot System/4:1','Robot System/4:2','Robot System/4:3','Robot System/4:4','Robot System/4:5"
+      "','Robot System/4:6'}},'ShowContent',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','-57.59"
+      "595','MaxYLimReal','15.2165','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','57.59595','LegendVisibility','"
+      "On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.6862"
+      "74509803922 0.686274509803922],'ColorOrder',[0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.160784"
+      "31372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.392156862745098 0.831372549019608 0.0745"
+      "098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])),extmgr.Configuration('Tools','Plot"
+      " Navigation',true),extmgr.Configuration('Tools','Measurements',true,'Version','2016a')),'Version','2016a','Posit"
+      "ion',[-992 69 560 420])"
+    }
     Block {
       BlockType		      SubSystem
       Name		      "Human System"
       SID		      "363"
-      Ports		      []
-      Position		      [1057, 79, 1387, 519]
+      Ports		      [0, 4]
+      Position		      [1050, 55, 1380, 495]
       ZOrder		      323
+      BlockMirror	      on
+      NamePlacement	      "alternate"
       RequestExecContextInheritance off
       Variant		      off
       System {
 	Name			"Human System"
-	Location		[37, 18, 1920, 1080]
+	Location		[-53, 10, 1830, 1072]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1035,7 +1091,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"128"
+	ZoomFactor		"122"
 	Block {
 	  BlockType		  ToWorkspace
 	  Name			  "Actual Joint\nPosition"
@@ -3250,7 +3306,7 @@ Model {
 		  Ports			  [0, 1]
 		  Position		  [-105, 45, -75, 75]
 		  ZOrder		  287
-		  Amplitude		  "0.075"
+		  Amplitude		  "0"
 		  SampleTime		  "0"
 		}
 		Block {
@@ -3272,7 +3328,7 @@ Model {
 		  Ports			  [0, 1]
 		  Position		  [-105, 170, -75, 200]
 		  ZOrder		  288
-		  Amplitude		  "0.075"
+		  Amplitude		  "0"
 		  SampleTime		  "0"
 		}
 		Block {
@@ -3294,7 +3350,7 @@ Model {
 		  Ports			  [0, 1]
 		  Position		  [-105, 290, -75, 320]
 		  ZOrder		  291
-		  Amplitude		  "0.075"
+		  Amplitude		  "0"
 		  Phase			  "pi/2"
 		  SampleTime		  "0"
 		}
@@ -4143,17 +4199,61 @@ Model {
 	  BlockType		  Constant
 	  Name			  "W_H_B\n"
 	  SID			  "476"
-	  Position		  [225, 215, 255, 245]
+	  Position		  [95, 225, 255, 245]
 	  ZOrder		  173
-	  Value			  "eye(4)"
+	  Value			  "HUMAN.CONFIG.POSE"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Human Mass Matrix"
+	  SID			  "482"
+	  Position		  [650, 108, 680, 122]
+	  ZOrder		  322
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Human Bias Force"
+	  SID			  "483"
+	  Position		  [780, 108, 810, 122]
+	  ZOrder		  323
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Human J_r_hand"
+	  SID			  "488"
+	  Position		  [670, 693, 700, 707]
+	  ZOrder		  324
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Human JDotNu_r_hand"
+	  SID			  "491"
+	  Position		  [670, 743, 700, 757]
+	  ZOrder		  332
+	  Port			  "4"
+	  IconDisplay		  "Port number"
 	}
 	Line {
 	  ZOrder		  1
 	  SrcBlock		  "Robot Dynamics"
 	  SrcPort		  2
-	  Points		  [59, 0; 0, -125]
-	  DstBlock		  "Control"
-	  DstPort		  3
+	  Points		  [59, 0; 0, -125; 91, 0]
+	  Branch {
+	    ZOrder		    55
+	    Points		    [0, -155]
+	    DstBlock		    "Human Bias Force"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    54
+	    DstBlock		    "Control"
+	    DstPort		    3
+	  }
 	}
 	Line {
 	  ZOrder		  2
@@ -4179,9 +4279,19 @@ Model {
 	  Points		  [48, 0]
 	  Branch {
 	    ZOrder		    6
-	    Points		    [0, 37; 285, 0; 0, -182]
-	    DstBlock		    "Control"
-	    DstPort		    7
+	    Points		    [0, 37]
+	    Branch {
+	      ZOrder		      57
+	      Points		      [0, 48]
+	      DstBlock		      "Human J_r_hand"
+	      DstPort		      1
+	    }
+	    Branch {
+	      ZOrder		      56
+	      Points		      [285, 0; 0, -182]
+	      DstBlock		      "Control"
+	      DstPort		      7
+	    }
 	  }
 	  Branch {
 	    ZOrder		    7
@@ -4233,9 +4343,19 @@ Model {
 	  ZOrder		  14
 	  SrcBlock		  "Robot Kinematics"
 	  SrcPort		  3
-	  Points		  [355, 0; 0, -150]
-	  DstBlock		  "Control"
-	  DstPort		  8
+	  Points		  [23, 0]
+	  Branch {
+	    ZOrder		    59
+	    Points		    [0, 80]
+	    DstBlock		    "Human JDotNu_r_hand"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    58
+	    Points		    [332, 0; 0, -150]
+	    DstBlock		    "Control"
+	    DstPort		    8
+	  }
 	}
 	Line {
 	  ZOrder		  15
@@ -4248,9 +4368,18 @@ Model {
 	  ZOrder		  16
 	  SrcBlock		  "Robot Dynamics"
 	  SrcPort		  1
-	  Points		  [18, 0; 0, -45]
-	  DstBlock		  "Control"
-	  DstPort		  2
+	  Points		  [18, 0; 0, -45; 32, 0]
+	  Branch {
+	    ZOrder		    53
+	    Points		    [0, -105]
+	    DstBlock		    "Human Mass Matrix"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    52
+	    DstBlock		    "Control"
+	    DstPort		    2
+	  }
 	}
 	Line {
 	  ZOrder		  17
@@ -4258,13 +4387,14 @@ Model {
 	  SrcPort		  1
 	  Points		  [89, 0]
 	  Branch {
-	    ZOrder		    18
+	    ZOrder		    35
+	    Points		    [0, -5]
 	    DstBlock		    "Robot Dynamics"
 	    DstPort		    1
 	  }
 	  Branch {
 	    ZOrder		    19
-	    Points		    [0, 325]
+	    Points		    [0, 320]
 	    DstBlock		    "Robot Kinematics"
 	    DstPort		    1
 	  }
@@ -4369,9 +4499,10 @@ Model {
       BlockType		      SubSystem
       Name		      "Robot System"
       SID		      "362"
-      Ports		      []
-      Position		      [502, 79, 832, 519]
+      Ports		      [0, 5]
+      Position		      [365, 55, 695, 495]
       ZOrder		      -74
+      NamePlacement	      "alternate"
       RequestExecContextInheritance off
       Variant		      off
       System {
@@ -4388,7 +4519,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"128"
+	ZoomFactor		"110"
 	Block {
 	  BlockType		  ToWorkspace
 	  Name			  "Actual Joint\nPosition"
@@ -5053,6 +5184,15 @@ Model {
 	  SampleTime		  "-1"
 	}
 	Block {
+	  BlockType		  Display
+	  Name			  "Display"
+	  SID			  "481"
+	  Ports			  [1]
+	  Position		  [480, 735, 570, 765]
+	  ZOrder		  326
+	  Decimation		  "1"
+	}
+	Block {
 	  BlockType		  Reference
 	  Name			  "Initial\nPosition\n"
 	  SID			  "326"
@@ -5120,6 +5260,17 @@ Model {
 	  "Version','2016a','Position',[96 -346 1321 666])"
 	}
 	Block {
+	  BlockType		  Mux
+	  Name			  "Mux"
+	  SID			  "479"
+	  Ports			  [2, 1]
+	  Position		  [345, 708, 350, 792]
+	  ZOrder		  324
+	  ShowName		  off
+	  Inputs		  "2"
+	  DisplayOption		  "bar"
+	}
+	Block {
 	  BlockType		  SubSystem
 	  Name			  "References"
 	  SID			  "274"
@@ -5132,7 +5283,7 @@ Model {
 	  System {
 	    Name		    "References"
 	    Location		    [37, 18, 1920, 1080]
-	    Open		    off
+	    Open		    on
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -6625,7 +6776,7 @@ Model {
 		  Ports			  [0, 1]
 		  Position		  [-105, 170, -75, 200]
 		  ZOrder		  288
-		  Amplitude		  "0.075"
+		  Amplitude		  "0.15"
 		  SampleTime		  "0"
 		}
 		Block {
@@ -6647,7 +6798,7 @@ Model {
 		  Ports			  [0, 1]
 		  Position		  [-105, 290, -75, 320]
 		  ZOrder		  291
-		  Amplitude		  "0.075"
+		  Amplitude		  "0"
 		  Phase			  "pi/2"
 		  SampleTime		  "0"
 		}
@@ -7110,7 +7261,7 @@ Model {
 	  Variant		  off
 	  System {
 	    Name		    "Robot Dynamics"
-	    Location		    [37, 18, 1920, 1080]
+	    Location		    [-53, 10, 1830, 1072]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -7122,7 +7273,7 @@ Model {
 	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "329"
+	    ZoomFactor		    "313"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "W_H_B"
@@ -7286,7 +7437,7 @@ Model {
 	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "319"
+	    ZoomFactor		    "306"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "w_H_b"
@@ -7500,6 +7651,68 @@ Model {
 	  ZOrder		  173
 	  Value			  "eye(4)"
 	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Yarp Read"
+	  SID			  "477"
+	  Ports			  [0, 1]
+	  Position		  [1190, 721, 1250, 769]
+	  ZOrder		  322
+	  ForegroundColor	  "[0.490196, 0.000000, 0.000000]"
+	  LibraryVersion	  "1.480"
+	  SourceBlock		  "WBToolboxLibrary/Utilities/Yarp Read"
+	  SourceType		  "YARP Read"
+	  portName		  "'/iCub/wholeBodyDynamics/right_arm/endEffectorWrench:o'"
+	  signalSize		  "6"
+	  blocking		  off
+	  timestamp		  off
+	  autoconnect		  on
+	  errorOnConnection	  on
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Robot Mass Matrix"
+	  SID			  "484"
+	  Position		  [690, 113, 720, 127]
+	  ZOrder		  327
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Robot Bias Forces"
+	  SID			  "485"
+	  Position		  [820, 113, 850, 127]
+	  ZOrder		  328
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Robot J_r_hand"
+	  SID			  "487"
+	  Position		  [695, 728, 725, 742]
+	  ZOrder		  329
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "External Wrench"
+	  SID			  "489"
+	  Position		  [1325, 738, 1355, 752]
+	  ZOrder		  330
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Robot JDotNu_r_hand"
+	  SID			  "490"
+	  Position		  [695, 778, 725, 792]
+	  ZOrder		  331
+	  Port			  "5"
+	  IconDisplay		  "Port number"
+	}
 	Line {
 	  ZOrder		  8
 	  SrcBlock		  "Joint Position"
@@ -7546,36 +7759,46 @@ Model {
 	  ZOrder		  29
 	  SrcBlock		  "Joint Velocity"
 	  SrcPort		  1
-	  Points		  [90, 0]
+	  Points		  [5, 0]
 	  Branch {
-	    ZOrder		    725
-	    Points		    [0, 80]
+	    ZOrder		    777
+	    Points		    [0, 345]
+	    DstBlock		    "Mux"
+	    DstPort		    2
+	  }
+	  Branch {
+	    ZOrder		    776
+	    Points		    [85, 0]
 	    Branch {
-	      ZOrder		      724
-	      Points		      [0, 170]
-	      DstBlock		      "Robot Kinematics"
-	      DstPort		      4
-	    }
-	    Branch {
-	      ZOrder		      612
-	      Points		      [264, 0]
+	      ZOrder		      725
+	      Points		      [0, 80]
 	      Branch {
-		ZOrder			721
-		Points			[0, -185]
-		DstBlock		"Control"
+		ZOrder			724
+		Points			[0, 170]
+		DstBlock		"Robot Kinematics"
 		DstPort			4
 	      }
 	      Branch {
-		ZOrder			641
-		DstBlock		"References"
-		DstPort			1
+		ZOrder			612
+		Points			[264, 0]
+		Branch {
+		  ZOrder		  721
+		  Points		  [0, -185]
+		  DstBlock		  "Control"
+		  DstPort		  4
+		}
+		Branch {
+		  ZOrder		  641
+		  DstBlock		  "References"
+		  DstPort		  1
+		}
 	      }
 	    }
-	  }
-	  Branch {
-	    ZOrder		    585
-	    DstBlock		    "Robot Dynamics"
-	    DstPort		    4
+	    Branch {
+	      ZOrder		      585
+	      DstBlock		      "Robot Dynamics"
+	      DstPort		      4
+	    }
 	  }
 	}
 	Line {
@@ -7599,9 +7822,18 @@ Model {
 	  ZOrder		  683
 	  SrcBlock		  "Robot Dynamics"
 	  SrcPort		  1
-	  Points		  [18, 0; 0, -45]
-	  DstBlock		  "Control"
-	  DstPort		  2
+	  Points		  [18, 0; 0, -45; 54, 0]
+	  Branch {
+	    ZOrder		    783
+	    DstBlock		    "Control"
+	    DstPort		    2
+	  }
+	  Branch {
+	    ZOrder		    782
+	    Points		    [0, -100]
+	    DstBlock		    "Robot Mass Matrix"
+	    DstPort		    1
+	  }
 	}
 	Line {
 	  ZOrder		  613
@@ -7614,9 +7846,19 @@ Model {
 	  ZOrder		  635
 	  SrcBlock		  "Robot Kinematics"
 	  SrcPort		  3
-	  Points		  [355, 0; 0, -150]
-	  DstBlock		  "Control"
-	  DstPort		  8
+	  Points		  [22, 0]
+	  Branch {
+	    ZOrder		    793
+	    Points		    [0, 115]
+	    DstBlock		    "Robot JDotNu_r_hand"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    792
+	    Points		    [333, 0; 0, -150]
+	    DstBlock		    "Control"
+	    DstPort		    8
+	  }
 	}
 	Line {
 	  ZOrder		  684
@@ -7670,35 +7912,78 @@ Model {
 	  }
 	  Branch {
 	    ZOrder		    638
-	    Points		    [0, 37; 285, 0; 0, -182]
-	    DstBlock		    "Control"
-	    DstPort		    7
+	    Points		    [0, 37]
+	    Branch {
+	      ZOrder		      788
+	      Points		      [0, 83]
+	      DstBlock		      "Robot J_r_hand"
+	      DstPort		      1
+	    }
+	    Branch {
+	      ZOrder		      787
+	      Points		      [285, 0; 0, -182]
+	      DstBlock		      "Control"
+	      DstPort		      7
+	    }
 	  }
 	}
 	Line {
 	  ZOrder		  56
 	  SrcBlock		  "Base Velocity\n"
 	  SrcPort		  1
-	  Points		  [129, 0]
+	  Points		  [43, 0]
 	  Branch {
-	    ZOrder		    726
-	    Points		    [0, 275]
-	    DstBlock		    "Robot Kinematics"
-	    DstPort		    3
+	    ZOrder		    775
+	    Points		    [0, 370]
+	    DstBlock		    "Mux"
+	    DstPort		    1
 	  }
 	  Branch {
-	    ZOrder		    588
-	    DstBlock		    "Robot Dynamics"
-	    DstPort		    3
+	    ZOrder		    774
+	    Points		    [86, 0]
+	    Branch {
+	      ZOrder		      726
+	      Points		      [0, 275]
+	      DstBlock		      "Robot Kinematics"
+	      DstPort		      3
+	    }
+	    Branch {
+	      ZOrder		      588
+	      DstBlock		      "Robot Dynamics"
+	      DstPort		      3
+	    }
 	  }
 	}
 	Line {
 	  ZOrder		  643
 	  SrcBlock		  "Robot Dynamics"
 	  SrcPort		  2
-	  Points		  [59, 0; 0, -125]
-	  DstBlock		  "Control"
-	  DstPort		  3
+	  Points		  [59, 0; 0, -125; 136, 0]
+	  Branch {
+	    ZOrder		    785
+	    Points		    [0, -150]
+	    DstBlock		    "Robot Bias Forces"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    784
+	    DstBlock		    "Control"
+	    DstPort		    3
+	  }
+	}
+	Line {
+	  ZOrder		  791
+	  SrcBlock		  "Yarp Read"
+	  SrcPort		  1
+	  DstBlock		  "External Wrench"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  780
+	  SrcBlock		  "Mux"
+	  SrcPort		  1
+	  DstBlock		  "Display"
+	  DstPort		  1
 	}
       }
     }
@@ -7718,6 +8003,309 @@ Model {
       serverPortName	      "'/clock/rpc'"
       clientPortName	      "'/WBT_synchronizer/rpc:o'"
     }
+    Block {
+      BlockType		      SubSystem
+      Name		      "comPositeMatrices"
+      SID		      "486"
+      Ports		      [9]
+      Position		      [811, 530, 959, 660]
+      ZOrder		      324
+      BlockRotation	      270
+      BlockMirror	      on
+      NamePlacement	      "alternate"
+      LibraryVersion	      "1.32"
+      ErrorFcn		      "Stateflow.Translate.translate"
+      PermitHierarchicalResolution "ExplicitOnly"
+      TreatAsAtomicUnit	      on
+      RequestExecContextInheritance off
+      SFBlockType	      "MATLAB Function"
+      Variant		      off
+      System {
+	Name			"comPositeMatrices"
+	Location		[223, 338, 826, 833]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	SIDHighWatermark	"26"
+	Block {
+	  BlockType		  Inport
+	  Name			  "robotM"
+	  SID			  "486::20"
+	  Position		  [20, 101, 40, 119]
+	  ZOrder		  11
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "robotBiasForce"
+	  SID			  "486::21"
+	  Position		  [20, 136, 40, 154]
+	  ZOrder		  12
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "humanM"
+	  SID			  "486::1"
+	  Position		  [20, 171, 40, 189]
+	  ZOrder		  -1
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "humanBiasForce"
+	  SID			  "486::19"
+	  Position		  [20, 206, 40, 224]
+	  ZOrder		  10
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "robotEEJ"
+	  SID			  "486::22"
+	  Position		  [20, 246, 40, 264]
+	  ZOrder		  13
+	  Port			  "5"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "humanEEJ"
+	  SID			  "486::23"
+	  Position		  [20, 281, 40, 299]
+	  ZOrder		  14
+	  Port			  "6"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "extWrench"
+	  SID			  "486::24"
+	  Position		  [20, 316, 40, 334]
+	  ZOrder		  15
+	  Port			  "7"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "robotJDotNu"
+	  SID			  "486::25"
+	  Position		  [20, 351, 40, 369]
+	  ZOrder		  16
+	  Port			  "8"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "humanJDotNu"
+	  SID			  "486::26"
+	  Position		  [20, 386, 40, 404]
+	  ZOrder		  17
+	  Port			  "9"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  " Demux "
+	  SID			  "486::17"
+	  Ports			  [1, 1]
+	  Position		  [270, 100, 320, 140]
+	  ZOrder		  8
+	  Outputs		  "1"
+	}
+	Block {
+	  BlockType		  S-Function
+	  Name			  " SFunction "
+	  SID			  "486::16"
+	  Tag			  "Stateflow S-Function pHRIControl 9"
+	  Ports			  [9, 1]
+	  Position		  [180, 110, 230, 310]
+	  ZOrder		  7
+	  FunctionName		  "sf_sfun"
+	  PortCounts		  "[9 1]"
+	  SFunctionDeploymentMode off
+	  EnableBusSupport	  on
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  " Terminator "
+	  SID			  "486::18"
+	  Position		  [460, 111, 480, 129]
+	  ZOrder		  9
+	}
+	Line {
+	  ZOrder		  91
+	  SrcBlock		  "robotM"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  92
+	  SrcBlock		  "robotBiasForce"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  2
+	}
+	Line {
+	  ZOrder		  93
+	  SrcBlock		  "humanM"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  3
+	}
+	Line {
+	  ZOrder		  94
+	  SrcBlock		  "humanBiasForce"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  4
+	}
+	Line {
+	  ZOrder		  95
+	  SrcBlock		  "robotEEJ"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  5
+	}
+	Line {
+	  ZOrder		  96
+	  SrcBlock		  "humanEEJ"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  6
+	}
+	Line {
+	  ZOrder		  97
+	  SrcBlock		  "extWrench"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  7
+	}
+	Line {
+	  ZOrder		  98
+	  SrcBlock		  "robotJDotNu"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  8
+	}
+	Line {
+	  ZOrder		  99
+	  SrcBlock		  "humanJDotNu"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  9
+	}
+	Line {
+	  ZOrder		  100
+	  SrcBlock		  " Demux "
+	  SrcPort		  1
+	  DstBlock		  " Terminator "
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  101
+	  SrcBlock		  " SFunction "
+	  SrcPort		  1
+	  DstBlock		  " Demux "
+	  DstPort		  1
+	}
+      }
+    }
+    Line {
+      ZOrder		      1
+      SrcBlock		      "Robot System"
+      SrcPort		      2
+      Points		      [140, 0]
+      DstBlock		      "comPositeMatrices"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      2
+      SrcBlock		      "Robot System"
+      SrcPort		      1
+      Points		      [125, 0]
+      DstBlock		      "comPositeMatrices"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      3
+      SrcBlock		      "Human System"
+      SrcPort		      1
+      Points		      [-190, 0]
+      DstBlock		      "comPositeMatrices"
+      DstPort		      3
+    }
+    Line {
+      ZOrder		      4
+      SrcBlock		      "Human System"
+      SrcPort		      2
+      Points		      [-175, 0]
+      DstBlock		      "comPositeMatrices"
+      DstPort		      4
+    }
+    Line {
+      ZOrder		      5
+      SrcBlock		      "Robot System"
+      SrcPort		      3
+      Points		      [185, 0]
+      DstBlock		      "comPositeMatrices"
+      DstPort		      5
+    }
+    Line {
+      ZOrder		      6
+      SrcBlock		      "Human System"
+      SrcPort		      3
+      Points		      [-145, 0]
+      DstBlock		      "comPositeMatrices"
+      DstPort		      6
+    }
+    Line {
+      ZOrder		      8
+      SrcBlock		      "Robot System"
+      SrcPort		      5
+      Points		      [230, 0]
+      DstBlock		      "comPositeMatrices"
+      DstPort		      8
+    }
+    Line {
+      ZOrder		      9
+      SrcBlock		      "Human System"
+      SrcPort		      4
+      Points		      [-100, 0]
+      DstBlock		      "comPositeMatrices"
+      DstPort		      9
+    }
+    Line {
+      ZOrder		      7
+      SrcBlock		      "Robot System"
+      SrcPort		      4
+      Points		      [33, 0]
+      Branch {
+	ZOrder			13
+	Points			[0, 45]
+	DstBlock		"External Wrench"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			12
+	Points			[182, 0]
+	DstBlock		"comPositeMatrices"
+	DstPort			7
+      }
+    }
   }
 }
 #Finite State Machines
@@ -7731,7 +8319,7 @@ Stateflow {
     name		    "pHRIControl"
     created		    "07-Dec-2017 15:23:47"
     isLibrary		    0
-    firstTarget		    110
+    firstTarget		    124
     sfVersion		    80000009
   }
   chart {
@@ -8043,10 +8631,7 @@ Stateflow {
     firstTransition	    34
     firstJunction	    33
     viewObj		    16
-    visible		    1
     machine		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    27
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -8683,7 +9268,6 @@ Stateflow {
     firstTransition	    54
     firstJunction	    53
     viewObj		    45
-    visible		    1
     machine		    1
     ssIdHighWaterMark	    9
     decomposition	    CLUSTER_CHART
@@ -8910,8 +9494,6 @@ Stateflow {
     firstJunction	    73
     viewObj		    56
     machine		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    27
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -9367,8 +9949,6 @@ Stateflow {
     firstJunction	    84
     viewObj		    76
     machine		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    9
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -9593,10 +10173,7 @@ Stateflow {
     firstTransition	    99
     firstJunction	    98
     viewObj		    87
-    visible		    1
     machine		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    12
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -9896,8 +10473,6 @@ Stateflow {
     firstJunction	    107
     viewObj		    101
     machine		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    8
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -10069,8 +10644,313 @@ Stateflow {
     machine		    1
     chart		    101
   }
-  target {
+  chart {
     id			    110
+    name		    "comPositeMatrices"
+    windowPosition	    [422 539.941 189 413]
+    viewLimits		    [0 156.75 0 153.75]
+    screen		    [1 1 3600 1200 1.180555555555556]
+    treeNode		    [0 111 0 0]
+    firstTransition	    122
+    firstJunction	    121
+    viewObj		    110
+    machine		    1
+    ssIdHighWaterMark	    13
+    decomposition	    CLUSTER_CHART
+    type		    EML_CHART
+    firstData		    112
+    chartFileNumber	    9
+    disableImplicitCasting  1
+    eml {
+      name		      "compositeMatrices"
+    }
+  }
+  state {
+    id			    111
+    labelString		    "eML_blk_kernel()"
+    position		    [18 64.5 118 66]
+    fontSize		    12
+    chart		    110
+    treeNode		    [110 0 0 0]
+    superState		    SUBCHART
+    subviewer		    110
+    ssIdNumber		    1
+    type		    FUNC_STATE
+    decomposition	    CLUSTER_STATE
+    eml {
+      isEML		      1
+      script		      "function compositeMatrices(robotM,robotBiasForce,humanM,humanBiasForce,robotEEJ,humanEEJ,extWrenc"
+      "h,robotJDotNu,humanJDotNu)\n\n    M = [humanM zeros(17);\n         zeros(17) robotM];\n     \n    h = [humanBias"
+      "Force;\n         robotBiasForce];\n     \n    humanB = [zeros(11,6) eye(11)]';\n    robotB = [zeros(11,6) eye(11"
+      ")]';\n    \n    B = [humanB zeros(17,11);\n         zeros(17,11) robotB];\n     \n    J = [humanEEJ' zeros(17,6)"
+      ";\n          zeros(17,6) robotEEJ']';\n      \n    f = [extWrench; -extWrench];\n    \n    PV = [robotJDotNu-hum"
+      "anJDotNu];\n    \n    Q = [humanEEJ-robotEEJ];\n    \nend"
+      editorLayout	      "100 M4x1[10 5 700 500]"
+    }
+  }
+  data {
+    id			    112
+    ssIdNumber		    7
+    name		    "robotM"
+    linkNode		    [110 0 113]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    113
+    ssIdNumber		    8
+    name		    "robotBiasForce"
+    linkNode		    [110 112 114]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    114
+    ssIdNumber		    4
+    name		    "humanM"
+    linkNode		    [110 113 115]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    115
+    ssIdNumber		    6
+    name		    "humanBiasForce"
+    linkNode		    [110 114 116]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    116
+    ssIdNumber		    9
+    name		    "robotEEJ"
+    linkNode		    [110 115 117]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    117
+    ssIdNumber		    10
+    name		    "humanEEJ"
+    linkNode		    [110 116 118]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    118
+    ssIdNumber		    11
+    name		    "extWrench"
+    linkNode		    [110 117 119]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    119
+    ssIdNumber		    12
+    name		    "robotJDotNu"
+    linkNode		    [110 118 120]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    120
+    ssIdNumber		    13
+    name		    "humanJDotNu"
+    linkNode		    [110 119 0]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  junction {
+    id			    121
+    position		    [23.5747 49.5747 7]
+    chart		    110
+    linkNode		    [110 0 0]
+    subviewer		    110
+    ssIdNumber		    3
+    type		    CONNECTIVE_JUNCTION
+  }
+  transition {
+    id			    122
+    labelString		    "{eML_blk_kernel();}"
+    labelPosition	    [28.125 13.875 102.544 14.964]
+    fontSize		    12
+    src {
+      intersection	      [0 0 1 0 23.5747 14.625 0 0]
+    }
+    dst {
+      id		      121
+      intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
+    }
+    midPoint		    [23.5747 24.9468]
+    chart		    110
+    linkNode		    [110 0 0]
+    dataLimits		    [21.175 25.975 14.625 42.575]
+    subviewer		    110
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    2
+  }
+  instance {
+    id			    123
+    name		    "comPositeMatrices"
+    machine		    1
+    chart		    110
+  }
+  target {
+    id			    124
     name		    "sfun"
     description		    "Default Simulink S-Function Target."
     machine		    1
